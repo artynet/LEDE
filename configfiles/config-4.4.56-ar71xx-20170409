@@ -26,6 +26,7 @@ CONFIG_TARGET_ar71xx=y
 # CONFIG_TARGET_ixp4xx is not set
 # CONFIG_TARGET_lantiq is not set
 # CONFIG_TARGET_malta is not set
+# CONFIG_TARGET_pistachio is not set
 # CONFIG_TARGET_mvebu is not set
 # CONFIG_TARGET_kirkwood is not set
 # CONFIG_TARGET_mediatek is not set
@@ -105,10 +106,11 @@ CONFIG_TARGET_ar71xx_generic=y
 # CONFIG_TARGET_ar71xx_generic_DEVICE_WPE72_16M is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_WPE72_4M is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_WPE72_8M is not set
-# CONFIG_TARGET_ar71xx_generic_DEVICE_WPJ342_16M is not set
-# CONFIG_TARGET_ar71xx_generic_DEVICE_WPJ344_16M is not set
-# CONFIG_TARGET_ar71xx_generic_DEVICE_WPJ531_16M is not set
-# CONFIG_TARGET_ar71xx_generic_DEVICE_WPJ558_16M is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_wpj342 is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_wpj344 is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_wpj531 is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_wpj558 is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_wpj563 is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_dap-2695-a1 is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_DGL5500A1 is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_DHP1565A1 is not set
@@ -193,6 +195,8 @@ CONFIG_TARGET_ar71xx_generic_DEVICE_LININO=y
 # CONFIG_TARGET_ar71xx_generic_DEVICE_OM2P is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_OM5PAC is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_OM5P is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_cpe505n is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_r602n is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_pqi-air-pen is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_MZKW04NU is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_MZKW300NH is not set
@@ -290,6 +294,8 @@ CONFIG_TARGET_ar71xx_generic_DEVICE_LININO=y
 # CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wr802n-v1 is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wr802n-v2 is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wr810n is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wr840n-v2 is not set
+# CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wr840n-v3 is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wr841-v1.5 is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wr841-v10 is not set
 # CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wr841-v11 is not set
@@ -1446,7 +1452,7 @@ CONFIG_BUSYBOX_DEFAULT_FEATURE_IP_ROUTE=y
 CONFIG_BUSYBOX_DEFAULT_FEATURE_IP_ROUTE_DIR="/etc/iproute2"
 # CONFIG_BUSYBOX_DEFAULT_FEATURE_IP_TUNNEL is not set
 CONFIG_BUSYBOX_DEFAULT_FEATURE_IP_RULE=y
-# CONFIG_BUSYBOX_DEFAULT_FEATURE_IP_NEIGH is not set
+CONFIG_BUSYBOX_DEFAULT_FEATURE_IP_NEIGH=y
 # CONFIG_BUSYBOX_DEFAULT_FEATURE_IP_RARE_PROTOCOLS is not set
 # CONFIG_BUSYBOX_DEFAULT_IPCALC is not set
 # CONFIG_BUSYBOX_DEFAULT_FEATURE_IPCALC_FANCY is not set
@@ -1867,9 +1873,9 @@ CONFIG_BUSYBOX_CONFIG_FEATURE_LS_USERNAME=y
 CONFIG_BUSYBOX_CONFIG_FEATURE_LS_COLOR=y
 CONFIG_BUSYBOX_CONFIG_FEATURE_LS_COLOR_IS_DEFAULT=y
 CONFIG_BUSYBOX_CONFIG_MD5SUM=y
-# CONFIG_BUSYBOX_CONFIG_SHA1SUM is not set
-# CONFIG_BUSYBOX_CONFIG_SHA256SUM is not set
-# CONFIG_BUSYBOX_CONFIG_SHA512SUM is not set
+CONFIG_BUSYBOX_CONFIG_SHA1SUM=y
+CONFIG_BUSYBOX_CONFIG_SHA256SUM=y
+CONFIG_BUSYBOX_CONFIG_SHA512SUM=y
 # CONFIG_BUSYBOX_CONFIG_SHA3SUM is not set
 
 #
@@ -2515,7 +2521,7 @@ CONFIG_PACKAGE_libstdcpp=y
 CONFIG_PACKAGE_linino-conf=y
 CONFIG_PACKAGE_linino-scripts=y
 CONFIG_PACKAGE_logd=y
-CONFIG_PACKAGE_mksh=m
+# CONFIG_PACKAGE_mksh is not set
 CONFIG_PACKAGE_mtd=y
 CONFIG_PACKAGE_netifd=y
 CONFIG_PACKAGE_nvram=m
@@ -2536,7 +2542,7 @@ CONFIG_PACKAGE_rpcd=y
 # CONFIG_PACKAGE_rpcd-mod-iwinfo is not set
 # CONFIG_PACKAGE_rpcd-mod-rpcsys is not set
 # CONFIG_PACKAGE_snapshot-tool is not set
-# CONFIG_PACKAGE_sqm-scripts is not set
+CONFIG_PACKAGE_sqm-scripts=m
 # CONFIG_PACKAGE_sqm-scripts-extra is not set
 CONFIG_PACKAGE_swconfig=y
 CONFIG_PACKAGE_test-scripts=m
@@ -2607,21 +2613,21 @@ CONFIG_PACKAGE_wireless-tools=y
 #
 # zabbix
 #
-CONFIG_PACKAGE_zabbix-agentd=m
+# CONFIG_PACKAGE_zabbix-agentd is not set
 # CONFIG_PACKAGE_zabbix-extra-mac80211 is not set
 # CONFIG_PACKAGE_zabbix-extra-network is not set
 # CONFIG_PACKAGE_zabbix-extra-wifi is not set
-CONFIG_PACKAGE_zabbix-get=m
-CONFIG_PACKAGE_zabbix-proxy=m
-CONFIG_PACKAGE_zabbix-sender=m
-CONFIG_PACKAGE_zabbix-server=m
+# CONFIG_PACKAGE_zabbix-get is not set
+# CONFIG_PACKAGE_zabbix-proxy is not set
+# CONFIG_PACKAGE_zabbix-sender is not set
+# CONFIG_PACKAGE_zabbix-server is not set
 # CONFIG_PACKAGE_debootstrap is not set
-CONFIG_PACKAGE_htop=m
-CONFIG_PACKAGE_monit=m
-CONFIG_PACKAGE_monit-nossl=m
-CONFIG_PACKAGE_muninlite=m
+# CONFIG_PACKAGE_htop is not set
+# CONFIG_PACKAGE_monit is not set
+# CONFIG_PACKAGE_monit-nossl is not set
+# CONFIG_PACKAGE_muninlite is not set
 # CONFIG_PACKAGE_netdata is not set
-CONFIG_PACKAGE_sudo=m
+# CONFIG_PACKAGE_sudo is not set
 # CONFIG_PACKAGE_syslog-ng is not set
 
 #
@@ -2658,9 +2664,9 @@ CONFIG_PACKAGE_findutils=m
 CONFIG_PACKAGE_gcc=m
 CONFIG_PACKAGE_gdb=m
 CONFIG_PACKAGE_gdbserver=m
-# CONFIG_PACKAGE_libtool-bin is not set
+CONFIG_PACKAGE_libtool-bin=m
 # CONFIG_PACKAGE_lpc21isp is not set
-# CONFIG_PACKAGE_lttng-tools is not set
+CONFIG_PACKAGE_lttng-tools=m
 CONFIG_PACKAGE_m4=m
 CONFIG_PACKAGE_make=m
 CONFIG_PACKAGE_objdump=m
@@ -2668,7 +2674,7 @@ CONFIG_PACKAGE_patch=m
 CONFIG_PACKAGE_perf=m
 CONFIG_PACKAGE_pkg-config=m
 CONFIG_PACKAGE_sed=m
-# CONFIG_PACKAGE_swig is not set
+CONFIG_PACKAGE_swig=m
 CONFIG_PACKAGE_trace-cmd=m
 CONFIG_PACKAGE_trace-cmd-extra=m
 CONFIG_PACKAGE_valgrind=m
@@ -2686,8 +2692,13 @@ CONFIG_PACKAGE_valgrind-vgdb=m
 #
 # Firmware
 #
+
+#
+# ath10k IPQ4019 Boarddata
+#
 # CONFIG_PACKAGE_aircard-pcmcia-firmware is not set
 # CONFIG_PACKAGE_ar3k-firmware is not set
+# CONFIG_PACKAGE_ath10k-firmware-qca4019 is not set
 # CONFIG_PACKAGE_ath10k-firmware-qca6174 is not set
 # CONFIG_PACKAGE_ath10k-firmware-qca9887 is not set
 # CONFIG_PACKAGE_ath10k-firmware-qca9887-ct is not set
@@ -2744,28 +2755,28 @@ CONFIG_PACKAGE_ath9k-htc-firmware=y
 #
 # DejaVu
 #
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuMathTeXGyre=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-Bold=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-BoldOblique=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-ExtraLight=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-Oblique=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansCondensed=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansCondensed-Bold=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansCondensed-BoldOblique=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansCondensed-Oblique=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansMono=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansMono-Bold=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansMono-BoldOblique=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansMono-Oblique=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerif=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerif-Bold=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerif-BoldItalic=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerif-Italic=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerifCondensed=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerifCondensed-Bold=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerifCondensed-BoldItalic=m
-CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerifCondensed-Italic=m
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuMathTeXGyre is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-Bold is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-BoldOblique is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-ExtraLight is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSans-Oblique is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansCondensed is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansCondensed-Bold is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansCondensed-BoldOblique is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansCondensed-Oblique is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansMono is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansMono-Bold is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansMono-BoldOblique is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSansMono-Oblique is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerif is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerif-Bold is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerif-BoldItalic is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerif-Italic is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerifCondensed is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerifCondensed-Bold is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerifCondensed-BoldItalic is not set
+# CONFIG_PACKAGE_dejavu-fonts-ttf-DejaVuSerifCondensed-Italic is not set
 
 #
 # Kernel modules
@@ -2805,6 +2816,7 @@ CONFIG_PACKAGE_kmod-crypto-authenc=m
 CONFIG_PACKAGE_kmod-crypto-cbc=m
 # CONFIG_PACKAGE_kmod-crypto-ccm is not set
 CONFIG_PACKAGE_kmod-crypto-cmac=y
+CONFIG_PACKAGE_kmod-crypto-crc32=y
 CONFIG_PACKAGE_kmod-crypto-crc32c=y
 # CONFIG_PACKAGE_kmod-crypto-ctr is not set
 CONFIG_PACKAGE_kmod-crypto-deflate=m
@@ -3079,6 +3091,7 @@ CONFIG_PACKAGE_kmod-nfnetlink-queue=m
 # CONFIG_PACKAGE_kmod-hfcpci is not set
 CONFIG_PACKAGE_kmod-ifb=m
 # CONFIG_PACKAGE_kmod-igb is not set
+# CONFIG_PACKAGE_kmod-ixgbe is not set
 CONFIG_PACKAGE_kmod-libphy=m
 # CONFIG_PACKAGE_kmod-macvlan is not set
 CONFIG_PACKAGE_kmod-mii=m
@@ -3090,7 +3103,7 @@ CONFIG_PACKAGE_kmod-mii=m
 # CONFIG_PACKAGE_kmod-ppfe is not set
 # CONFIG_PACKAGE_kmod-r6040 is not set
 # CONFIG_PACKAGE_kmod-r8169 is not set
-# CONFIG_PACKAGE_kmod-siit is not set
+CONFIG_PACKAGE_kmod-siit=m
 # CONFIG_PACKAGE_kmod-sis190 is not set
 # CONFIG_PACKAGE_kmod-sis900 is not set
 # CONFIG_PACKAGE_kmod-skge is not set
@@ -3117,14 +3130,7 @@ CONFIG_PACKAGE_kmod-appletalk=m
 CONFIG_PACKAGE_kmod-atm=m
 CONFIG_PACKAGE_kmod-atmtcp=m
 CONFIG_PACKAGE_kmod-ax25=m
-CONFIG_PACKAGE_kmod-batman-adv=m
-# CONFIG_KMOD_BATMAN_ADV_DEBUG_LOG is not set
-CONFIG_KMOD_BATMAN_ADV_BLA=y
-CONFIG_KMOD_BATMAN_ADV_DAT=y
-CONFIG_KMOD_BATMAN_ADV_DEBUGFS=y
-CONFIG_KMOD_BATMAN_ADV_MCAST=y
-# CONFIG_KMOD_BATMAN_ADV_NC is not set
-# CONFIG_KMOD_BATMAN_ADV_BATMAN_V is not set
+# CONFIG_PACKAGE_kmod-batman-adv is not set
 CONFIG_PACKAGE_kmod-bonding=m
 CONFIG_PACKAGE_kmod-capi=m
 CONFIG_PACKAGE_kmod-dnsresolver=m
@@ -3148,10 +3154,10 @@ CONFIG_PACKAGE_kmod-l2tp-eth=m
 CONFIG_PACKAGE_kmod-l2tp-ip=m
 CONFIG_PACKAGE_kmod-misdn=m
 CONFIG_PACKAGE_kmod-mpls=m
-CONFIG_PACKAGE_kmod-nat46=m
+# CONFIG_PACKAGE_kmod-nat46 is not set
 CONFIG_PACKAGE_kmod-netem=m
 # CONFIG_PACKAGE_kmod-nlmon is not set
-CONFIG_PACKAGE_kmod-openvswitch=m
+# CONFIG_PACKAGE_kmod-openvswitch is not set
 CONFIG_PACKAGE_kmod-ppp=y
 CONFIG_PACKAGE_kmod-mppe=m
 CONFIG_PACKAGE_kmod-pktgen=m
@@ -3224,6 +3230,7 @@ CONFIG_PACKAGE_kmod-ssb=m
 # CONFIG_PACKAGE_kmod-tpm is not set
 # CONFIG_PACKAGE_kmod-tpm-i2c-atmel is not set
 # CONFIG_PACKAGE_kmod-tpm-i2c-infineon is not set
+# CONFIG_PACKAGE_kmod-w83627hf-wdt is not set
 CONFIG_PACKAGE_kmod-zram=m
 
 #
@@ -3497,11 +3504,11 @@ CONFIG_PACKAGE_MAC80211_MESH=y
 #
 # Erlang
 #
-CONFIG_PACKAGE_erlang=m
+CONFIG_PACKAGE_erlang=y
 CONFIG_PACKAGE_erlang-asn1=m
 CONFIG_PACKAGE_erlang-compiler=m
 CONFIG_PACKAGE_erlang-crypto=m
-CONFIG_PACKAGE_erlang-hipe=m
+CONFIG_PACKAGE_erlang-hipe=y
 CONFIG_PACKAGE_erlang-inets=m
 CONFIG_PACKAGE_erlang-mnesia=m
 CONFIG_PACKAGE_erlang-runtime-tools=m
@@ -3518,7 +3525,7 @@ CONFIG_PACKAGE_jamvm=m
 #
 # Lua
 #
-# CONFIG_PACKAGE_dkjson is not set
+CONFIG_PACKAGE_dkjson=m
 # CONFIG_PACKAGE_json4lua is not set
 CONFIG_PACKAGE_libiwinfo-lua=y
 # CONFIG_PACKAGE_lpeg is not set
@@ -3534,7 +3541,7 @@ CONFIG_PACKAGE_lua-lzlib=m
 CONFIG_PACKAGE_lua-md5=m
 CONFIG_PACKAGE_lua-mobdebug=m
 CONFIG_PACKAGE_lua-mosquitto=m
-# CONFIG_PACKAGE_lua-openssl is not set
+CONFIG_PACKAGE_lua-openssl=m
 CONFIG_PACKAGE_lua-penlight=m
 CONFIG_PACKAGE_lua-rings=m
 CONFIG_PACKAGE_lua-rs232=m
@@ -3547,18 +3554,18 @@ CONFIG_PACKAGE_luac=m
 CONFIG_PACKAGE_luaexpat=m
 CONFIG_PACKAGE_luafilesystem=y
 CONFIG_PACKAGE_luai2c=m
-# CONFIG_PACKAGE_luajit is not set
+CONFIG_PACKAGE_luajit=m
 CONFIG_PACKAGE_lualanes=m
 CONFIG_PACKAGE_luaposix=m
-# CONFIG_PACKAGE_luarocks is not set
-# CONFIG_PACKAGE_luasec is not set
-# CONFIG_PACKAGE_luasoap is not set
+CONFIG_PACKAGE_luarocks=m
+CONFIG_PACKAGE_luasec=m
+CONFIG_PACKAGE_luasoap=m
 CONFIG_PACKAGE_luasocket=m
 CONFIG_PACKAGE_luasql-mysql=m
 CONFIG_PACKAGE_luasql-pgsql=m
 CONFIG_PACKAGE_luasql-sqlite3=m
 # CONFIG_PACKAGE_luv is not set
-# CONFIG_PACKAGE_lzmq is not set
+CONFIG_PACKAGE_lzmq=m
 CONFIG_PACKAGE_uuid=m
 
 #
@@ -3584,7 +3591,7 @@ CONFIG_PACKAGE_node-ideino-linino-lib=m
 CONFIG_PACKAGE_node-johnny-five=m
 CONFIG_PACKAGE_node-level=m
 CONFIG_PACKAGE_node-leveldown=m
-# CONFIG_PACKAGE_node-libwyliodrin is not set
+CONFIG_PACKAGE_node-libwyliodrin=m
 CONFIG_PACKAGE_node-modbus=m
 CONFIG_PACKAGE_node-muzzley-client=m
 CONFIG_PACKAGE_node-nitrogen=m
@@ -3600,7 +3607,7 @@ CONFIG_PACKAGE_node-socket.io=m
 CONFIG_PACKAGE_node-socket.io-client=m
 CONFIG_PACKAGE_node-sqlite3=m
 CONFIG_PACKAGE_node-ws=m
-# CONFIG_PACKAGE_node-wyliodrin-app-server is not set
+CONFIG_PACKAGE_node-wyliodrin-app-server=m
 CONFIG_PACKAGE_node6=m
 
 #
@@ -3620,7 +3627,60 @@ CONFIG_PACKAGE_node6=m
 #
 # PHP
 #
-# CONFIG_PACKAGE_php7 is not set
+CONFIG_PACKAGE_php7=m
+CONFIG_PHP7_FILTER=y
+CONFIG_PHP7_LIBXML=y
+CONFIG_PHP7_SYSTEMTZDATA=y
+CONFIG_PACKAGE_php7-cgi=m
+CONFIG_PACKAGE_php7-cli=m
+CONFIG_PACKAGE_php7-fastcgi=m
+CONFIG_PACKAGE_php7-fpm=m
+CONFIG_PACKAGE_php7-mod-calendar=m
+CONFIG_PACKAGE_php7-mod-ctype=m
+CONFIG_PACKAGE_php7-mod-curl=m
+CONFIG_PACKAGE_php7-mod-dom=m
+CONFIG_PACKAGE_php7-mod-exif=m
+CONFIG_PACKAGE_php7-mod-fileinfo=m
+CONFIG_PACKAGE_php7-mod-ftp=m
+CONFIG_PACKAGE_php7-mod-gd=m
+CONFIG_PACKAGE_php7-mod-gettext=m
+CONFIG_PACKAGE_php7-mod-gmp=m
+CONFIG_PACKAGE_php7-mod-hash=m
+CONFIG_PACKAGE_php7-mod-iconv=m
+CONFIG_PACKAGE_php7-mod-intl=m
+CONFIG_PACKAGE_php7-mod-json=m
+CONFIG_PACKAGE_php7-mod-ldap=m
+CONFIG_PACKAGE_php7-mod-mbstring=m
+CONFIG_PACKAGE_php7-mod-mcrypt=m
+CONFIG_PACKAGE_php7-mod-mysqli=m
+CONFIG_PACKAGE_php7-mod-opcache=m
+CONFIG_PACKAGE_php7-mod-openssl=m
+CONFIG_PACKAGE_php7-mod-pcntl=m
+CONFIG_PACKAGE_php7-mod-pdo=m
+CONFIG_PACKAGE_php7-mod-pdo-mysql=m
+CONFIG_PACKAGE_php7-mod-pdo-pgsql=m
+CONFIG_PACKAGE_php7-mod-pdo-sqlite=m
+CONFIG_PACKAGE_php7-mod-pgsql=m
+CONFIG_PACKAGE_php7-mod-phar=m
+CONFIG_PACKAGE_php7-mod-session=m
+CONFIG_PACKAGE_php7-mod-shmop=m
+CONFIG_PACKAGE_php7-mod-simplexml=m
+CONFIG_PACKAGE_php7-mod-soap=m
+CONFIG_PACKAGE_php7-mod-sockets=m
+CONFIG_PACKAGE_php7-mod-sqlite3=m
+CONFIG_PACKAGE_php7-mod-sysvmsg=m
+CONFIG_PACKAGE_php7-mod-sysvsem=m
+CONFIG_PACKAGE_php7-mod-sysvshm=m
+CONFIG_PACKAGE_php7-mod-tokenizer=m
+CONFIG_PACKAGE_php7-mod-xml=m
+CONFIG_PACKAGE_php7-mod-xmlreader=m
+CONFIG_PACKAGE_php7-mod-xmlwriter=m
+CONFIG_PACKAGE_php7-mod-zip=m
+CONFIG_PACKAGE_php7-pecl-dio=m
+CONFIG_PACKAGE_php7-pecl-http=m
+CONFIG_PACKAGE_php7-pecl-libevent=m
+CONFIG_PACKAGE_php7-pecl-propro=m
+CONFIG_PACKAGE_php7-pecl-raphf=m
 
 #
 # Perl
@@ -3636,11 +3696,11 @@ CONFIG_PERL_NOCOMMENT=y
 CONFIG_PACKAGE_perl-cgi=m
 CONFIG_PACKAGE_perl-compress-bzip2=m
 CONFIG_PACKAGE_perl-dbi=m
-# CONFIG_PACKAGE_perl-device-serialport is not set
-# CONFIG_PACKAGE_perl-device-usb is not set
+CONFIG_PACKAGE_perl-device-serialport=m
+CONFIG_PACKAGE_perl-device-usb=m
 CONFIG_PACKAGE_perl-encode-locale=m
 CONFIG_PACKAGE_perl-file-listing=m
-# CONFIG_PACKAGE_perl-file-sharedir-install is not set
+CONFIG_PACKAGE_perl-file-sharedir-install=m
 CONFIG_PACKAGE_perl-html-form=m
 CONFIG_PACKAGE_perl-html-parser=m
 CONFIG_PACKAGE_perl-html-tagset=m
@@ -3651,27 +3711,27 @@ CONFIG_PACKAGE_perl-http-date=m
 CONFIG_PACKAGE_perl-http-message=m
 CONFIG_PACKAGE_perl-http-negotiate=m
 CONFIG_PACKAGE_perl-http-server-simple=m
-# CONFIG_PACKAGE_perl-inline is not set
-# CONFIG_PACKAGE_perl-inline-c is not set
+CONFIG_PACKAGE_perl-inline=m
+CONFIG_PACKAGE_perl-inline-c=m
 CONFIG_PACKAGE_perl-io-html=m
 CONFIG_PACKAGE_perl-lockfile-simple=m
 CONFIG_PACKAGE_perl-lwp-mediatypes=m
 CONFIG_PACKAGE_perl-net-http=m
 CONFIG_PACKAGE_perl-net-telnet=m
-# CONFIG_PACKAGE_perl-parse-recdescent is not set
+CONFIG_PACKAGE_perl-parse-recdescent=m
 CONFIG_PACKAGE_perl-sub-uplevel=m
-# CONFIG_PACKAGE_perl-test-harness is not set
+CONFIG_PACKAGE_perl-test-harness=m
 CONFIG_PACKAGE_perl-test-warn=m
 CONFIG_PACKAGE_perl-uri=m
 CONFIG_PACKAGE_perl-www=m
 CONFIG_PACKAGE_perl-www-curl=m
 CONFIG_PACKAGE_perl-www-mechanize=m
 CONFIG_PACKAGE_perl-www-robotrules=m
-# CONFIG_PACKAGE_perl-xml-parser is not set
+CONFIG_PACKAGE_perl-xml-parser=m
 CONFIG_PACKAGE_perlbase-anydbm-file=m
-# CONFIG_PACKAGE_perlbase-app is not set
+CONFIG_PACKAGE_perlbase-app=m
 CONFIG_PACKAGE_perlbase-archive=m
-# CONFIG_PACKAGE_perlbase-arybase is not set
+CONFIG_PACKAGE_perlbase-arybase=m
 CONFIG_PACKAGE_perlbase-attribute=m
 CONFIG_PACKAGE_perlbase-attributes=m
 CONFIG_PACKAGE_perlbase-autodie=m
@@ -3729,7 +3789,7 @@ CONFIG_PACKAGE_perlbase-if=m
 CONFIG_PACKAGE_perlbase-integer=m
 CONFIG_PACKAGE_perlbase-io=m
 CONFIG_PACKAGE_perlbase-ipc=m
-# CONFIG_PACKAGE_perlbase-json-pp is not set
+CONFIG_PACKAGE_perlbase-json-pp=m
 CONFIG_PACKAGE_perlbase-less=m
 CONFIG_PACKAGE_perlbase-list=m
 CONFIG_PACKAGE_perlbase-locale=m
@@ -3801,23 +3861,23 @@ CONFIG_PACKAGE_dbus-python=m
 # CONFIG_PACKAGE_micropython is not set
 # CONFIG_PACKAGE_micropython-lib is not set
 # CONFIG_PACKAGE_openpyxl is not set
-# CONFIG_PACKAGE_pillow is not set
+CONFIG_PACKAGE_pillow=m
 # CONFIG_PACKAGE_pycairo is not set
 # CONFIG_PACKAGE_pyqt4 is not set
 CONFIG_PACKAGE_python=m
 CONFIG_PACKAGE_python-argh=m
-# CONFIG_PACKAGE_python-attrs is not set
+CONFIG_PACKAGE_python-attrs=m
 CONFIG_PACKAGE_python-babel=m
 CONFIG_PACKAGE_python-backports=m
 CONFIG_PACKAGE_python-base=y
 CONFIG_PACKAGE_python-blinker=m
 CONFIG_PACKAGE_python-certifi=m
-# CONFIG_PACKAGE_python-cffi is not set
+CONFIG_PACKAGE_python-cffi=m
 CONFIG_PACKAGE_python-codecs=m
 CONFIG_PACKAGE_python-compiler=m
-# CONFIG_PACKAGE_python-crcmod is not set
-# CONFIG_PACKAGE_python-crypto is not set
-# CONFIG_PACKAGE_python-cryptography is not set
+CONFIG_PACKAGE_python-crcmod=m
+CONFIG_PACKAGE_python-crypto=m
+CONFIG_PACKAGE_python-cryptography=m
 CONFIG_PACKAGE_python-ctypes=m
 # CONFIG_PACKAGE_python-dateutil is not set
 CONFIG_PACKAGE_python-db=m
@@ -3825,9 +3885,9 @@ CONFIG_PACKAGE_python-decimal=m
 CONFIG_PACKAGE_python-dev=m
 CONFIG_PACKAGE_python-distutils=m
 # CONFIG_PACKAGE_python-dns is not set
-# CONFIG_PACKAGE_python-egenix-mx-base is not set
+CONFIG_PACKAGE_python-egenix-mx-base=m
 CONFIG_PACKAGE_python-email=m
-# CONFIG_PACKAGE_python-enum34 is not set
+CONFIG_PACKAGE_python-enum34=m
 # CONFIG_PACKAGE_python-firmata is not set
 CONFIG_PACKAGE_python-flask=m
 CONFIG_PACKAGE_python-flask-assets=m
@@ -3838,18 +3898,18 @@ CONFIG_PACKAGE_python-gdbm=m
 # CONFIG_PACKAGE_python-gmpy2 is not set
 # CONFIG_PACKAGE_python-gtk is not set
 # CONFIG_PACKAGE_python-hippo-canvas is not set
-# CONFIG_PACKAGE_python-idna is not set
-# CONFIG_PACKAGE_python-ipaddress is not set
+CONFIG_PACKAGE_python-idna=m
+CONFIG_PACKAGE_python-ipaddress=m
 CONFIG_PACKAGE_python-itsdangerous=m
 CONFIG_PACKAGE_python-jinja2=m
-# CONFIG_PACKAGE_python-ldap is not set
+CONFIG_PACKAGE_python-ldap=m
 CONFIG_PACKAGE_python-lib2to3=m
-# CONFIG_PACKAGE_python-libwyliodrin is not set
+CONFIG_PACKAGE_python-libwyliodrin=m
 CONFIG_PACKAGE_python-light=y
 CONFIG_PACKAGE_python-logging=m
 CONFIG_PACKAGE_python-markupsafe=m
 CONFIG_PACKAGE_python-multiprocessing=m
-CONFIG_PACKAGE_python-mysql=m
+# CONFIG_PACKAGE_python-mysql is not set
 CONFIG_PACKAGE_python-ncurses=m
 CONFIG_PACKAGE_python-neard=m
 CONFIG_PACKAGE_python-neard-git=m
@@ -3865,16 +3925,16 @@ CONFIG_PACKAGE_python-pathtools=m
 CONFIG_PACKAGE_python-pip=m
 CONFIG_PACKAGE_python-pip-conf=m
 CONFIG_PACKAGE_python-pkginfo=m
-# CONFIG_PACKAGE_python-ply is not set
+CONFIG_PACKAGE_python-ply=m
 CONFIG_PACKAGE_python-psutil=m
-# CONFIG_PACKAGE_python-psycopg2 is not set
+CONFIG_PACKAGE_python-psycopg2=m
 CONFIG_PACKAGE_python-pyasn1=m
-# CONFIG_PACKAGE_python-pyasn1-modules is not set
-# CONFIG_PACKAGE_python-pycparser is not set
+CONFIG_PACKAGE_python-pyasn1-modules=m
+CONFIG_PACKAGE_python-pycparser=m
 CONFIG_PACKAGE_python-pydoc=m
 CONFIG_PACKAGE_python-pylru=m
-# CONFIG_PACKAGE_python-pyopenssl is not set
-# CONFIG_PACKAGE_python-pyptlib is not set
+CONFIG_PACKAGE_python-pyopenssl=m
+CONFIG_PACKAGE_python-pyptlib=m
 CONFIG_PACKAGE_python-pyserial=m
 CONFIG_PACKAGE_python-pytz=m
 CONFIG_PACKAGE_python-requests=m
@@ -3883,7 +3943,7 @@ CONFIG_PACKAGE_python-sarge=m
 CONFIG_PACKAGE_python-semantic_version=m
 # CONFIG_PACKAGE_python-service-identity is not set
 CONFIG_PACKAGE_python-setuptools=m
-# CONFIG_PACKAGE_python-six is not set
+CONFIG_PACKAGE_python-six=m
 CONFIG_PACKAGE_python-sleekxmpp=m
 # CONFIG_PACKAGE_python-smbus is not set
 CONFIG_PACKAGE_python-sockjs_tornado=m
@@ -3901,62 +3961,62 @@ CONFIG_PACKAGE_python-xml=m
 CONFIG_PACKAGE_python-yaml=m
 CONFIG_PACKAGE_python3=m
 CONFIG_PACKAGE_python3-asyncio=m
-# CONFIG_PACKAGE_python3-asyncio-src is not set
+CONFIG_PACKAGE_python3-asyncio-src=m
 CONFIG_PACKAGE_python3-base=m
-# CONFIG_PACKAGE_python3-base-src is not set
-# CONFIG_PACKAGE_python3-bottle is not set
-# CONFIG_PACKAGE_python3-cffi is not set
+CONFIG_PACKAGE_python3-base-src=m
+CONFIG_PACKAGE_python3-bottle=m
+CONFIG_PACKAGE_python3-cffi=m
 CONFIG_PACKAGE_python3-codecs=m
-# CONFIG_PACKAGE_python3-codecs-src is not set
+CONFIG_PACKAGE_python3-codecs-src=m
 CONFIG_PACKAGE_python3-ctypes=m
-# CONFIG_PACKAGE_python3-ctypes-src is not set
+CONFIG_PACKAGE_python3-ctypes-src=m
 CONFIG_PACKAGE_python3-dbm=m
-# CONFIG_PACKAGE_python3-dbm-src is not set
+CONFIG_PACKAGE_python3-dbm-src=m
 CONFIG_PACKAGE_python3-decimal=m
-# CONFIG_PACKAGE_python3-decimal-src is not set
-# CONFIG_PACKAGE_python3-dev is not set
-# CONFIG_PACKAGE_python3-dev-src is not set
+CONFIG_PACKAGE_python3-decimal-src=m
+CONFIG_PACKAGE_python3-dev=m
+CONFIG_PACKAGE_python3-dev-src=m
 CONFIG_PACKAGE_python3-distutils=m
-# CONFIG_PACKAGE_python3-distutils-src is not set
+CONFIG_PACKAGE_python3-distutils-src=m
 CONFIG_PACKAGE_python3-email=m
-# CONFIG_PACKAGE_python3-email-src is not set
+CONFIG_PACKAGE_python3-email-src=m
 CONFIG_PACKAGE_python3-gdbm=m
-# CONFIG_PACKAGE_python3-gdbm-src is not set
-# CONFIG_PACKAGE_python3-lib2to3 is not set
-# CONFIG_PACKAGE_python3-lib2to3-src is not set
+CONFIG_PACKAGE_python3-gdbm-src=m
+CONFIG_PACKAGE_python3-lib2to3=m
+CONFIG_PACKAGE_python3-lib2to3-src=m
 CONFIG_PACKAGE_python3-light=m
-# CONFIG_PACKAGE_python3-light-src is not set
+CONFIG_PACKAGE_python3-light-src=m
 CONFIG_PACKAGE_python3-logging=m
-# CONFIG_PACKAGE_python3-logging-src is not set
+CONFIG_PACKAGE_python3-logging-src=m
 CONFIG_PACKAGE_python3-lzma=m
-# CONFIG_PACKAGE_python3-lzma-src is not set
+CONFIG_PACKAGE_python3-lzma-src=m
 CONFIG_PACKAGE_python3-multiprocessing=m
-# CONFIG_PACKAGE_python3-multiprocessing-src is not set
+CONFIG_PACKAGE_python3-multiprocessing-src=m
 CONFIG_PACKAGE_python3-ncurses=m
-# CONFIG_PACKAGE_python3-ncurses-src is not set
+CONFIG_PACKAGE_python3-ncurses-src=m
 CONFIG_PACKAGE_python3-openssl=m
-# CONFIG_PACKAGE_python3-openssl-src is not set
-# CONFIG_PACKAGE_python3-pip is not set
-# CONFIG_PACKAGE_python3-pip-src is not set
-# CONFIG_PACKAGE_python3-ply is not set
-# CONFIG_PACKAGE_python3-pycparser is not set
+CONFIG_PACKAGE_python3-openssl-src=m
+CONFIG_PACKAGE_python3-pip=m
+CONFIG_PACKAGE_python3-pip-src=m
+CONFIG_PACKAGE_python3-ply=m
+CONFIG_PACKAGE_python3-pycparser=m
 CONFIG_PACKAGE_python3-pydoc=m
-# CONFIG_PACKAGE_python3-pydoc-src is not set
-# CONFIG_PACKAGE_python3-setuptools is not set
-# CONFIG_PACKAGE_python3-setuptools-src is not set
-# CONFIG_PACKAGE_python3-smbus is not set
+CONFIG_PACKAGE_python3-pydoc-src=m
+CONFIG_PACKAGE_python3-setuptools=m
+CONFIG_PACKAGE_python3-setuptools-src=m
+CONFIG_PACKAGE_python3-smbus=m
 CONFIG_PACKAGE_python3-sqlite3=m
-# CONFIG_PACKAGE_python3-sqlite3-src is not set
-# CONFIG_PACKAGE_python3-src is not set
+CONFIG_PACKAGE_python3-sqlite3-src=m
+CONFIG_PACKAGE_python3-src=m
 CONFIG_PACKAGE_python3-unittest=m
-# CONFIG_PACKAGE_python3-unittest-src is not set
+CONFIG_PACKAGE_python3-unittest-src=m
 CONFIG_PACKAGE_python3-xml=m
-# CONFIG_PACKAGE_python3-xml-src is not set
+CONFIG_PACKAGE_python3-xml-src=m
 # CONFIG_PACKAGE_pytz is not set
 # CONFIG_PACKAGE_rcssmin is not set
-# CONFIG_PACKAGE_simplejson is not set
-# CONFIG_PACKAGE_twisted is not set
-# CONFIG_PACKAGE_zope-interface is not set
+CONFIG_PACKAGE_simplejson=m
+CONFIG_PACKAGE_twisted=m
+CONFIG_PACKAGE_zope-interface=y
 
 #
 # Ruby
@@ -3966,40 +4026,40 @@ CONFIG_PACKAGE_ruby=m
 #
 # Standard Library
 #
-# CONFIG_PACKAGE_ruby-stdlib is not set
+CONFIG_PACKAGE_ruby-stdlib=m
 CONFIG_PACKAGE_ruby-bigdecimal=m
 CONFIG_PACKAGE_ruby-cgi=m
-# CONFIG_PACKAGE_ruby-csv is not set
+CONFIG_PACKAGE_ruby-csv=m
 CONFIG_PACKAGE_ruby-datetime=m
 CONFIG_PACKAGE_ruby-dbm=m
 CONFIG_PACKAGE_ruby-debuglib=m
-# CONFIG_PACKAGE_ruby-did-you-mean is not set
+CONFIG_PACKAGE_ruby-did-you-mean=m
 CONFIG_PACKAGE_ruby-digest=m
-# CONFIG_RUBY_DIGEST_USE_OPENSSL is not set
-# CONFIG_PACKAGE_ruby-drb is not set
+CONFIG_RUBY_DIGEST_USE_OPENSSL=y
+CONFIG_PACKAGE_ruby-drb=m
 CONFIG_PACKAGE_ruby-enc=m
-# CONFIG_PACKAGE_ruby-enc-extra is not set
+CONFIG_PACKAGE_ruby-enc-extra=m
 CONFIG_PACKAGE_ruby-erb=m
-# CONFIG_PACKAGE_ruby-fiddle is not set
+CONFIG_PACKAGE_ruby-fiddle=m
 CONFIG_PACKAGE_ruby-filelib=m
 CONFIG_PACKAGE_ruby-gdbm=m
 CONFIG_PACKAGE_ruby-gems=m
-# CONFIG_PACKAGE_ruby-io-console is not set
+CONFIG_PACKAGE_ruby-io-console=m
 CONFIG_PACKAGE_ruby-irb=m
 CONFIG_PACKAGE_ruby-json=m
-# CONFIG_PACKAGE_ruby-logger is not set
+CONFIG_PACKAGE_ruby-logger=m
 CONFIG_PACKAGE_ruby-math=m
-# CONFIG_PACKAGE_ruby-minitest is not set
+CONFIG_PACKAGE_ruby-minitest=m
 CONFIG_PACKAGE_ruby-misc=m
-# CONFIG_PACKAGE_ruby-mkmf is not set
+CONFIG_PACKAGE_ruby-mkmf=m
 CONFIG_PACKAGE_ruby-multithread=m
 CONFIG_PACKAGE_ruby-net=m
-# CONFIG_PACKAGE_ruby-net-telnet is not set
+CONFIG_PACKAGE_ruby-net-telnet=m
 CONFIG_PACKAGE_ruby-nkf=m
 CONFIG_PACKAGE_ruby-openssl=m
 CONFIG_PACKAGE_ruby-optparse=m
 CONFIG_PACKAGE_ruby-patterns=m
-# CONFIG_PACKAGE_ruby-powerassert is not set
+CONFIG_PACKAGE_ruby-powerassert=m
 CONFIG_PACKAGE_ruby-prettyprint=m
 CONFIG_PACKAGE_ruby-pstore=m
 CONFIG_PACKAGE_ruby-psych=m
@@ -4009,14 +4069,14 @@ CONFIG_PACKAGE_ruby-rbconfig=m
 CONFIG_PACKAGE_ruby-rdoc=m
 CONFIG_PACKAGE_ruby-readline=m
 CONFIG_PACKAGE_ruby-rexml=m
-# CONFIG_PACKAGE_ruby-rinda is not set
-# CONFIG_PACKAGE_ruby-ripper is not set
+CONFIG_PACKAGE_ruby-rinda=m
+CONFIG_PACKAGE_ruby-ripper=m
 CONFIG_PACKAGE_ruby-rss=m
-# CONFIG_PACKAGE_ruby-sdbm is not set
-# CONFIG_PACKAGE_ruby-shell is not set
+CONFIG_PACKAGE_ruby-sdbm=m
+CONFIG_PACKAGE_ruby-shell=m
 CONFIG_PACKAGE_ruby-socket=m
-# CONFIG_PACKAGE_ruby-testunit is not set
-# CONFIG_PACKAGE_ruby-unicodenormalize is not set
+CONFIG_PACKAGE_ruby-testunit=m
+CONFIG_PACKAGE_ruby-unicodenormalize=m
 CONFIG_PACKAGE_ruby-uri=m
 CONFIG_PACKAGE_ruby-webrick=m
 CONFIG_PACKAGE_ruby-xmlrpc=m
@@ -4026,7 +4086,7 @@ CONFIG_PACKAGE_ruby-zlib=m
 #
 # Tcl
 #
-# CONFIG_PACKAGE_tcl is not set
+CONFIG_PACKAGE_tcl=m
 CONFIG_PACKAGE_duktape=m
 # CONFIG_PACKAGE_vala is not set
 
@@ -4048,21 +4108,7 @@ CONFIG_PACKAGE_libacl=m
 CONFIG_PACKAGE_libattr=m
 CONFIG_PACKAGE_libext2fs=y
 CONFIG_PACKAGE_libfuse=m
-CONFIG_PACKAGE_libow=m
-
-#
-# Customize libow
-#
-
-#
-# Bus master and adapter support
-#
-CONFIG_LIBOW_MASTER_USB=y
-CONFIG_LIBOW_MASTER_I2C=y
-# CONFIG_LIBOW_MASTER_W1 is not set
-CONFIG_LIBOW_ZEROCONF=y
-CONFIG_LIBOW_DEBUG=y
-# CONFIG_LIBOW_OWTRAFFIC is not set
+# CONFIG_PACKAGE_libow is not set
 # CONFIG_PACKAGE_libow-capi is not set
 CONFIG_PACKAGE_libsysfs=y
 
@@ -4254,14 +4300,14 @@ CONFIG_OPENSSL_ENGINE_CRYPTO=y
 #
 # Sound
 #
-CONFIG_PACKAGE_liblo=m
+# CONFIG_PACKAGE_liblo is not set
 
 #
 # Telephony
 #
 # CONFIG_PACKAGE_bcg729 is not set
 # CONFIG_PACKAGE_dahdi-tools-libtonezone is not set
-CONFIG_PACKAGE_libiksemel=m
+# CONFIG_PACKAGE_libiksemel is not set
 # CONFIG_PACKAGE_libortp is not set
 # CONFIG_PACKAGE_libosip2 is not set
 # CONFIG_PACKAGE_libpj is not set
@@ -4283,7 +4329,7 @@ CONFIG_PACKAGE_libiksemel=m
 # database
 #
 CONFIG_PACKAGE_libpq=m
-CONFIG_PACKAGE_libsqlite3=y
+CONFIG_PACKAGE_libsqlite3=m
 # CONFIG_PACKAGE_pgsqlodbc is not set
 # CONFIG_PACKAGE_tdb is not set
 CONFIG_PACKAGE_unixodbc=m
@@ -4308,7 +4354,7 @@ CONFIG_PACKAGE_unixodbc=m
 CONFIG_PACKAGE_alsa-lib=m
 CONFIG_PACKAGE_argp-standalone=y
 # CONFIG_PACKAGE_avro-c is not set
-CONFIG_PACKAGE_bind-libs=m
+# CONFIG_PACKAGE_bind-libs is not set
 CONFIG_PACKAGE_bluez-libs=m
 CONFIG_PACKAGE_boost=m
 
@@ -4319,9 +4365,9 @@ CONFIG_PACKAGE_boost=m
 #
 # Boost compilation options.
 #
-CONFIG_boost-shared-libs=y
+# CONFIG_boost-shared-libs is not set
 # CONFIG_boost-static-libs is not set
-# CONFIG_boost-static-and-shared-libs is not set
+CONFIG_boost-static-and-shared-libs=y
 CONFIG_boost-runtime-shared=y
 CONFIG_boost-variant-release=y
 # CONFIG_boost-variant-debug is not set
@@ -4366,12 +4412,11 @@ CONFIG_PACKAGE_ccid=m
 # CONFIG_PACKAGE_check is not set
 CONFIG_PACKAGE_classpath=m
 # CONFIG_PACKAGE_classpath-tools is not set
-CONFIG_PACKAGE_confuse=m
+# CONFIG_PACKAGE_confuse is not set
 # CONFIG_PACKAGE_dtndht is not set
-CONFIG_PACKAGE_fcgi=m
-# CONFIG_PACKAGE_fcgixx is not set
-# CONFIG_PACKAGE_fftw3 is not set
-# CONFIG_PACKAGE_fftw3f is not set
+# CONFIG_PACKAGE_fcgi is not set
+CONFIG_PACKAGE_fftw3=m
+CONFIG_PACKAGE_fftw3f=m
 CONFIG_PACKAGE_giflib=m
 CONFIG_PACKAGE_glib2=m
 CONFIG_PACKAGE_hidapi=m
@@ -4389,14 +4434,14 @@ CONFIG_PACKAGE_libao=m
 CONFIG_PACKAGE_libapr=m
 CONFIG_PACKAGE_libaprutil=m
 CONFIG_PACKAGE_libarchive=m
-# CONFIG_PACKAGE_libarchive-noopenssl is not set
+CONFIG_PACKAGE_libarchive-noopenssl=m
 # CONFIG_PACKAGE_libartnet is not set
 CONFIG_PACKAGE_libassuan=y
 CONFIG_PACKAGE_libaudiofile=m
 CONFIG_PACKAGE_libavahi-client=m
-# CONFIG_PACKAGE_libavahi-compat-libdnssd is not set
+CONFIG_PACKAGE_libavahi-compat-libdnssd=m
 CONFIG_PACKAGE_libavahi-dbus-support=m
-CONFIG_PACKAGE_libavahi-nodbus-support=y
+# CONFIG_PACKAGE_libavahi-nodbus-support is not set
 # CONFIG_PACKAGE_libavl is not set
 CONFIG_PACKAGE_libbfd=m
 CONFIG_PACKAGE_libblkid=y
@@ -4449,31 +4494,28 @@ CONFIG_LIBCURL_PROXY=y
 # CONFIG_LIBCURL_UNIX_SOCKETS is not set
 # CONFIG_LIBCURL_LIBCURL_OPTION is not set
 # CONFIG_LIBCURL_VERBOSE is not set
-CONFIG_PACKAGE_libdaemon=y
-CONFIG_PACKAGE_libdaq=m
-CONFIG_PACKAGE_libdb47=y
-# CONFIG_PACKAGE_libdb47xx is not set
-CONFIG_PACKAGE_libdbi=m
-# CONFIG_PACKAGE_libdbd-mysql is not set
-# CONFIG_PACKAGE_libdbd-pgsql is not set
-# CONFIG_PACKAGE_libdbd-sqlite3 is not set
-CONFIG_PACKAGE_libdbus=y
-CONFIG_PACKAGE_libdbus-glib=m
-CONFIG_PACKAGE_libdevmapper=m
+CONFIG_PACKAGE_libdaemon=m
+# CONFIG_PACKAGE_libdaq is not set
+# CONFIG_PACKAGE_libdbi is not set
+# CONFIG_PACKAGE_libdevmapper is not set
 # CONFIG_PACKAGE_libdmapsharing is not set
-CONFIG_PACKAGE_libdnet=m
+# CONFIG_PACKAGE_libdnet is not set
 # CONFIG_PACKAGE_libdouble-conversion is not set
-CONFIG_PACKAGE_libdrm=m
-# CONFIG_PACKAGE_libedit is not set
+# CONFIG_PACKAGE_libdrm is not set
+CONFIG_PACKAGE_libedit=m
 CONFIG_PACKAGE_libelf1=y
 CONFIG_PACKAGE_libasm=m
+CONFIG_PACKAGE_libdb47=m
+# CONFIG_PACKAGE_libdb47xx is not set
+CONFIG_PACKAGE_libdbus=m
+CONFIG_PACKAGE_libdbus-glib=m
 CONFIG_PACKAGE_libdw=m
 # CONFIG_PACKAGE_libecdsautil is not set
 # CONFIG_PACKAGE_libesmtp is not set
 # CONFIG_PACKAGE_libestr is not set
-# CONFIG_PACKAGE_libev is not set
+CONFIG_PACKAGE_libev=m
 # CONFIG_PACKAGE_libevdev is not set
-CONFIG_PACKAGE_libevent=m
+# CONFIG_PACKAGE_libevent is not set
 CONFIG_PACKAGE_libevent2=m
 CONFIG_PACKAGE_libevent2-core=m
 # CONFIG_PACKAGE_libevent2-extra is not set
@@ -4483,21 +4525,22 @@ CONFIG_PACKAGE_libevent2-openssl=m
 # CONFIG_PACKAGE_libevhtp is not set
 CONFIG_PACKAGE_libexif=m
 CONFIG_PACKAGE_libexpat=y
-CONFIG_PACKAGE_libexslt=m
+# CONFIG_PACKAGE_libexslt is not set
 # CONFIG_PACKAGE_libextractor is not set
 # CONFIG_PACKAGE_libfastjson is not set
-CONFIG_PACKAGE_libfdisk=m
 CONFIG_PACKAGE_libffi=y
 # CONFIG_PACKAGE_libfreecwmp is not set
 CONFIG_PACKAGE_libftdi=m
 CONFIG_PACKAGE_libftdi1=y
-CONFIG_PACKAGE_libgcrypt=m
+# CONFIG_PACKAGE_libgcrypt is not set
 CONFIG_PACKAGE_libgd=m
+CONFIG_PACKAGE_libgdbm=m
 # CONFIG_PACKAGE_libgee is not set
 # CONFIG_PACKAGE_libglpk is not set
-# CONFIG_PACKAGE_libf2fs is not set
+CONFIG_PACKAGE_libf2fs=m
 CONFIG_PACKAGE_libfaad2=m
 # CONFIG_FAAD2_ALWAYS_USE_FLOATING_POINT is not set
+CONFIG_PACKAGE_libfdisk=m
 # CONFIG_PACKAGE_libfdt is not set
 CONFIG_PACKAGE_libffmpeg-audio-dec=m
 CONFIG_PACKAGE_libffmpeg-custom=m
@@ -4525,10 +4568,10 @@ CONFIG_FFMPEG_CUSTOM_AUDIO_DEC_SUPPORT=y
 #
 # External Libraries
 #
+# CONFIG_FFMPEG_CUSTOM_SELECT_libfdk-aac is not set
 CONFIG_FFMPEG_CUSTOM_SELECT_libmp3lame=y
 CONFIG_FFMPEG_CUSTOM_SELECT_libopus=y
 CONFIG_FFMPEG_CUSTOM_SELECT_libshine=y
-CONFIG_FFMPEG_CUSTOM_SELECT_libx264=y
 
 #
 # Encoders
@@ -4650,17 +4693,16 @@ CONFIG_FFMPEG_CUSTOM_PROTOCOL_udp=y
 CONFIG_PACKAGE_libffmpeg-full=m
 CONFIG_PACKAGE_libffmpeg-mini=m
 CONFIG_PACKAGE_libflac=m
-CONFIG_PACKAGE_libfreetype=y
+CONFIG_PACKAGE_libfreetype=m
 # CONFIG_PACKAGE_libgconf2 is not set
-CONFIG_PACKAGE_libgdbm=y
 CONFIG_PACKAGE_libgmp=m
 # CONFIG_PACKAGE_libgnurl is not set
 CONFIG_PACKAGE_libgpg-error=y
 # CONFIG_PACKAGE_libgps is not set
 # CONFIG_PACKAGE_libhamlib is not set
-CONFIG_PACKAGE_libhavege=m
+# CONFIG_PACKAGE_libhavege is not set
 CONFIG_PACKAGE_libhiredis=m
-# CONFIG_PACKAGE_libhttp-parser is not set
+CONFIG_PACKAGE_libhttp-parser=m
 CONFIG_PACKAGE_libical=m
 CONFIG_PACKAGE_libiconv=m
 CONFIG_PACKAGE_libiconv-full=m
@@ -4668,18 +4710,19 @@ CONFIG_PACKAGE_libid3tag=m
 CONFIG_PACKAGE_libidn=m
 # CONFIG_PACKAGE_libimobiledevice is not set
 # CONFIG_PACKAGE_libinput is not set
-# CONFIG_PACKAGE_libintl is not set
+CONFIG_PACKAGE_libintl=m
 CONFIG_PACKAGE_libintl-full=m
 CONFIG_PACKAGE_libiw=m
 CONFIG_PACKAGE_libiwinfo=y
-CONFIG_PACKAGE_libjpeg=y
+CONFIG_PACKAGE_libjpeg=m
 CONFIG_PACKAGE_libjson-c=y
 CONFIG_PACKAGE_libjsoncpp=m
-CONFIG_PACKAGE_libkmod=m
+# CONFIG_PACKAGE_libkmod is not set
 CONFIG_PACKAGE_liblapack=m
 # CONFIG_PACKAGE_libldns is not set
 CONFIG_PACKAGE_libltdl=m
 CONFIG_PACKAGE_liblua=y
+CONFIG_PACKAGE_liblxc=m
 # CONFIG_PACKAGE_liblz4 is not set
 CONFIG_PACKAGE_liblzo=m
 CONFIG_PACKAGE_libmad=m
@@ -4688,7 +4731,7 @@ CONFIG_PACKAGE_libmcrypt=m
 # CONFIG_PACKAGE_libmicrohttpd is not set
 # CONFIG_PACKAGE_libmicrohttpd-no-ssl is not set
 # CONFIG_PACKAGE_libmicroxml is not set
-CONFIG_PACKAGE_libminiupnpc=m
+# CONFIG_PACKAGE_libminiupnpc is not set
 CONFIG_PACKAGE_libmms=m
 CONFIG_PACKAGE_libmnl=m
 CONFIG_PACKAGE_libmodbus=m
@@ -4697,15 +4740,15 @@ CONFIG_PACKAGE_libmosquitto-ssl=m
 # CONFIG_PACKAGE_libmosquittopp is not set
 CONFIG_PACKAGE_libmount=m
 CONFIG_PACKAGE_libmpdclient=m
-CONFIG_PACKAGE_libmpeg2=m
+# CONFIG_PACKAGE_libmpeg2 is not set
 # CONFIG_PACKAGE_libmpg123 is not set
 CONFIG_PACKAGE_libmpsse=m
 # CONFIG_PACKAGE_libmraa is not set
 CONFIG_PACKAGE_libmysqlclient=m
 CONFIG_PACKAGE_libmysqlclient-r=m
-CONFIG_PACKAGE_libnatpmp=m
+# CONFIG_PACKAGE_libnatpmp is not set
 CONFIG_PACKAGE_libncurses=y
-CONFIG_PACKAGE_libneon=m
+# CONFIG_PACKAGE_libneon is not set
 # CONFIG_PACKAGE_libnet-1.2.x is not set
 # CONFIG_PACKAGE_libnetconf is not set
 # CONFIG_PACKAGE_libnetconf2 is not set
@@ -4715,7 +4758,7 @@ CONFIG_PACKAGE_libnetfilter-cthelper=m
 CONFIG_PACKAGE_libnetfilter-cttimeout=m
 # CONFIG_PACKAGE_libnetfilter-log is not set
 CONFIG_PACKAGE_libnetfilter-queue=m
-CONFIG_PACKAGE_libnetsnmp=m
+# CONFIG_PACKAGE_libnetsnmp is not set
 CONFIG_PACKAGE_libnettle=m
 
 #
@@ -4733,12 +4776,12 @@ CONFIG_PACKAGE_libnl-route=m
 CONFIG_PACKAGE_libnl-tiny=y
 # CONFIG_PACKAGE_libnopoll is not set
 CONFIG_PACKAGE_libogg=m
-CONFIG_PACKAGE_liboil=m
+# CONFIG_PACKAGE_liboil is not set
 CONFIG_PACKAGE_libopcodes=m
 CONFIG_PACKAGE_libopenldap=m
 # CONFIG_PACKAGE_libopensc is not set
 # CONFIG_PACKAGE_libopenzwave is not set
-CONFIG_PACKAGE_liboping=m
+# CONFIG_PACKAGE_liboping is not set
 CONFIG_PACKAGE_libopus=m
 # CONFIG_PACKAGE_libowfat is not set
 # CONFIG_PACKAGE_libp11 is not set
@@ -4752,7 +4795,7 @@ CONFIG_PACKAGE_libpcap=m
 # CONFIG_PCAP_HAS_NETFILTER is not set
 CONFIG_PACKAGE_libpcre=y
 # CONFIG_PACKAGE_libpcre16 is not set
-# CONFIG_PACKAGE_libpcre2 is not set
+CONFIG_PACKAGE_libpcre2=m
 # CONFIG_PACKAGE_libpcre2-16 is not set
 # CONFIG_PACKAGE_libpcre2-32 is not set
 # CONFIG_PACKAGE_libpcrecpp is not set
@@ -4760,36 +4803,37 @@ CONFIG_PACKAGE_libpcsclite=m
 # CONFIG_PACKAGE_libpkcs11-spy is not set
 # CONFIG_PACKAGE_libplist is not set
 # CONFIG_PACKAGE_libplistcxx is not set
-CONFIG_PACKAGE_libpng=y
+CONFIG_PACKAGE_libpng=m
 CONFIG_PACKAGE_libpopt=m
 # CONFIG_PACKAGE_libpri is not set
 CONFIG_PACKAGE_libprotobuf=m
 CONFIG_PACKAGE_libprotobuf-c=m
-# CONFIG_PACKAGE_libqrencode is not set
+CONFIG_PACKAGE_libqrencode=m
 # CONFIG_PACKAGE_libradcli is not set
 CONFIG_PACKAGE_libreadline=y
 # CONFIG_PACKAGE_libroxml is not set
 CONFIG_PACKAGE_librpc=m
 CONFIG_PACKAGE_librrd1=m
-# CONFIG_PACKAGE_librtlsdr is not set
+CONFIG_PACKAGE_librtlsdr=m
 CONFIG_PACKAGE_libruby=m
-CONFIG_PACKAGE_libsamplerate=m
+# CONFIG_PACKAGE_libsamplerate is not set
 # CONFIG_PACKAGE_libsane is not set
 CONFIG_PACKAGE_libsasl2=m
 # CONFIG_PACKAGE_libsearpc is not set
 # CONFIG_PACKAGE_libseccomp is not set
 CONFIG_PACKAGE_libsensors=m
-CONFIG_PACKAGE_libshout=m
+# CONFIG_PACKAGE_libshout is not set
 # CONFIG_PACKAGE_libshout-full is not set
 # CONFIG_PACKAGE_libshout-nossl is not set
-CONFIG_PACKAGE_libsigcxx=m
+# CONFIG_PACKAGE_libsigcxx is not set
 CONFIG_PACKAGE_libsmartcols=y
 CONFIG_PACKAGE_libsndfile=m
+# CONFIG_PACKAGE_libsoc is not set
 # CONFIG_PACKAGE_libsocks is not set
 # CONFIG_PACKAGE_libsodium is not set
 # CONFIG_PACKAGE_libsoup is not set
 # CONFIG_PACKAGE_libsoxr is not set
-CONFIG_PACKAGE_libspeex=m
+# CONFIG_PACKAGE_libspeex is not set
 CONFIG_PACKAGE_libspeexdsp=m
 # CONFIG_PACKAGE_libssh is not set
 # CONFIG_PACKAGE_libssh2 is not set
@@ -4797,14 +4841,14 @@ CONFIG_PACKAGE_libspeexdsp=m
 CONFIG_PACKAGE_libstrophe=m
 CONFIG_libstrophe-expat=y
 # CONFIG_libstrophe-libxml2 is not set
-# CONFIG_PACKAGE_libtalloc is not set
-CONFIG_PACKAGE_libtasn1=m
-CONFIG_PACKAGE_libtheora=m
+CONFIG_PACKAGE_libtalloc=m
+# CONFIG_PACKAGE_libtasn1 is not set
+# CONFIG_PACKAGE_libtheora is not set
 CONFIG_PACKAGE_libtiff=m
 # CONFIG_PACKAGE_libtiffxx is not set
 # CONFIG_PACKAGE_libtorrent is not set
 CONFIG_PACKAGE_libubox=y
-# CONFIG_PACKAGE_libubox-lua is not set
+CONFIG_PACKAGE_libubox-lua=m
 CONFIG_PACKAGE_libubus=y
 CONFIG_PACKAGE_libubus-lua=y
 CONFIG_PACKAGE_libuci=y
@@ -4828,31 +4872,31 @@ CONFIG_PACKAGE_libustream-mbedtls=m
 # CONFIG_PACKAGE_libustream-openssl is not set
 CONFIG_PACKAGE_libuuid=y
 CONFIG_PACKAGE_libuv=m
-CONFIG_PACKAGE_libuvc=m
-CONFIG_PACKAGE_libv4l=m
+# CONFIG_PACKAGE_libuvc is not set
+# CONFIG_PACKAGE_libv4l is not set
 CONFIG_PACKAGE_libvorbis=m
 CONFIG_PACKAGE_libvorbisidec=m
 # CONFIG_PACKAGE_libvpx is not set
 # CONFIG_PACKAGE_libwebcam is not set
 # CONFIG_PACKAGE_libwebsockets-cyassl is not set
-# CONFIG_PACKAGE_libwebsockets-full is not set
+CONFIG_PACKAGE_libwebsockets-full=m
 CONFIG_PACKAGE_libwebsockets-openssl=m
 CONFIG_PACKAGE_libwrap=m
-# CONFIG_PACKAGE_libwyliodrin is not set
-CONFIG_PACKAGE_libx264=m
+CONFIG_PACKAGE_libwyliodrin=m
+# CONFIG_PACKAGE_libx264 is not set
 # CONFIG_PACKAGE_libxerces-c is not set
 # CONFIG_PACKAGE_libxerces-c-samples is not set
-CONFIG_PACKAGE_libxml2=y
-CONFIG_PACKAGE_libxslt=m
+CONFIG_PACKAGE_libxml2=m
+# CONFIG_PACKAGE_libxslt is not set
 # CONFIG_PACKAGE_libyang is not set
 # CONFIG_PACKAGE_libzdb is not set
 # CONFIG_PACKAGE_libzmq-curve is not set
-# CONFIG_PACKAGE_libzmq-nc is not set
+CONFIG_PACKAGE_libzmq-nc=m
 CONFIG_PACKAGE_linux-atm=m
 # CONFIG_PACKAGE_loudmouth is not set
 CONFIG_PACKAGE_lttng-ust=m
 # CONFIG_PACKAGE_mtdev is not set
-# CONFIG_PACKAGE_musl-fts is not set
+CONFIG_PACKAGE_musl-fts=m
 # CONFIG_PACKAGE_mxml is not set
 # CONFIG_PACKAGE_nacl is not set
 CONFIG_PACKAGE_opencv=m
@@ -4860,8 +4904,9 @@ CONFIG_PACKAGE_opencv=m
 # CONFIG_PACKAGE_poco is not set
 CONFIG_PACKAGE_protobuf=m
 # CONFIG_PACKAGE_pthsem is not set
+CONFIG_PACKAGE_rpcd-mod-lxc=m
 # CONFIG_PACKAGE_rxtx is not set
-CONFIG_PACKAGE_sbc=m
+# CONFIG_PACKAGE_sbc is not set
 # CONFIG_PACKAGE_shflags is not set
 CONFIG_PACKAGE_terminfo=y
 # CONFIG_PACKAGE_tinycdb is not set
@@ -4881,7 +4926,7 @@ CONFIG_PACKAGE_zlib=y
 # 1. Collections
 #
 CONFIG_PACKAGE_luci=y
-CONFIG_PACKAGE_luci-ssl=m
+# CONFIG_PACKAGE_luci-ssl is not set
 # CONFIG_PACKAGE_luci-ssl-openssl is not set
 
 #
@@ -4920,81 +4965,82 @@ CONFIG_PACKAGE_luci-base=y
 # CONFIG_LUCI_LANG_zh-cn is not set
 # CONFIG_LUCI_LANG_zh-tw is not set
 CONFIG_PACKAGE_luci-mod-admin-full=y
-CONFIG_PACKAGE_luci-mod-failsafe=m
-# CONFIG_PACKAGE_luci-mod-freifunk is not set
+# CONFIG_PACKAGE_luci-mod-failsafe is not set
+CONFIG_PACKAGE_luci-mod-freifunk=m
 # CONFIG_PACKAGE_luci-mod-freifunk-community is not set
-CONFIG_PACKAGE_luci-mod-rpc=m
+# CONFIG_PACKAGE_luci-mod-rpc is not set
 
 #
 # 3. Applications
 #
 CONFIG_PACKAGE_arduinoos=y
 CONFIG_PACKAGE_luci-app-6lowpand=m
-# CONFIG_PACKAGE_luci-app-adblock is not set
+# CONFIG_PACKAGE_luci-app-acme is not set
+CONFIG_PACKAGE_luci-app-adblock=m
 CONFIG_PACKAGE_luci-app-ahcp=m
-# CONFIG_PACKAGE_luci-app-aria2 is not set
-# CONFIG_PACKAGE_luci-app-asterisk is not set
-# CONFIG_PACKAGE_luci-app-bcp38 is not set
-# CONFIG_PACKAGE_luci-app-bird4 is not set
-# CONFIG_PACKAGE_luci-app-bird6 is not set
-# CONFIG_PACKAGE_luci-app-bmx6 is not set
-# CONFIG_PACKAGE_luci-app-bmx7 is not set
-# CONFIG_PACKAGE_luci-app-cjdns is not set
-# CONFIG_PACKAGE_luci-app-clamav is not set
+CONFIG_PACKAGE_luci-app-aria2=m
+CONFIG_PACKAGE_luci-app-asterisk=m
+CONFIG_PACKAGE_luci-app-bcp38=m
+CONFIG_PACKAGE_luci-app-bird4=m
+CONFIG_PACKAGE_luci-app-bird6=m
+CONFIG_PACKAGE_luci-app-bmx6=m
+CONFIG_PACKAGE_luci-app-bmx7=m
+CONFIG_PACKAGE_luci-app-cjdns=m
+CONFIG_PACKAGE_luci-app-clamav=m
 CONFIG_PACKAGE_luci-app-commands=m
-# CONFIG_PACKAGE_luci-app-cshark is not set
+CONFIG_PACKAGE_luci-app-cshark=m
 CONFIG_PACKAGE_luci-app-ddns=m
 CONFIG_PACKAGE_luci-app-diag-core=m
-# CONFIG_PACKAGE_luci-app-dump1090 is not set
-# CONFIG_PACKAGE_luci-app-dynapoint is not set
-# CONFIG_PACKAGE_luci-app-e2guardian is not set
+CONFIG_PACKAGE_luci-app-dump1090=m
+CONFIG_PACKAGE_luci-app-dynapoint=m
+CONFIG_PACKAGE_luci-app-e2guardian=m
 CONFIG_PACKAGE_luci-app-firewall=y
-# CONFIG_PACKAGE_luci-app-freifunk-diagnostics is not set
-# CONFIG_PACKAGE_luci-app-freifunk-policyrouting is not set
-# CONFIG_PACKAGE_luci-app-freifunk-widgets is not set
-# CONFIG_PACKAGE_luci-app-fwknopd is not set
+CONFIG_PACKAGE_luci-app-freifunk-diagnostics=m
+CONFIG_PACKAGE_luci-app-freifunk-policyrouting=m
+CONFIG_PACKAGE_luci-app-freifunk-widgets=m
+CONFIG_PACKAGE_luci-app-fwknopd=m
 CONFIG_PACKAGE_luci-app-hd-idle=m
-# CONFIG_PACKAGE_luci-app-hnet is not set
-# CONFIG_PACKAGE_luci-app-lxc is not set
+CONFIG_PACKAGE_luci-app-hnet=m
+CONFIG_PACKAGE_luci-app-lxc=m
 CONFIG_PACKAGE_luci-app-meshwizard=m
-# CONFIG_PACKAGE_luci-app-minidlna is not set
-# CONFIG_PACKAGE_luci-app-mjpg-streamer is not set
-# CONFIG_PACKAGE_luci-app-mmc-over-gpio is not set
-# CONFIG_PACKAGE_luci-app-mwan3 is not set
+CONFIG_PACKAGE_luci-app-minidlna=m
+CONFIG_PACKAGE_luci-app-mjpg-streamer=m
+CONFIG_PACKAGE_luci-app-mmc-over-gpio=m
+CONFIG_PACKAGE_luci-app-mwan3=m
 CONFIG_PACKAGE_luci-app-ntpc=m
-# CONFIG_PACKAGE_luci-app-ocserv is not set
+CONFIG_PACKAGE_luci-app-ocserv=m
 CONFIG_PACKAGE_luci-app-olsr=m
 CONFIG_PACKAGE_luci-app-olsr-services=m
 CONFIG_PACKAGE_luci-app-olsr-viz=m
-# CONFIG_PACKAGE_luci-app-openvpn is not set
+CONFIG_PACKAGE_luci-app-openvpn=m
 CONFIG_PACKAGE_luci-app-p910nd=m
 CONFIG_PACKAGE_luci-app-polipo=m
-# CONFIG_PACKAGE_luci-app-privoxy is not set
+CONFIG_PACKAGE_luci-app-privoxy=m
 CONFIG_PACKAGE_luci-app-qos=m
-# CONFIG_PACKAGE_luci-app-radicale is not set
-# CONFIG_PACKAGE_luci-app-rp-pppoe-server is not set
+CONFIG_PACKAGE_luci-app-radicale=m
+CONFIG_PACKAGE_luci-app-rp-pppoe-server=m
 CONFIG_PACKAGE_luci-app-samba=m
-# CONFIG_PACKAGE_luci-app-shadowsocks-libev is not set
-# CONFIG_PACKAGE_luci-app-shairplay is not set
-# CONFIG_PACKAGE_luci-app-shairport is not set
-# CONFIG_PACKAGE_luci-app-siitwizard is not set
-# CONFIG_PACKAGE_luci-app-simple-adblock is not set
+CONFIG_PACKAGE_luci-app-shadowsocks-libev=m
+CONFIG_PACKAGE_luci-app-shairplay=m
+CONFIG_PACKAGE_luci-app-shairport=m
+CONFIG_PACKAGE_luci-app-siitwizard=m
+CONFIG_PACKAGE_luci-app-simple-adblock=m
 CONFIG_PACKAGE_luci-app-splash=m
-# CONFIG_PACKAGE_luci-app-sqm is not set
-# CONFIG_PACKAGE_luci-app-squid is not set
-# CONFIG_PACKAGE_luci-app-statistics is not set
+CONFIG_PACKAGE_luci-app-sqm=m
+CONFIG_PACKAGE_luci-app-squid=m
+CONFIG_PACKAGE_luci-app-statistics=m
 CONFIG_PACKAGE_luci-app-tinyproxy=m
 CONFIG_PACKAGE_luci-app-transmission=m
-# CONFIG_PACKAGE_luci-app-travelmate is not set
-# CONFIG_PACKAGE_luci-app-udpxy is not set
-# CONFIG_PACKAGE_luci-app-uhttpd is not set
-# CONFIG_PACKAGE_luci-app-unbound is not set
+CONFIG_PACKAGE_luci-app-travelmate=m
+CONFIG_PACKAGE_luci-app-udpxy=m
+CONFIG_PACKAGE_luci-app-uhttpd=m
+CONFIG_PACKAGE_luci-app-unbound=m
 CONFIG_PACKAGE_luci-app-upnp=m
 CONFIG_PACKAGE_luci-app-vnstat=m
-# CONFIG_PACKAGE_luci-app-vpnbypass is not set
+CONFIG_PACKAGE_luci-app-vpnbypass=m
 CONFIG_PACKAGE_luci-app-watchcat=m
-# CONFIG_PACKAGE_luci-app-wifischedule is not set
-# CONFIG_PACKAGE_luci-app-wireguard is not set
+CONFIG_PACKAGE_luci-app-wifischedule=m
+CONFIG_PACKAGE_luci-app-wireguard=m
 CONFIG_PACKAGE_luci-app-wol=m
 CONFIG_PACKAGE_luci-webpanel-linino=m
 
@@ -5004,43 +5050,50 @@ CONFIG_PACKAGE_luci-webpanel-linino=m
 CONFIG_PACKAGE_luci-theme-bootstrap=y
 CONFIG_PACKAGE_luci-theme-freifunk-generic=m
 CONFIG_PACKAGE_luci-theme-material=m
-CONFIG_PACKAGE_luci-theme-openwrt=y
+CONFIG_PACKAGE_luci-theme-openwrt=m
 
 #
 # 5. Protocols
 #
-CONFIG_PACKAGE_luci-proto-3g=m
+# CONFIG_PACKAGE_luci-proto-3g is not set
 # CONFIG_PACKAGE_luci-proto-ipip is not set
 CONFIG_PACKAGE_luci-proto-ipv6=y
 # CONFIG_PACKAGE_luci-proto-ncm is not set
 # CONFIG_PACKAGE_luci-proto-openconnect is not set
 CONFIG_PACKAGE_luci-proto-ppp=y
 # CONFIG_PACKAGE_luci-proto-qmi is not set
-CONFIG_PACKAGE_luci-proto-relay=m
+# CONFIG_PACKAGE_luci-proto-relay is not set
 # CONFIG_PACKAGE_luci-proto-vpnc is not set
 # CONFIG_PACKAGE_luci-proto-wireguard is not set
 
 #
 # 6. Libraries
 #
+CONFIG_PACKAGE_luci-lib-dracula=m
 CONFIG_PACKAGE_luci-lib-httpclient=m
 CONFIG_PACKAGE_luci-lib-ip=y
+CONFIG_PACKAGE_luci-lib-jquery-1-4=m
 CONFIG_PACKAGE_luci-lib-json=y
 CONFIG_PACKAGE_luci-lib-jsonc=y
 CONFIG_PACKAGE_luci-lib-luaneightbl=m
 CONFIG_PACKAGE_luci-lib-nixio=y
-CONFIG_PACKAGE_luci-lib-px5g=m
+# CONFIG_PACKAGE_luci-lib-px5g is not set
 
 #
 # 9. Freifunk
 #
-# CONFIG_PACKAGE_freifunk-common is not set
-# CONFIG_PACKAGE_freifunk-firewall is not set
+CONFIG_PACKAGE_freifunk-common=m
+# CONFIG_PACKAGE_community-profiles is not set
+CONFIG_PACKAGE_freifunk-firewall=m
 # CONFIG_PACKAGE_freifunk-gwcheck is not set
 # CONFIG_PACKAGE_freifunk-mapupdate is not set
-# CONFIG_PACKAGE_freifunk-policyrouting is not set
+CONFIG_PACKAGE_freifunk-policyrouting=m
 # CONFIG_PACKAGE_freifunk-watchdog is not set
 CONFIG_PACKAGE_meshwizard=m
+# CONFIG_PACKAGE_luci-i18n-adblock-ja is not set
+# CONFIG_PACKAGE_luci-i18n-adblock-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-adblock-sv is not set
+# CONFIG_PACKAGE_luci-i18n-adblock-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-ahcp-ca is not set
 # CONFIG_PACKAGE_luci-i18n-ahcp-cs is not set
 # CONFIG_PACKAGE_luci-i18n-ahcp-de is not set
@@ -5066,6 +5119,33 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-ahcp-vi is not set
 # CONFIG_PACKAGE_luci-i18n-ahcp-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-ahcp-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-aria2-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-aria2-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-ca is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-cs is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-de is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-el is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-en is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-es is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-fr is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-he is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-hu is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-it is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-ja is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-ms is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-no is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-pl is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-pt is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-ro is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-ru is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-sk is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-sv is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-tr is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-uk is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-vi is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-asterisk-zh-tw is not set
 # CONFIG_PACKAGE_luci-i18n-base-ca is not set
 # CONFIG_PACKAGE_luci-i18n-base-cs is not set
 # CONFIG_PACKAGE_luci-i18n-base-de is not set
@@ -5092,6 +5172,7 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-base-vi is not set
 # CONFIG_PACKAGE_luci-i18n-base-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-base-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-clamav-ja is not set
 # CONFIG_PACKAGE_luci-i18n-commands-ca is not set
 # CONFIG_PACKAGE_luci-i18n-commands-cs is not set
 # CONFIG_PACKAGE_luci-i18n-commands-de is not set
@@ -5163,6 +5244,9 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-diag-core-vi is not set
 # CONFIG_PACKAGE_luci-i18n-diag-core-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-diag-core-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-dynapoint-de is not set
+# CONFIG_PACKAGE_luci-i18n-dynapoint-ja is not set
+# CONFIG_PACKAGE_luci-i18n-dynapoint-pt-br is not set
 # CONFIG_PACKAGE_luci-i18n-firewall-ca is not set
 # CONFIG_PACKAGE_luci-i18n-firewall-cs is not set
 # CONFIG_PACKAGE_luci-i18n-firewall-de is not set
@@ -5189,6 +5273,58 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-firewall-vi is not set
 # CONFIG_PACKAGE_luci-i18n-firewall-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-firewall-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-ca is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-cs is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-de is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-el is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-en is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-es is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-fr is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-he is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-hu is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-it is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-ja is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-ms is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-no is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-pl is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-ca is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-cs is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-de is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-el is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-en is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-es is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-fr is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-he is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-hu is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-it is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-ja is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-ms is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-no is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-pl is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-pt is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-ro is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-ru is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-sk is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-sv is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-tr is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-uk is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-vi is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-policyrouting-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-pt is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-ro is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-ru is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-sk is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-sv is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-tr is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-uk is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-vi is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-freifunk-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-fwknopd-en is not set
+# CONFIG_PACKAGE_luci-i18n-fwknopd-pt-br is not set
 # CONFIG_PACKAGE_luci-i18n-hd-idle-ca is not set
 # CONFIG_PACKAGE_luci-i18n-hd-idle-cs is not set
 # CONFIG_PACKAGE_luci-i18n-hd-idle-de is not set
@@ -5239,6 +5375,59 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-meshwizard-vi is not set
 # CONFIG_PACKAGE_luci-i18n-meshwizard-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-meshwizard-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-ca is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-cs is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-de is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-el is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-en is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-es is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-fr is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-he is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-hu is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-it is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-ja is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-ms is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-no is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-pl is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-pt is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-ro is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-ru is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-sk is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-sv is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-tr is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-uk is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-vi is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-minidlna-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-mjpg-streamer-ja is not set
+# CONFIG_PACKAGE_luci-i18n-mjpg-streamer-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-mjpg-streamer-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-ca is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-cs is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-de is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-el is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-en is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-es is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-fr is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-he is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-hu is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-it is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-ja is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-ms is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-no is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-pl is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-pt is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-ro is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-ru is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-sk is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-sv is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-tr is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-uk is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-vi is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-mmc-over-gpio-zh-tw is not set
 # CONFIG_PACKAGE_luci-i18n-ntpc-ca is not set
 # CONFIG_PACKAGE_luci-i18n-ntpc-cs is not set
 # CONFIG_PACKAGE_luci-i18n-ntpc-de is not set
@@ -5289,6 +5478,31 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-olsr-vi is not set
 # CONFIG_PACKAGE_luci-i18n-olsr-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-olsr-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-ca is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-cs is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-de is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-el is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-en is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-es is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-fr is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-he is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-hu is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-it is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-ja is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-ms is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-no is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-pl is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-pt is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-ro is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-ru is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-sk is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-sv is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-tr is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-uk is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-vi is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-openvpn-zh-tw is not set
 # CONFIG_PACKAGE_luci-i18n-p910nd-ca is not set
 # CONFIG_PACKAGE_luci-i18n-p910nd-cs is not set
 # CONFIG_PACKAGE_luci-i18n-p910nd-de is not set
@@ -5339,6 +5553,10 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-polipo-vi is not set
 # CONFIG_PACKAGE_luci-i18n-polipo-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-polipo-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-privoxy-de is not set
+# CONFIG_PACKAGE_luci-i18n-privoxy-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-privoxy-sv is not set
+# CONFIG_PACKAGE_luci-i18n-privoxy-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-qos-ca is not set
 # CONFIG_PACKAGE_luci-i18n-qos-cs is not set
 # CONFIG_PACKAGE_luci-i18n-qos-de is not set
@@ -5364,6 +5582,9 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-qos-vi is not set
 # CONFIG_PACKAGE_luci-i18n-qos-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-qos-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-radicale-de is not set
+# CONFIG_PACKAGE_luci-i18n-radicale-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-radicale-sv is not set
 # CONFIG_PACKAGE_luci-i18n-samba-ca is not set
 # CONFIG_PACKAGE_luci-i18n-samba-cs is not set
 # CONFIG_PACKAGE_luci-i18n-samba-de is not set
@@ -5389,6 +5610,12 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-samba-vi is not set
 # CONFIG_PACKAGE_luci-i18n-samba-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-samba-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-shadowsocks-libev-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-shadowsocks-libev-sv is not set
+# CONFIG_PACKAGE_luci-i18n-shadowsocks-libev-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-shairplay-ja is not set
+# CONFIG_PACKAGE_luci-i18n-shairplay-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-simple-adblock-ja is not set
 # CONFIG_PACKAGE_luci-i18n-splash-ca is not set
 # CONFIG_PACKAGE_luci-i18n-splash-cs is not set
 # CONFIG_PACKAGE_luci-i18n-splash-de is not set
@@ -5414,6 +5641,31 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-splash-vi is not set
 # CONFIG_PACKAGE_luci-i18n-splash-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-splash-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-ca is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-cs is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-de is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-el is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-en is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-es is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-fr is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-he is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-hu is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-it is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-ja is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-ms is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-no is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-pl is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-pt is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-ro is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-ru is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-sk is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-sv is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-tr is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-uk is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-vi is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-statistics-zh-tw is not set
 # CONFIG_PACKAGE_luci-i18n-tinyproxy-ca is not set
 # CONFIG_PACKAGE_luci-i18n-tinyproxy-cs is not set
 # CONFIG_PACKAGE_luci-i18n-tinyproxy-de is not set
@@ -5464,6 +5716,10 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-transmission-vi is not set
 # CONFIG_PACKAGE_luci-i18n-transmission-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-transmission-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-travelmate-ja is not set
+# CONFIG_PACKAGE_luci-i18n-travelmate-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-uhttpd-ja is not set
+# CONFIG_PACKAGE_luci-i18n-uhttpd-pt-br is not set
 # CONFIG_PACKAGE_luci-i18n-upnp-ca is not set
 # CONFIG_PACKAGE_luci-i18n-upnp-cs is not set
 # CONFIG_PACKAGE_luci-i18n-upnp-de is not set
@@ -5514,6 +5770,7 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-vnstat-vi is not set
 # CONFIG_PACKAGE_luci-i18n-vnstat-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-vnstat-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-vpnbypass-pt-br is not set
 # CONFIG_PACKAGE_luci-i18n-watchcat-ca is not set
 # CONFIG_PACKAGE_luci-i18n-watchcat-cs is not set
 # CONFIG_PACKAGE_luci-i18n-watchcat-de is not set
@@ -5539,6 +5796,11 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_luci-i18n-watchcat-vi is not set
 # CONFIG_PACKAGE_luci-i18n-watchcat-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-watchcat-zh-tw is not set
+# CONFIG_PACKAGE_luci-i18n-wifischedule-ja is not set
+# CONFIG_PACKAGE_luci-i18n-wifischedule-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-wifischedule-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-wireguard-ja is not set
+# CONFIG_PACKAGE_luci-i18n-wireguard-pt-br is not set
 # CONFIG_PACKAGE_luci-i18n-wol-ca is not set
 # CONFIG_PACKAGE_luci-i18n-wol-cs is not set
 # CONFIG_PACKAGE_luci-i18n-wol-de is not set
@@ -5578,13 +5840,8 @@ CONFIG_PACKAGE_meshwizard=m
 # CONFIG_PACKAGE_mailman is not set
 # CONFIG_PACKAGE_mailsend is not set
 # CONFIG_PACKAGE_mailsend-nossl is not set
-CONFIG_PACKAGE_msmtp=m
-# CONFIG_PACKAGE_msmtp-mta is not set
-CONFIG_PACKAGE_msmtp-nossl=m
-CONFIG_PACKAGE_msmtp-queue=m
-# CONFIG_PACKAGE_msmtpq-ng is not set
-# CONFIG_PACKAGE_msmtpq-ng-mta is not set
-# CONFIG_PACKAGE_msmtpq-ng-mta-smtpd is not set
+# CONFIG_PACKAGE_msmtp is not set
+# CONFIG_PACKAGE_msmtp-nossl is not set
 # CONFIG_PACKAGE_mutt is not set
 # CONFIG_PACKAGE_nail is not set
 # CONFIG_PACKAGE_postfix is not set
@@ -5599,7 +5856,7 @@ CONFIG_POSTFIX_LDAP=y
 CONFIG_POSTFIX_CDB=y
 CONFIG_POSTFIX_SQLITE=y
 # CONFIG_POSTFIX_EAI is not set
-CONFIG_PACKAGE_ssmtp=m
+# CONFIG_PACKAGE_ssmtp is not set
 
 #
 # Multimedia
@@ -5609,11 +5866,11 @@ CONFIG_PACKAGE_ssmtp=m
 # Streaming
 #
 # CONFIG_PACKAGE_oggfwd is not set
-# CONFIG_PACKAGE_crtmpserver is not set
+CONFIG_PACKAGE_crtmpserver=m
 CONFIG_PACKAGE_ffmpeg=m
 CONFIG_PACKAGE_ffprobe=m
 CONFIG_PACKAGE_ffserver=m
-# CONFIG_PACKAGE_fswebcam is not set
+CONFIG_PACKAGE_fswebcam=m
 # CONFIG_PACKAGE_grilo is not set
 # CONFIG_PACKAGE_grilo-plugins is not set
 # CONFIG_PACKAGE_gst1-libav is not set
@@ -5623,7 +5880,7 @@ CONFIG_PACKAGE_ffserver=m
 # CONFIG_PACKAGE_gstreamer1-plugins-good is not set
 # CONFIG_PACKAGE_gstreamer1-plugins-ugly is not set
 # CONFIG_PACKAGE_gstreamer1-utils is not set
-CONFIG_PACKAGE_icecast=m
+# CONFIG_PACKAGE_icecast is not set
 CONFIG_PACKAGE_imagemagick=m
 CONFIG_PACKAGE_imagemagick-config=m
 CONFIG_PACKAGE_imagemagick-jpeg=m
@@ -5631,21 +5888,21 @@ CONFIG_PACKAGE_imagemagick-png=m
 CONFIG_PACKAGE_imagemagick-tiff=m
 CONFIG_PACKAGE_imagemagick-tools=m
 # CONFIG_PACKAGE_lcdgrilo is not set
-# CONFIG_PACKAGE_minidlna is not set
+CONFIG_PACKAGE_minidlna=m
 CONFIG_PACKAGE_mjpg-streamer=m
-CONFIG_MJPG_STREAMER_V4L2=y
-CONFIG_MJPG_STREAMER_INPUT_FILE=y
+# CONFIG_MJPG_STREAMER_V4L2 is not set
+# CONFIG_MJPG_STREAMER_INPUT_FILE is not set
 CONFIG_MJPG_STREAMER_INPUT_UVC=y
-CONFIG_MJPG_STREAMER_INPUT_TESTPICTURE=y
-CONFIG_MJPG_STREAMER_OUTPUT_FILE=y
+# CONFIG_MJPG_STREAMER_INPUT_TESTPICTURE is not set
+# CONFIG_MJPG_STREAMER_OUTPUT_FILE is not set
 CONFIG_MJPG_STREAMER_OUTPUT_HTTP=y
-CONFIG_MJPG_STREAMER_WWW=y
-CONFIG_PACKAGE_motion=m
+# CONFIG_MJPG_STREAMER_WWW is not set
+# CONFIG_PACKAGE_motion is not set
 CONFIG_PACKAGE_png2mono=m
 # CONFIG_PACKAGE_tvheadend is not set
 # CONFIG_PACKAGE_vips is not set
 # CONFIG_PACKAGE_xupnpd is not set
-# CONFIG_PACKAGE_youtube-dl is not set
+CONFIG_PACKAGE_youtube-dl=m
 
 #
 # Network
@@ -5683,7 +5940,19 @@ CONFIG_PACKAGE_png2mono=m
 #
 # File Transfer
 #
-# CONFIG_PACKAGE_aria2 is not set
+CONFIG_PACKAGE_aria2=m
+
+#
+# Aria2 Configuration
+#
+CONFIG_ARIA2_OPENSSL=y
+# CONFIG_ARIA2_GNUTLS is not set
+# CONFIG_ARIA2_NOSSL is not set
+# CONFIG_ARIA2_BITTORRENT is not set
+# CONFIG_ARIA2_SFTP is not set
+# CONFIG_ARIA2_ASYNC_DNS is not set
+# CONFIG_ARIA2_COOKIE is not set
+# CONFIG_ARIA2_METALINK is not set
 # CONFIG_PACKAGE_atftp is not set
 # CONFIG_PACKAGE_atftpd is not set
 CONFIG_PACKAGE_curl=y
@@ -5693,8 +5962,8 @@ CONFIG_PACKAGE_rsync=m
 # CONFIG_RSYNC_xattr is not set
 # CONFIG_RSYNC_acl is not set
 CONFIG_RSYNC_zlib=y
-CONFIG_PACKAGE_rsyncd=m
-CONFIG_PACKAGE_vsftpd=m
+# CONFIG_PACKAGE_rsyncd is not set
+# CONFIG_PACKAGE_vsftpd is not set
 # CONFIG_PACKAGE_vsftpd-tls is not set
 CONFIG_PACKAGE_wget=y
 CONFIG_PACKAGE_wget-nossl=m
@@ -5704,12 +5973,11 @@ CONFIG_PACKAGE_wget-nossl=m
 #
 # CONFIG_PACKAGE_davfs2 is not set
 # CONFIG_PACKAGE_netatalk is not set
-CONFIG_PACKAGE_nfs-kernel-server=m
-CONFIG_PACKAGE_nfs-kernel-server-utils=m
-CONFIG_PACKAGE_owftpd=m
-CONFIG_PACKAGE_owhttpd=m
-CONFIG_PACKAGE_owserver=m
-CONFIG_PACKAGE_sshfs=m
+# CONFIG_PACKAGE_nfs-kernel-server is not set
+# CONFIG_PACKAGE_owftpd is not set
+# CONFIG_PACKAGE_owhttpd is not set
+# CONFIG_PACKAGE_owserver is not set
+# CONFIG_PACKAGE_sshfs is not set
 
 #
 # Firewall
@@ -5719,7 +5987,7 @@ CONFIG_PACKAGE_arptables=m
 # CONFIG_PACKAGE_conntrackd is not set
 CONFIG_PACKAGE_ebtables=m
 CONFIG_PACKAGE_ebtables-utils=m
-CONFIG_PACKAGE_fwknop=m
+# CONFIG_PACKAGE_fwknop is not set
 CONFIG_PACKAGE_fwknopd=m
 
 #
@@ -5769,19 +6037,13 @@ CONFIG_PACKAGE_iptables-mod-tproxy=m
 CONFIG_PACKAGE_iptables-mod-u32=m
 CONFIG_PACKAGE_iptables-mod-ulog=m
 CONFIG_PACKAGE_iptaccount=m
-CONFIG_PACKAGE_l7-protocols=m
-# CONFIG_PACKAGE_l7-protocols-testing is not set
-CONFIG_PACKAGE_miniupnpc=m
+# CONFIG_PACKAGE_l7-protocols is not set
+# CONFIG_PACKAGE_miniupnpc is not set
 CONFIG_PACKAGE_miniupnpd=m
 CONFIG_MINIUPNPD_IGDv2=y
-CONFIG_PACKAGE_natpmpc=m
+# CONFIG_PACKAGE_natpmpc is not set
 # CONFIG_PACKAGE_nftables is not set
-CONFIG_PACKAGE_snort=m
-
-#
-# Configuration
-#
-# CONFIG_SNORT_LZMA is not set
+# CONFIG_PACKAGE_snort is not set
 
 #
 # Firewall Tunnel
@@ -5799,31 +6061,59 @@ CONFIG_PACKAGE_snort=m
 #
 # FreeRADIUS (version 3)
 #
-# CONFIG_PACKAGE_freeradius3 is not set
-# CONFIG_PACKAGE_freeradius3-common is not set
-# CONFIG_PACKAGE_freeradius3-utils is not set
+CONFIG_PACKAGE_freeradius3=m
+# CONFIG_FREERADIUS3_NOSSL is not set
+CONFIG_FREERADIUS3_OPENSSL=y
+CONFIG_PACKAGE_freeradius3-common=m
+CONFIG_PACKAGE_freeradius3-default=m
+CONFIG_PACKAGE_freeradius3-democerts=m
+CONFIG_PACKAGE_freeradius3-mod-always=m
+CONFIG_PACKAGE_freeradius3-mod-attr-filter=m
+CONFIG_PACKAGE_freeradius3-mod-chap=m
+CONFIG_PACKAGE_freeradius3-mod-detail=m
+CONFIG_PACKAGE_freeradius3-mod-digest=m
+CONFIG_PACKAGE_freeradius3-mod-eap=m
+CONFIG_PACKAGE_freeradius3-mod-eap-gtc=m
+CONFIG_PACKAGE_freeradius3-mod-eap-leap=m
+CONFIG_PACKAGE_freeradius3-mod-eap-md5=m
+CONFIG_PACKAGE_freeradius3-mod-eap-mschapv2=m
+CONFIG_PACKAGE_freeradius3-mod-eap-peap=m
+CONFIG_PACKAGE_freeradius3-mod-eap-tls=m
+CONFIG_PACKAGE_freeradius3-mod-eap-ttls=m
+CONFIG_PACKAGE_freeradius3-mod-exec=m
+CONFIG_PACKAGE_freeradius3-mod-expiration=m
+CONFIG_PACKAGE_freeradius3-mod-expr=m
+CONFIG_PACKAGE_freeradius3-mod-files=m
+CONFIG_PACKAGE_freeradius3-mod-logintime=m
+CONFIG_PACKAGE_freeradius3-mod-mschap=m
+CONFIG_PACKAGE_freeradius3-mod-pap=m
+CONFIG_PACKAGE_freeradius3-mod-passwd=m
+CONFIG_PACKAGE_freeradius3-mod-preprocess=m
+CONFIG_PACKAGE_freeradius3-mod-radutmp=m
+CONFIG_PACKAGE_freeradius3-mod-realm=m
+CONFIG_PACKAGE_freeradius3-mod-unix=m
+CONFIG_PACKAGE_freeradius3-utils=m
 
 #
 # IP Addresses and Names
 #
 # CONFIG_PACKAGE_aggregate is not set
-CONFIG_PACKAGE_announce=m
-CONFIG_PACKAGE_avahi-autoipd=m
-CONFIG_PACKAGE_avahi-daemon-service-http=y
-CONFIG_PACKAGE_avahi-daemon-service-ssh=y
+# CONFIG_PACKAGE_announce is not set
+# CONFIG_PACKAGE_avahi-autoipd is not set
+CONFIG_PACKAGE_avahi-daemon-service-http=m
+CONFIG_PACKAGE_avahi-daemon-service-ssh=m
 CONFIG_PACKAGE_avahi-dbus-daemon=m
-CONFIG_PACKAGE_avahi-dnsconfd=y
-CONFIG_PACKAGE_avahi-nodbus-daemon=y
+# CONFIG_PACKAGE_avahi-dnsconfd is not set
+# CONFIG_PACKAGE_avahi-nodbus-daemon is not set
 CONFIG_PACKAGE_avahi-utils=m
-CONFIG_PACKAGE_bind-check=m
-CONFIG_PACKAGE_bind-client=m
-CONFIG_PACKAGE_bind-dig=m
-CONFIG_PACKAGE_bind-dnssec=m
-CONFIG_PACKAGE_bind-host=m
-CONFIG_PACKAGE_bind-rndc=m
-CONFIG_PACKAGE_bind-server=m
-# CONFIG_BIND_ENABLE_FILTER_AAAA is not set
-CONFIG_PACKAGE_bind-tools=m
+# CONFIG_PACKAGE_bind-check is not set
+# CONFIG_PACKAGE_bind-client is not set
+# CONFIG_PACKAGE_bind-dig is not set
+# CONFIG_PACKAGE_bind-dnssec is not set
+# CONFIG_PACKAGE_bind-host is not set
+# CONFIG_PACKAGE_bind-rndc is not set
+# CONFIG_PACKAGE_bind-server is not set
+# CONFIG_PACKAGE_bind-tools is not set
 CONFIG_PACKAGE_ddns-scripts=m
 # CONFIG_PACKAGE_ddns-scripts_cloudflare is not set
 # CONFIG_PACKAGE_ddns-scripts_cloudflare.com-v4 is not set
@@ -5862,10 +6152,10 @@ CONFIG_PACKAGE_ddns-scripts=m
 # CONFIG_PACKAGE_nsd-nossl is not set
 # CONFIG_PACKAGE_ohybridproxy is not set
 CONFIG_PACKAGE_unbound=m
-CONFIG_PACKAGE_unbound-anchor=m
-CONFIG_PACKAGE_unbound-control=m
-CONFIG_PACKAGE_unbound-control-setup=m
-CONFIG_PACKAGE_unbound-host=m
+# CONFIG_PACKAGE_unbound-anchor is not set
+# CONFIG_PACKAGE_unbound-control is not set
+# CONFIG_PACKAGE_unbound-control-setup is not set
+# CONFIG_PACKAGE_unbound-host is not set
 # CONFIG_PACKAGE_zonestitcher is not set
 
 #
@@ -5933,9 +6223,9 @@ CONFIG_PACKAGE_nping=m
 #
 # NTRIP
 #
-CONFIG_PACKAGE_ntripcaster=m
-CONFIG_PACKAGE_ntripclient=m
-CONFIG_PACKAGE_ntripserver=m
+# CONFIG_PACKAGE_ntripcaster is not set
+# CONFIG_PACKAGE_ntripclient is not set
+# CONFIG_PACKAGE_ntripserver is not set
 
 #
 # OLSR.org network framework
@@ -5968,20 +6258,31 @@ CONFIG_PACKAGE_p910nd=m
 # Routing and Redirection
 #
 # CONFIG_PACKAGE_babel-pinger is not set
-CONFIG_PACKAGE_babeld=m
+# CONFIG_PACKAGE_babeld is not set
 # CONFIG_PACKAGE_batmand is not set
-# CONFIG_PACKAGE_bcp38 is not set
+CONFIG_PACKAGE_bcp38=m
 CONFIG_PACKAGE_bird4=m
-# CONFIG_PACKAGE_bird4-uci is not set
+CONFIG_PACKAGE_bird4-uci=m
 CONFIG_PACKAGE_bird6=m
-# CONFIG_PACKAGE_bird6-uci is not set
-CONFIG_PACKAGE_birdc4=m
-CONFIG_PACKAGE_birdc6=m
+CONFIG_PACKAGE_bird6-uci=m
+# CONFIG_PACKAGE_birdc4 is not set
+# CONFIG_PACKAGE_birdc6 is not set
 # CONFIG_PACKAGE_birdcl4 is not set
 # CONFIG_PACKAGE_birdcl6 is not set
-# CONFIG_PACKAGE_bmx6 is not set
-# CONFIG_PACKAGE_bmx7 is not set
-# CONFIG_PACKAGE_cjdns is not set
+CONFIG_PACKAGE_bmx6=m
+# CONFIG_PACKAGE_bmx6-json is not set
+# CONFIG_PACKAGE_bmx6-sms is not set
+# CONFIG_PACKAGE_bmx6-table is not set
+# CONFIG_PACKAGE_bmx6-uci-config is not set
+CONFIG_PACKAGE_bmx7=m
+# CONFIG_PACKAGE_bmx7-iwinfo is not set
+# CONFIG_PACKAGE_bmx7-json is not set
+# CONFIG_PACKAGE_bmx7-sms is not set
+# CONFIG_PACKAGE_bmx7-table is not set
+# CONFIG_PACKAGE_bmx7-topology is not set
+# CONFIG_PACKAGE_bmx7-tun is not set
+# CONFIG_PACKAGE_bmx7-uci-config is not set
+CONFIG_PACKAGE_cjdns=m
 # CONFIG_PACKAGE_cjdns-tests is not set
 CONFIG_PACKAGE_genl=m
 CONFIG_PACKAGE_igmpproxy=m
@@ -6005,14 +6306,14 @@ CONFIG_LLDPD_WITH_CUSTOM=y
 # CONFIG_LLDPD_WITH_JSON is not set
 # CONFIG_LLDPD_WITH_SNMP is not set
 # CONFIG_PACKAGE_mcproxy is not set
-# CONFIG_PACKAGE_mwan3 is not set
+CONFIG_PACKAGE_mwan3=m
 # CONFIG_PACKAGE_nstat is not set
 CONFIG_PACKAGE_olsrd=m
 # CONFIG_PACKAGE_olsrd-mod-arprefresh is not set
 # CONFIG_PACKAGE_olsrd-mod-bmf is not set
 # CONFIG_PACKAGE_olsrd-mod-dot-draw is not set
 # CONFIG_PACKAGE_olsrd-mod-dyn-gw is not set
-CONFIG_PACKAGE_olsrd-mod-dyn-gw-plain=m
+# CONFIG_PACKAGE_olsrd-mod-dyn-gw-plain is not set
 # CONFIG_PACKAGE_olsrd-mod-httpinfo is not set
 CONFIG_PACKAGE_olsrd-mod-jsoninfo=m
 # CONFIG_PACKAGE_olsrd-mod-mdns is not set
@@ -6025,13 +6326,13 @@ CONFIG_PACKAGE_olsrd-mod-nameservice=m
 # CONFIG_PACKAGE_olsrd-mod-secure is not set
 # CONFIG_PACKAGE_olsrd-mod-sgwdynspeed is not set
 CONFIG_PACKAGE_olsrd-mod-txtinfo=m
-CONFIG_PACKAGE_olsrd-mod-watchdog=m
+# CONFIG_PACKAGE_olsrd-mod-watchdog is not set
 # CONFIG_PACKAGE_prince is not set
 # CONFIG_PACKAGE_quagga is not set
 CONFIG_PACKAGE_relayd=m
-CONFIG_PACKAGE_smcroute=m
+# CONFIG_PACKAGE_smcroute is not set
 CONFIG_PACKAGE_ss=m
-CONFIG_PACKAGE_sslh=m
+# CONFIG_PACKAGE_sslh is not set
 CONFIG_PACKAGE_tc=m
 # CONFIG_PACKAGE_tcpproxy is not set
 # CONFIG_PACKAGE_vis is not set
@@ -6039,7 +6340,7 @@ CONFIG_PACKAGE_tc=m
 #
 # SSH
 #
-# CONFIG_PACKAGE_autossh is not set
+CONFIG_PACKAGE_autossh=m
 CONFIG_PACKAGE_corkscrew=m
 CONFIG_PACKAGE_openssh-client=m
 CONFIG_PACKAGE_openssh-client-utils=m
@@ -6047,9 +6348,9 @@ CONFIG_PACKAGE_openssh-keygen=m
 CONFIG_PACKAGE_openssh-moduli=m
 CONFIG_PACKAGE_openssh-server=m
 # CONFIG_PACKAGE_openssh-server-pam is not set
-# CONFIG_PACKAGE_openssh-sftp-avahi-service is not set
+CONFIG_PACKAGE_openssh-sftp-avahi-service=m
 CONFIG_PACKAGE_openssh-sftp-client=m
-CONFIG_PACKAGE_openssh-sftp-server=y
+CONFIG_PACKAGE_openssh-sftp-server=m
 CONFIG_PACKAGE_sshtunnel=m
 
 #
@@ -6141,17 +6442,19 @@ CONFIG_PACKAGE_ntpdate=m
 #
 # CONFIG_PACKAGE_chaosvpn is not set
 # CONFIG_PACKAGE_fastd is not set
-CONFIG_PACKAGE_ipsec-tools=m
-# CONFIG_PACKAGE_ocserv is not set
-CONFIG_PACKAGE_openconnect=m
+# CONFIG_PACKAGE_ipsec-tools is not set
+CONFIG_PACKAGE_ocserv=m
 
 #
 # Configuration
 #
-CONFIG_OPENCONNECT_GNUTLS=y
-# CONFIG_OPENCONNECT_OPENSSL is not set
-# CONFIG_OPENCONNECT_STOKEN is not set
-CONFIG_PACKAGE_opennhrp=m
+# CONFIG_OCSERV_PAM is not set
+# CONFIG_OCSERV_SECCOMP is not set
+# CONFIG_OCSERV_RADIUS is not set
+CONFIG_OCSERV_PROTOBUF=y
+CONFIG_OCSERV_HTTP_PARSER=y
+# CONFIG_PACKAGE_openconnect is not set
+# CONFIG_PACKAGE_opennhrp is not set
 CONFIG_PACKAGE_openvpn-easy-rsa=m
 # CONFIG_PACKAGE_openvpn-mbedtls is not set
 CONFIG_PACKAGE_openvpn-nossl=m
@@ -6186,108 +6489,96 @@ CONFIG_OPENVPN_openssl_ENABLE_SMALL=y
 # CONFIG_PACKAGE_pptpd is not set
 # CONFIG_PACKAGE_softethervpn is not set
 # CONFIG_PACKAGE_sstp-client is not set
-CONFIG_PACKAGE_strongswan=m
-
-#
-# Configuration
-#
-CONFIG_STRONGSWAN_ROUTING_TABLE="220"
-CONFIG_STRONGSWAN_ROUTING_TABLE_PRIO="220"
-CONFIG_PACKAGE_strongswan-charon=m
-CONFIG_PACKAGE_strongswan-default=m
+# CONFIG_PACKAGE_strongswan is not set
+# CONFIG_PACKAGE_strongswan-charon is not set
+# CONFIG_PACKAGE_strongswan-default is not set
 # CONFIG_PACKAGE_strongswan-full is not set
 # CONFIG_PACKAGE_strongswan-isakmp is not set
 # CONFIG_PACKAGE_strongswan-libtls is not set
-CONFIG_PACKAGE_strongswan-minimal=m
-CONFIG_PACKAGE_strongswan-mod-addrblock=m
-CONFIG_PACKAGE_strongswan-mod-aes=m
-CONFIG_PACKAGE_strongswan-mod-af-alg=m
-CONFIG_PACKAGE_strongswan-mod-agent=m
-CONFIG_PACKAGE_strongswan-mod-attr=m
-CONFIG_PACKAGE_strongswan-mod-attr-sql=m
-CONFIG_PACKAGE_strongswan-mod-blowfish=m
-CONFIG_PACKAGE_strongswan-mod-ccm=m
-CONFIG_PACKAGE_strongswan-mod-cmac=m
-CONFIG_PACKAGE_strongswan-mod-connmark=m
-CONFIG_PACKAGE_strongswan-mod-constraints=m
-CONFIG_PACKAGE_strongswan-mod-coupling=m
-CONFIG_PACKAGE_strongswan-mod-ctr=m
-CONFIG_PACKAGE_strongswan-mod-curl=m
-CONFIG_PACKAGE_strongswan-mod-des=m
-CONFIG_PACKAGE_strongswan-mod-dhcp=m
-CONFIG_PACKAGE_strongswan-mod-dnskey=m
-CONFIG_PACKAGE_strongswan-mod-duplicheck=m
-CONFIG_PACKAGE_strongswan-mod-eap-identity=m
-CONFIG_PACKAGE_strongswan-mod-eap-md5=m
-CONFIG_PACKAGE_strongswan-mod-eap-mschapv2=m
+# CONFIG_PACKAGE_strongswan-minimal is not set
+# CONFIG_PACKAGE_strongswan-mod-addrblock is not set
+# CONFIG_PACKAGE_strongswan-mod-aes is not set
+# CONFIG_PACKAGE_strongswan-mod-af-alg is not set
+# CONFIG_PACKAGE_strongswan-mod-agent is not set
+# CONFIG_PACKAGE_strongswan-mod-attr is not set
+# CONFIG_PACKAGE_strongswan-mod-attr-sql is not set
+# CONFIG_PACKAGE_strongswan-mod-blowfish is not set
+# CONFIG_PACKAGE_strongswan-mod-ccm is not set
+# CONFIG_PACKAGE_strongswan-mod-cmac is not set
+# CONFIG_PACKAGE_strongswan-mod-connmark is not set
+# CONFIG_PACKAGE_strongswan-mod-constraints is not set
+# CONFIG_PACKAGE_strongswan-mod-coupling is not set
+# CONFIG_PACKAGE_strongswan-mod-ctr is not set
+# CONFIG_PACKAGE_strongswan-mod-curl is not set
+# CONFIG_PACKAGE_strongswan-mod-des is not set
+# CONFIG_PACKAGE_strongswan-mod-dhcp is not set
+# CONFIG_PACKAGE_strongswan-mod-dnskey is not set
+# CONFIG_PACKAGE_strongswan-mod-duplicheck is not set
+# CONFIG_PACKAGE_strongswan-mod-eap-identity is not set
+# CONFIG_PACKAGE_strongswan-mod-eap-md5 is not set
+# CONFIG_PACKAGE_strongswan-mod-eap-mschapv2 is not set
 # CONFIG_PACKAGE_strongswan-mod-eap-radius is not set
 # CONFIG_PACKAGE_strongswan-mod-eap-tls is not set
-CONFIG_PACKAGE_strongswan-mod-farp=m
-CONFIG_PACKAGE_strongswan-mod-fips-prf=m
+# CONFIG_PACKAGE_strongswan-mod-farp is not set
+# CONFIG_PACKAGE_strongswan-mod-fips-prf is not set
 # CONFIG_PACKAGE_strongswan-mod-forecast is not set
-CONFIG_PACKAGE_strongswan-mod-gcm=m
-CONFIG_PACKAGE_strongswan-mod-gcrypt=m
-CONFIG_PACKAGE_strongswan-mod-gmp=m
+# CONFIG_PACKAGE_strongswan-mod-gcm is not set
+# CONFIG_PACKAGE_strongswan-mod-gcrypt is not set
+# CONFIG_PACKAGE_strongswan-mod-gmp is not set
 # CONFIG_PACKAGE_strongswan-mod-gmpdh is not set
-CONFIG_PACKAGE_strongswan-mod-ha=m
-CONFIG_PACKAGE_strongswan-mod-hmac=m
+# CONFIG_PACKAGE_strongswan-mod-ha is not set
+# CONFIG_PACKAGE_strongswan-mod-hmac is not set
 # CONFIG_PACKAGE_strongswan-mod-kernel-libipsec is not set
-CONFIG_PACKAGE_strongswan-mod-kernel-netlink=m
-CONFIG_PACKAGE_strongswan-mod-ldap=m
-CONFIG_PACKAGE_strongswan-mod-led=m
-CONFIG_PACKAGE_strongswan-mod-load-tester=m
-CONFIG_PACKAGE_strongswan-mod-md4=m
-CONFIG_PACKAGE_strongswan-mod-md5=m
-CONFIG_PACKAGE_strongswan-mod-mysql=m
-CONFIG_PACKAGE_strongswan-mod-nonce=m
-CONFIG_PACKAGE_strongswan-mod-openssl=m
-CONFIG_PACKAGE_strongswan-mod-pem=m
-CONFIG_PACKAGE_strongswan-mod-pgp=m
-CONFIG_PACKAGE_strongswan-mod-pkcs1=m
-CONFIG_PACKAGE_strongswan-mod-pkcs11=m
+# CONFIG_PACKAGE_strongswan-mod-kernel-netlink is not set
+# CONFIG_PACKAGE_strongswan-mod-ldap is not set
+# CONFIG_PACKAGE_strongswan-mod-led is not set
+# CONFIG_PACKAGE_strongswan-mod-load-tester is not set
+# CONFIG_PACKAGE_strongswan-mod-md4 is not set
+# CONFIG_PACKAGE_strongswan-mod-md5 is not set
+# CONFIG_PACKAGE_strongswan-mod-mysql is not set
+# CONFIG_PACKAGE_strongswan-mod-nonce is not set
+# CONFIG_PACKAGE_strongswan-mod-openssl is not set
+# CONFIG_PACKAGE_strongswan-mod-pem is not set
+# CONFIG_PACKAGE_strongswan-mod-pgp is not set
+# CONFIG_PACKAGE_strongswan-mod-pkcs1 is not set
+# CONFIG_PACKAGE_strongswan-mod-pkcs11 is not set
 # CONFIG_PACKAGE_strongswan-mod-pkcs12 is not set
 # CONFIG_PACKAGE_strongswan-mod-pkcs7 is not set
-CONFIG_PACKAGE_strongswan-mod-pkcs8=m
-CONFIG_PACKAGE_strongswan-mod-pubkey=m
-CONFIG_PACKAGE_strongswan-mod-random=m
-CONFIG_PACKAGE_strongswan-mod-rc2=m
-CONFIG_PACKAGE_strongswan-mod-resolve=m
-CONFIG_PACKAGE_strongswan-mod-revocation=m
-CONFIG_PACKAGE_strongswan-mod-sha1=m
-CONFIG_PACKAGE_strongswan-mod-sha2=m
-CONFIG_PACKAGE_strongswan-mod-smp=m
-CONFIG_PACKAGE_strongswan-mod-socket-default=m
-CONFIG_PACKAGE_strongswan-mod-socket-dynamic=m
-CONFIG_PACKAGE_strongswan-mod-sql=m
-CONFIG_PACKAGE_strongswan-mod-sqlite=m
-CONFIG_PACKAGE_strongswan-mod-sshkey=m
-CONFIG_PACKAGE_strongswan-mod-stroke=m
-CONFIG_PACKAGE_strongswan-mod-test-vectors=m
-CONFIG_PACKAGE_strongswan-mod-uci=m
+# CONFIG_PACKAGE_strongswan-mod-pkcs8 is not set
+# CONFIG_PACKAGE_strongswan-mod-pubkey is not set
+# CONFIG_PACKAGE_strongswan-mod-random is not set
+# CONFIG_PACKAGE_strongswan-mod-rc2 is not set
+# CONFIG_PACKAGE_strongswan-mod-resolve is not set
+# CONFIG_PACKAGE_strongswan-mod-revocation is not set
+# CONFIG_PACKAGE_strongswan-mod-sha1 is not set
+# CONFIG_PACKAGE_strongswan-mod-sha2 is not set
+# CONFIG_PACKAGE_strongswan-mod-smp is not set
+# CONFIG_PACKAGE_strongswan-mod-socket-default is not set
+# CONFIG_PACKAGE_strongswan-mod-socket-dynamic is not set
+# CONFIG_PACKAGE_strongswan-mod-sql is not set
+# CONFIG_PACKAGE_strongswan-mod-sqlite is not set
+# CONFIG_PACKAGE_strongswan-mod-sshkey is not set
+# CONFIG_PACKAGE_strongswan-mod-stroke is not set
+# CONFIG_PACKAGE_strongswan-mod-test-vectors is not set
+# CONFIG_PACKAGE_strongswan-mod-uci is not set
 # CONFIG_PACKAGE_strongswan-mod-unity is not set
-CONFIG_PACKAGE_strongswan-mod-updown=m
-CONFIG_PACKAGE_strongswan-mod-whitelist=m
-CONFIG_PACKAGE_strongswan-mod-x509=m
-CONFIG_PACKAGE_strongswan-mod-xauth-eap=m
-CONFIG_PACKAGE_strongswan-mod-xauth-generic=m
-CONFIG_PACKAGE_strongswan-mod-xcbc=m
-CONFIG_PACKAGE_strongswan-utils=m
-CONFIG_PACKAGE_tinc=m
-CONFIG_PACKAGE_uanytun=m
+# CONFIG_PACKAGE_strongswan-mod-updown is not set
+# CONFIG_PACKAGE_strongswan-mod-whitelist is not set
+# CONFIG_PACKAGE_strongswan-mod-x509 is not set
+# CONFIG_PACKAGE_strongswan-mod-xauth-eap is not set
+# CONFIG_PACKAGE_strongswan-mod-xauth-generic is not set
+# CONFIG_PACKAGE_strongswan-mod-xcbc is not set
+# CONFIG_PACKAGE_strongswan-utils is not set
+# CONFIG_PACKAGE_tinc is not set
+# CONFIG_PACKAGE_uanytun is not set
 # CONFIG_PACKAGE_uanytun-nettle is not set
-CONFIG_PACKAGE_uanytun-nocrypt=m
-CONFIG_PACKAGE_uanytun-sslcrypt=m
-CONFIG_PACKAGE_vpnc=m
-
-#
-# Configuration
-#
-CONFIG_VPNC_GNUTLS=y
-# CONFIG_VPNC_OPENSSL is not set
-CONFIG_PACKAGE_vpnc-scripts=m
+# CONFIG_PACKAGE_uanytun-nocrypt is not set
+# CONFIG_PACKAGE_uanytun-sslcrypt is not set
+# CONFIG_PACKAGE_vpnc is not set
+# CONFIG_PACKAGE_vpnc-scripts is not set
 # CONFIG_PACKAGE_wireguard is not set
-# CONFIG_PACKAGE_wireguard-tools is not set
-CONFIG_PACKAGE_xl2tpd=m
+CONFIG_PACKAGE_wireguard-tools=m
+# CONFIG_PACKAGE_xl2tpd is not set
 # CONFIG_PACKAGE_zerotier is not set
 
 #
@@ -6295,12 +6586,12 @@ CONFIG_PACKAGE_xl2tpd=m
 #
 # CONFIG_PACKAGE_fossil is not set
 CONFIG_PACKAGE_git=m
-# CONFIG_PACKAGE_git-gitweb is not set
+CONFIG_PACKAGE_git-gitweb=m
 CONFIG_PACKAGE_git-http=m
 # CONFIG_PACKAGE_gitolite is not set
-# CONFIG_PACKAGE_subversion-client is not set
-# CONFIG_PACKAGE_subversion-libs is not set
-# CONFIG_PACKAGE_subversion-server is not set
+CONFIG_PACKAGE_subversion-client=m
+CONFIG_PACKAGE_subversion-libs=m
+CONFIG_PACKAGE_subversion-server=m
 
 #
 # WWAN
@@ -6314,11 +6605,11 @@ CONFIG_PACKAGE_comgt=m
 # Web Servers/Proxies
 #
 CONFIG_PACKAGE_apache=m
-# CONFIG_PACKAGE_apache-icons is not set
+CONFIG_PACKAGE_apache-icons=m
 # CONFIG_PACKAGE_cgi-io is not set
-# CONFIG_PACKAGE_clamav is not set
+CONFIG_PACKAGE_clamav=m
 # CONFIG_PACKAGE_dansguardian is not set
-# CONFIG_PACKAGE_e2guardian is not set
+CONFIG_PACKAGE_e2guardian=m
 # CONFIG_PACKAGE_freshclam is not set
 # CONFIG_PACKAGE_haproxy is not set
 # CONFIG_PACKAGE_haproxy-nossl is not set
@@ -6326,14 +6617,42 @@ CONFIG_PACKAGE_apache=m
 CONFIG_PACKAGE_monkey=m
 # CONFIG_PACKAGE_nginx is not set
 CONFIG_PACKAGE_polipo=m
-# CONFIG_PACKAGE_privoxy is not set
+CONFIG_PACKAGE_privoxy=m
+
+#
+# Shared libraries settings
+#
+# CONFIG_PRIVOXY_disable-pthread is not set
+# CONFIG_PRIVOXY_disable-dynamic-pcre is not set
+# CONFIG_PRIVOXY_disable-zlib is not set
+
+#
+# Config options. Overwrites/ignore configuration file settings
+#
+# CONFIG_PRIVOXY_disable-toggle is not set
+# CONFIG_PRIVOXY_disable-force is not set
+# CONFIG_PRIVOXY_disable-fast-redirects is not set
+# CONFIG_PRIVOXY_disable-stats is not set
+# CONFIG_PRIVOXY_enable-ie-images is not set
+# CONFIG_PRIVOXY_disable-image-blocking is not set
+# CONFIG_PRIVOXY_disable-acl-support is not set
+# CONFIG_PRIVOXY_disable-trust-files is not set
+# CONFIG_PRIVOXY_disable-editor is not set
+# CONFIG_PRIVOXY_enable-no-gifs is not set
+# CONFIG_PRIVOXY_enable-graceful-termination is not set
+# CONFIG_PRIVOXY_enable-extended-host-patterns is not set
+# CONFIG_PRIVOXY_enable-external-filters is not set
+# CONFIG_PRIVOXY_enable-accept-filter is not set
+# CONFIG_PRIVOXY_enable-strptime-sanity-checks is not set
+# CONFIG_PRIVOXY_enable-compression is not set
 # CONFIG_PACKAGE_radicale-py2 is not set
 # CONFIG_PACKAGE_radicale-py3 is not set
 # CONFIG_PACKAGE_shadowsocks-client is not set
 # CONFIG_PACKAGE_sockd is not set
 # CONFIG_PACKAGE_socksify is not set
 # CONFIG_PACKAGE_spawn-fcgi is not set
-# CONFIG_PACKAGE_squid is not set
+CONFIG_PACKAGE_squid=m
+# CONFIG_PACKAGE_squid-mod-cachemgr is not set
 CONFIG_PACKAGE_tinyproxy=m
 CONFIG_PACKAGE_uhttpd=y
 # CONFIG_PACKAGE_uhttpd_debug is not set
@@ -6343,9 +6662,9 @@ CONFIG_PACKAGE_uhttpd-mod-ubus=y
 #
 # dial-in/up
 #
-# CONFIG_PACKAGE_rp-pppoe-common is not set
+CONFIG_PACKAGE_rp-pppoe-common=m
 # CONFIG_PACKAGE_rp-pppoe-relay is not set
-# CONFIG_PACKAGE_rp-pppoe-server is not set
+CONFIG_PACKAGE_rp-pppoe-server=m
 
 #
 # tcprelay
@@ -6364,20 +6683,20 @@ CONFIG_PACKAGE_uhttpd-mod-ubus=y
 #
 CONFIG_PACKAGE_aircrack-ng=m
 # CONFIG_PACKAGE_airmon-ng is not set
-# CONFIG_PACKAGE_dynapoint is not set
-CONFIG_PACKAGE_horst=m
+CONFIG_PACKAGE_dynapoint=m
+# CONFIG_PACKAGE_horst is not set
 # CONFIG_PACKAGE_kismet-client is not set
 # CONFIG_PACKAGE_kismet-drone is not set
 # CONFIG_PACKAGE_kismet-server is not set
 # CONFIG_PACKAGE_reaver is not set
 # CONFIG_PACKAGE_wavemon is not set
-# CONFIG_PACKAGE_wifischedule is not set
+CONFIG_PACKAGE_wifischedule=m
 # CONFIG_PACKAGE_464xlat is not set
 CONFIG_PACKAGE_6in4=m
 CONFIG_PACKAGE_6rd=m
 CONFIG_PACKAGE_6to4=m
 # CONFIG_PACKAGE_acme is not set
-# CONFIG_PACKAGE_adblock is not set
+CONFIG_PACKAGE_adblock=m
 # CONFIG_PACKAGE_addrwatch is not set
 CONFIG_PACKAGE_ahcpd=m
 # CONFIG_PACKAGE_aiccu is not set
@@ -6389,32 +6708,27 @@ CONFIG_PACKAGE_ajtcl-samples=m
 CONFIG_PACKAGE_ajtcl-services=m
 # CONFIG_PACKAGE_alfred is not set
 # CONFIG_PACKAGE_alljoyn is not set
-CONFIG_PACKAGE_apcupsd=m
+# CONFIG_PACKAGE_apcupsd is not set
 # CONFIG_PACKAGE_apcupsd-cgi is not set
 # CONFIG_PACKAGE_apinger is not set
 # CONFIG_PACKAGE_arp-scan is not set
 # CONFIG_PACKAGE_authsae is not set
 # CONFIG_PACKAGE_batctl is not set
-CONFIG_PACKAGE_bmon=m
+# CONFIG_PACKAGE_bmon is not set
 # CONFIG_PACKAGE_bwm-ng is not set
 CONFIG_PACKAGE_chat=m
 # CONFIG_PACKAGE_cifsmount is not set
-# CONFIG_PACKAGE_cshark is not set
+CONFIG_PACKAGE_cshark=m
 # CONFIG_PACKAGE_daemonlogger is not set
 # CONFIG_PACKAGE_darkstat is not set
-CONFIG_PACKAGE_dhcpcd=m
+# CONFIG_PACKAGE_dhcpcd is not set
 # CONFIG_PACKAGE_dmapd is not set
 CONFIG_PACKAGE_ds-lite=m
 # CONFIG_PACKAGE_eapol-test is not set
 # CONFIG_PACKAGE_esniper is not set
 CONFIG_PACKAGE_etherwake=m
-CONFIG_PACKAGE_ethtool=m
-
-#
-# Configuration
-#
-# CONFIG_ETHTOOL_PRETTY_DUMP is not set
-CONFIG_PACKAGE_fakeidentd=m
+# CONFIG_PACKAGE_ethtool is not set
+# CONFIG_PACKAGE_fakeidentd is not set
 # CONFIG_PACKAGE_fping is not set
 # CONFIG_PACKAGE_gnunet is not set
 # CONFIG_PACKAGE_gre is not set
@@ -6479,20 +6793,20 @@ CONFIG_PACKAGE_lowpan-tools=m
 # CONFIG_PACKAGE_mii-tool is not set
 # CONFIG_PACKAGE_mini_snmpd is not set
 # CONFIG_PACKAGE_minimalist-pcproxy is not set
-CONFIG_PACKAGE_mosquitto-client=m
+# CONFIG_PACKAGE_mosquitto-client is not set
 # CONFIG_PACKAGE_mosquitto-client-nossl is not set
 # CONFIG_PACKAGE_mosquitto-nossl is not set
 # CONFIG_PACKAGE_mosquitto-ssl is not set
-CONFIG_PACKAGE_mrd6=m
-CONFIG_PACKAGE_mtr=m
+# CONFIG_PACKAGE_mrd6 is not set
+# CONFIG_PACKAGE_mtr is not set
 # CONFIG_PACKAGE_nbd is not set
 # CONFIG_PACKAGE_nbd-server is not set
 # CONFIG_PACKAGE_ncp is not set
 # CONFIG_PACKAGE_ndppd is not set
-CONFIG_PACKAGE_netcat=m
+# CONFIG_PACKAGE_netcat is not set
 # CONFIG_PACKAGE_netdiscover is not set
 # CONFIG_PACKAGE_netperf is not set
-CONFIG_PACKAGE_noping=m
+# CONFIG_PACKAGE_noping is not set
 # CONFIG_PACKAGE_nut is not set
 # CONFIG_PACKAGE_obfsproxy is not set
 CONFIG_PACKAGE_odhcp6c=m
@@ -6502,12 +6816,12 @@ CONFIG_PACKAGE_odhcpd_ext_cer_id=0
 # CONFIG_PACKAGE_ola is not set
 # CONFIG_PACKAGE_omcproxy is not set
 # CONFIG_PACKAGE_openldap-server is not set
-CONFIG_PACKAGE_oping=m
+# CONFIG_PACKAGE_oping is not set
 # CONFIG_PACKAGE_pen is not set
 # CONFIG_PACKAGE_pimbd is not set
 # CONFIG_PACKAGE_pingcheck is not set
 # CONFIG_PACKAGE_port-mirroring is not set
-CONFIG_PACKAGE_portmap=m
+# CONFIG_PACKAGE_portmap is not set
 CONFIG_PACKAGE_ppp=y
 # CONFIG_PACKAGE_ppp-mod-passwordfd is not set
 CONFIG_PACKAGE_ppp-mod-pppoa=m
@@ -6538,48 +6852,36 @@ CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL=-1
 # CONFIG_PACKAGE_seafile-ccnet is not set
 # CONFIG_PACKAGE_seafile-seahub is not set
 # CONFIG_PACKAGE_seafile-server is not set
-CONFIG_PACKAGE_ser2net=m
+# CONFIG_PACKAGE_ser2net is not set
 # CONFIG_PACKAGE_shadowsocks-libev is not set
 # CONFIG_PACKAGE_shadowsocks-libev-mbedtls is not set
 CONFIG_PACKAGE_shellinabox=y
-# CONFIG_PACKAGE_simple-adblock is not set
+CONFIG_PACKAGE_simple-adblock=m
 # CONFIG_PACKAGE_sipgrep is not set
 # CONFIG_PACKAGE_smartsnmpd is not set
 # CONFIG_PACKAGE_sngrep is not set
 # CONFIG_PACKAGE_snmp-mibs is not set
-CONFIG_PACKAGE_snmp-utils=m
-CONFIG_PACKAGE_snmpd=m
+# CONFIG_PACKAGE_snmp-utils is not set
+# CONFIG_PACKAGE_snmpd is not set
 # CONFIG_PACKAGE_snmpd-static is not set
 # CONFIG_PACKAGE_socat is not set
-CONFIG_PACKAGE_softflowd=m
+# CONFIG_PACKAGE_softflowd is not set
 # CONFIG_PACKAGE_soloscli is not set
 CONFIG_PACKAGE_spacebrew=m
-CONFIG_PACKAGE_stunnel=m
-CONFIG_PACKAGE_tayga=m
+# CONFIG_PACKAGE_stunnel is not set
+# CONFIG_PACKAGE_tayga is not set
 CONFIG_PACKAGE_tcpdump=m
 CONFIG_PACKAGE_tcpdump-mini=m
 CONFIG_PACKAGE_temboo=m
 CONFIG_PACKAGE_tor=m
-# CONFIG_PACKAGE_tor-gencert is not set
+CONFIG_PACKAGE_tor-gencert=m
 CONFIG_PACKAGE_tor-geoip=m
-# CONFIG_PACKAGE_tor-resolve is not set
-# CONFIG_PACKAGE_travelmate is not set
+CONFIG_PACKAGE_tor-resolve=m
+CONFIG_PACKAGE_travelmate=m
 # CONFIG_PACKAGE_u2pnpd is not set
 CONFIG_PACKAGE_uclient-fetch=y
 CONFIG_PACKAGE_udpxy=m
-CONFIG_PACKAGE_ulogd=m
-# CONFIG_PACKAGE_ulogd-mod-dbi is not set
-# CONFIG_PACKAGE_ulogd-mod-extra is not set
-# CONFIG_PACKAGE_ulogd-mod-json is not set
-# CONFIG_PACKAGE_ulogd-mod-mysql is not set
-# CONFIG_PACKAGE_ulogd-mod-nfacct is not set
-# CONFIG_PACKAGE_ulogd-mod-nfct is not set
-# CONFIG_PACKAGE_ulogd-mod-nflog is not set
-# CONFIG_PACKAGE_ulogd-mod-pcap is not set
-# CONFIG_PACKAGE_ulogd-mod-pgsql is not set
-# CONFIG_PACKAGE_ulogd-mod-sqlite is not set
-# CONFIG_PACKAGE_ulogd-mod-syslog is not set
-# CONFIG_PACKAGE_ulogd-mod-xml is not set
+# CONFIG_PACKAGE_ulogd is not set
 # CONFIG_PACKAGE_umbim is not set
 # CONFIG_PACKAGE_umdns is not set
 # CONFIG_PACKAGE_usbip is not set
@@ -6587,7 +6889,7 @@ CONFIG_PACKAGE_ulogd=m
 # CONFIG_PACKAGE_vncrepeater is not set
 CONFIG_PACKAGE_vnstat=m
 CONFIG_PACKAGE_vnstati=m
-# CONFIG_PACKAGE_vpnbypass is not set
+CONFIG_PACKAGE_vpnbypass=m
 CONFIG_PACKAGE_vsc7385-ucode-pb44=m
 CONFIG_PACKAGE_vsc7395-ucode-pb44=m
 # CONFIG_PACKAGE_vti is not set
@@ -6612,7 +6914,7 @@ CONFIG_PACKAGE_wpad=m
 CONFIG_PACKAGE_wpad-mini=y
 # CONFIG_PACKAGE_wpan-tools is not set
 # CONFIG_PACKAGE_wwan is not set
-CONFIG_PACKAGE_xinetd=m
+# CONFIG_PACKAGE_xinetd is not set
 
 #
 # Phone
@@ -6628,35 +6930,35 @@ CONFIG_PACKAGE_xinetd=m
 CONFIG_PACKAGE_alsa-utils=m
 CONFIG_PACKAGE_alsa-utils-seq=m
 CONFIG_PACKAGE_alsa-utils-tests=m
-# CONFIG_PACKAGE_espeak is not set
+CONFIG_PACKAGE_espeak=m
 CONFIG_PACKAGE_faad2=m
-# CONFIG_PACKAGE_fdk-aac is not set
+CONFIG_PACKAGE_fdk-aac=m
 # CONFIG_PACKAGE_forked-daapd is not set
-CONFIG_PACKAGE_ices=m
+# CONFIG_PACKAGE_ices is not set
 CONFIG_PACKAGE_lame=m
 CONFIG_PACKAGE_lame-lib=m
-CONFIG_PACKAGE_liblo-utils=m
-# CONFIG_PACKAGE_madplay is not set
-# CONFIG_PACKAGE_madplay-alsa is not set
+# CONFIG_PACKAGE_liblo-utils is not set
+CONFIG_PACKAGE_madplay=m
+CONFIG_PACKAGE_madplay-alsa=m
 # CONFIG_PACKAGE_moc is not set
-CONFIG_PACKAGE_mpc=m
+# CONFIG_PACKAGE_mpc is not set
 # CONFIG_PACKAGE_mpd-avahi-service is not set
-# CONFIG_PACKAGE_mpd-full is not set
-# CONFIG_PACKAGE_mpd-mini is not set
+CONFIG_PACKAGE_mpd-full=m
+CONFIG_PACKAGE_mpd-mini=m
 # CONFIG_PACKAGE_mpg123 is not set
 # CONFIG_PACKAGE_pianod is not set
 # CONFIG_PACKAGE_pianod-client is not set
-# CONFIG_PACKAGE_portaudio is not set
+CONFIG_PACKAGE_portaudio=m
 CONFIG_PACKAGE_pulseaudio-daemon=m
-# CONFIG_PACKAGE_pulseaudio-profiles is not set
+CONFIG_PACKAGE_pulseaudio-profiles=m
 CONFIG_PACKAGE_pulseaudio-tools=m
-# CONFIG_PACKAGE_shairplay is not set
-# CONFIG_PACKAGE_shairport is not set
+CONFIG_PACKAGE_shairplay=m
+CONFIG_PACKAGE_shairport=m
 # CONFIG_PACKAGE_shairport-sync-mbedtls is not set
 # CONFIG_PACKAGE_shairport-sync-mini is not set
 # CONFIG_PACKAGE_shairport-sync-openssl is not set
 CONFIG_PACKAGE_shine=m
-# CONFIG_PACKAGE_sox is not set
+CONFIG_PACKAGE_sox=m
 # CONFIG_PACKAGE_squeezelite-full is not set
 # CONFIG_PACKAGE_squeezelite-mini is not set
 # CONFIG_PACKAGE_svox is not set
@@ -6677,9 +6979,9 @@ CONFIG_PACKAGE_uboot-envtools=y
 #
 # Compression
 #
-# CONFIG_PACKAGE_bsdtar is not set
+CONFIG_PACKAGE_bsdtar=m
 CONFIG_PACKAGE_bzip2=m
-# CONFIG_PACKAGE_gzip is not set
+CONFIG_PACKAGE_gzip=m
 # CONFIG_PACKAGE_lzmadec is not set
 # CONFIG_PACKAGE_lzmainfo is not set
 CONFIG_PACKAGE_unrar=m
@@ -6702,11 +7004,11 @@ CONFIG_PACKAGE_cfdisk=m
 # CONFIG_PACKAGE_cgdisk is not set
 CONFIG_PACKAGE_fdisk=m
 CONFIG_PACKAGE_findfs=m
-# CONFIG_PACKAGE_gdisk is not set
+CONFIG_PACKAGE_gdisk=m
 CONFIG_PACKAGE_hd-idle=m
-CONFIG_PACKAGE_hdparm=m
+# CONFIG_PACKAGE_hdparm is not set
 CONFIG_PACKAGE_lsblk=m
-CONFIG_PACKAGE_lvm2=m
+# CONFIG_PACKAGE_lvm2 is not set
 # CONFIG_PACKAGE_mdadm is not set
 CONFIG_PACKAGE_partx-utils=m
 CONFIG_PACKAGE_sfdisk=m
@@ -6720,21 +7022,21 @@ CONFIG_PACKAGE_joe=m
 CONFIG_PACKAGE_nano=m
 CONFIG_PACKAGE_vim=m
 CONFIG_PACKAGE_vim-full=m
-# CONFIG_PACKAGE_vim-fuller is not set
+CONFIG_PACKAGE_vim-fuller=m
 CONFIG_PACKAGE_vim-help=m
 CONFIG_PACKAGE_vim-runtime=m
-CONFIG_PACKAGE_zile=m
+# CONFIG_PACKAGE_zile is not set
 
 #
 # Encryption
 #
-CONFIG_PACKAGE_ccrypt=m
+# CONFIG_PACKAGE_ccrypt is not set
 CONFIG_PACKAGE_certtool=m
 # CONFIG_PACKAGE_cryptsetup is not set
 # CONFIG_PACKAGE_cryptsetup-openssl is not set
-CONFIG_PACKAGE_gnupg=y
+CONFIG_PACKAGE_gnupg=m
 # CONFIG_PACKAGE_gnupg-utils is not set
-CONFIG_PACKAGE_gnutls-utils=m
+# CONFIG_PACKAGE_gnutls-utils is not set
 # CONFIG_PACKAGE_gpgv is not set
 CONFIG_PACKAGE_px5g-mbedtls=m
 # CONFIG_PACKAGE_px5g-standalone is not set
@@ -6744,32 +7046,31 @@ CONFIG_PACKAGE_px5g-mbedtls=m
 # Filesystem
 #
 # CONFIG_PACKAGE_acl is not set
-CONFIG_PACKAGE_attr=m
+# CONFIG_PACKAGE_attr is not set
 # CONFIG_PACKAGE_badblocks is not set
-CONFIG_PACKAGE_btrfs-progs=m
+# CONFIG_PACKAGE_btrfs-progs is not set
 # CONFIG_PACKAGE_chattr is not set
 # CONFIG_PACKAGE_debugfs is not set
-# CONFIG_PACKAGE_dosfstools is not set
+CONFIG_PACKAGE_dosfstools=m
 # CONFIG_PACKAGE_dumpe2fs is not set
 # CONFIG_PACKAGE_e2freefrag is not set
 CONFIG_PACKAGE_e2fsprogs=m
-# CONFIG_PACKAGE_f2fs-tools is not set
-# CONFIG_PACKAGE_f2fsck is not set
+CONFIG_PACKAGE_f2fs-tools=m
+CONFIG_PACKAGE_f2fsck=m
 # CONFIG_PACKAGE_filefrag is not set
 CONFIG_PACKAGE_fuse-utils=m
 # CONFIG_PACKAGE_hfsfsck is not set
 # CONFIG_PACKAGE_lsattr is not set
-# CONFIG_PACKAGE_mkf2fs is not set
+CONFIG_PACKAGE_mkf2fs=m
 # CONFIG_PACKAGE_mkhfs is not set
 # CONFIG_PACKAGE_ncdu is not set
-CONFIG_PACKAGE_nfs-utils=m
-CONFIG_PACKAGE_ntfs-3g=m
-# CONFIG_PACKAGE_NTFS-3G_USE_LIBFUSE is not set
-CONFIG_PACKAGE_ntfs-3g-low=m
-CONFIG_PACKAGE_ntfs-3g-utils=m
-CONFIG_PACKAGE_ntfsprogs_ntfs-3g=m
-CONFIG_PACKAGE_owfs=m
-CONFIG_PACKAGE_owshell=m
+# CONFIG_PACKAGE_nfs-utils is not set
+# CONFIG_PACKAGE_ntfs-3g is not set
+# CONFIG_PACKAGE_ntfs-3g-low is not set
+# CONFIG_PACKAGE_ntfs-3g-utils is not set
+# CONFIG_PACKAGE_ntfsprogs_ntfs-3g is not set
+# CONFIG_PACKAGE_owfs is not set
+# CONFIG_PACKAGE_owshell is not set
 CONFIG_PACKAGE_resize2fs=m
 # CONFIG_PACKAGE_squashfs-tools-mksquashfs is not set
 # CONFIG_PACKAGE_squashfs-tools-unsquashfs is not set
@@ -6783,7 +7084,7 @@ CONFIG_PACKAGE_xfs-mkfs=m
 #
 # Image Manipulation
 #
-CONFIG_PACKAGE_jpeg-tools=m
+# CONFIG_PACKAGE_jpeg-tools is not set
 # CONFIG_PACKAGE_tiff-utils is not set
 
 #
@@ -6804,7 +7105,7 @@ CONFIG_PACKAGE_jpeg-tools=m
 #
 # Shells
 #
-CONFIG_PACKAGE_bash=m
+# CONFIG_PACKAGE_bash is not set
 # CONFIG_PACKAGE_klish is not set
 # CONFIG_PACKAGE_tcsh is not set
 # CONFIG_PACKAGE_zsh is not set
@@ -6826,7 +7127,7 @@ CONFIG_PACKAGE_screen=m
 CONFIG_PACKAGE_script-utils=m
 # CONFIG_PACKAGE_serialconsole is not set
 CONFIG_PACKAGE_setterm=m
-CONFIG_PACKAGE_tmux=m
+# CONFIG_PACKAGE_tmux is not set
 # CONFIG_PACKAGE_ttyd is not set
 CONFIG_PACKAGE_wall=m
 
@@ -6837,30 +7138,30 @@ CONFIG_PACKAGE_wall=m
 #
 # Zoneinfo
 #
-CONFIG_PACKAGE_zoneinfo-africa=m
-CONFIG_PACKAGE_zoneinfo-asia=m
-CONFIG_PACKAGE_zoneinfo-atlantic=m
-CONFIG_PACKAGE_zoneinfo-australia-nz=m
+# CONFIG_PACKAGE_zoneinfo-africa is not set
+# CONFIG_PACKAGE_zoneinfo-asia is not set
+# CONFIG_PACKAGE_zoneinfo-atlantic is not set
+# CONFIG_PACKAGE_zoneinfo-australia-nz is not set
 CONFIG_PACKAGE_zoneinfo-core=m
-CONFIG_PACKAGE_zoneinfo-europe=m
-CONFIG_PACKAGE_zoneinfo-india=m
-CONFIG_PACKAGE_zoneinfo-northamerica=m
-CONFIG_PACKAGE_zoneinfo-pacific=m
-CONFIG_PACKAGE_zoneinfo-poles=m
-CONFIG_PACKAGE_zoneinfo-simple=m
-CONFIG_PACKAGE_zoneinfo-southamerica=m
+# CONFIG_PACKAGE_zoneinfo-europe is not set
+# CONFIG_PACKAGE_zoneinfo-india is not set
+# CONFIG_PACKAGE_zoneinfo-northamerica is not set
+# CONFIG_PACKAGE_zoneinfo-pacific is not set
+# CONFIG_PACKAGE_zoneinfo-poles is not set
+# CONFIG_PACKAGE_zoneinfo-simple is not set
+# CONFIG_PACKAGE_zoneinfo-southamerica is not set
 
 #
 # database
 #
-CONFIG_PACKAGE_mysql-server=m
+# CONFIG_PACKAGE_mysql-server is not set
 # CONFIG_PACKAGE_pgsql-cli is not set
 # CONFIG_PACKAGE_pgsql-cli-extra is not set
 # CONFIG_PACKAGE_pgsql-server is not set
 # CONFIG_PACKAGE_rrdcgi1 is not set
-# CONFIG_PACKAGE_rrdtool1 is not set
-CONFIG_PACKAGE_sqlite3-cli=m
-CONFIG_PACKAGE_unixodbc-tools=m
+CONFIG_PACKAGE_rrdtool1=m
+# CONFIG_PACKAGE_sqlite3-cli is not set
+# CONFIG_PACKAGE_unixodbc-tools is not set
 # CONFIG_PACKAGE_adb is not set
 # CONFIG_PACKAGE_ap51-flash is not set
 # CONFIG_PACKAGE_at is not set
@@ -6870,7 +7171,7 @@ CONFIG_PACKAGE_avrdude=y
 # CONFIG_PACKAGE_bandwidthd-php is not set
 # CONFIG_PACKAGE_bandwidthd-sqlite is not set
 # CONFIG_PACKAGE_banhostlist is not set
-# CONFIG_PACKAGE_bc is not set
+CONFIG_PACKAGE_bc=m
 # CONFIG_PACKAGE_bluelog is not set
 CONFIG_PACKAGE_bluez-6lowpan-daemon=m
 CONFIG_PACKAGE_bluez-daemon=m
@@ -6881,7 +7182,7 @@ CONFIG_PACKAGE_bluez-utils=m
 # CONFIG_PACKAGE_bspatch is not set
 CONFIG_PACKAGE_cal=m
 # CONFIG_PACKAGE_canutils is not set
-CONFIG_PACKAGE_cmdpad=m
+# CONFIG_PACKAGE_cmdpad is not set
 CONFIG_PACKAGE_collectd=m
 # CONFIG_PACKAGE_collectd-mod-apache is not set
 # CONFIG_PACKAGE_collectd-mod-apcups is not set
@@ -6890,7 +7191,7 @@ CONFIG_PACKAGE_collectd=m
 # CONFIG_PACKAGE_collectd-mod-chrony is not set
 # CONFIG_PACKAGE_collectd-mod-conntrack is not set
 # CONFIG_PACKAGE_collectd-mod-contextswitch is not set
-# CONFIG_PACKAGE_collectd-mod-cpu is not set
+CONFIG_PACKAGE_collectd-mod-cpu=m
 # CONFIG_PACKAGE_collectd-mod-csv is not set
 # CONFIG_PACKAGE_collectd-mod-curl is not set
 # CONFIG_PACKAGE_collectd-mod-df is not set
@@ -6912,7 +7213,7 @@ CONFIG_PACKAGE_collectd-mod-load=m
 # CONFIG_PACKAGE_collectd-mod-match-regex is not set
 # CONFIG_PACKAGE_collectd-mod-match-timediff is not set
 # CONFIG_PACKAGE_collectd-mod-match-value is not set
-# CONFIG_PACKAGE_collectd-mod-memory is not set
+CONFIG_PACKAGE_collectd-mod-memory=m
 # CONFIG_PACKAGE_collectd-mod-modbus is not set
 # CONFIG_PACKAGE_collectd-mod-netlink is not set
 CONFIG_PACKAGE_collectd-mod-network=m
@@ -6943,7 +7244,7 @@ CONFIG_PACKAGE_collectd-mod-rrdtool=m
 # CONFIG_PACKAGE_collectd-mod-wireless is not set
 # CONFIG_PACKAGE_collectd-mod-write-graphite is not set
 # CONFIG_PACKAGE_collectd-mod-write-http is not set
-CONFIG_PACKAGE_coreutils=y
+CONFIG_PACKAGE_coreutils=m
 CONFIG_PACKAGE_coreutils-base64=m
 CONFIG_PACKAGE_coreutils-basename=m
 CONFIG_PACKAGE_coreutils-cat=m
@@ -7019,7 +7320,7 @@ CONFIG_PACKAGE_coreutils-sort=m
 CONFIG_PACKAGE_coreutils-split=m
 CONFIG_PACKAGE_coreutils-stat=m
 CONFIG_PACKAGE_coreutils-stdbuf=m
-CONFIG_PACKAGE_coreutils-stty=y
+CONFIG_PACKAGE_coreutils-stty=m
 CONFIG_PACKAGE_coreutils-sum=m
 CONFIG_PACKAGE_coreutils-sync=m
 CONFIG_PACKAGE_coreutils-tac=m
@@ -7032,7 +7333,7 @@ CONFIG_PACKAGE_coreutils-tr=m
 CONFIG_PACKAGE_coreutils-true=m
 CONFIG_PACKAGE_coreutils-truncate=m
 CONFIG_PACKAGE_coreutils-tsort=m
-CONFIG_PACKAGE_coreutils-tty=y
+CONFIG_PACKAGE_coreutils-tty=m
 CONFIG_PACKAGE_coreutils-uname=m
 CONFIG_PACKAGE_coreutils-unexpand=m
 CONFIG_PACKAGE_coreutils-uniq=m
@@ -7048,15 +7349,16 @@ CONFIG_PACKAGE_cpu-mcu-bridge=y
 # CONFIG_PACKAGE_crelay is not set
 # CONFIG_PACKAGE_ct-bugcheck is not set
 CONFIG_PACKAGE_curaengine=m
-CONFIG_PACKAGE_dbus=y
-# CONFIG_PACKAGE_dbus-launch-x is not set
+CONFIG_PACKAGE_dbus=m
+CONFIG_PACKAGE_dbus-launch-x=m
 CONFIG_PACKAGE_dbus-utils=m
-# CONFIG_PACKAGE_dfu-util is not set
+CONFIG_PACKAGE_dc=m
+CONFIG_PACKAGE_dfu-util=m
 CONFIG_PACKAGE_dmesg=m
 # CONFIG_PACKAGE_domoticz is not set
 CONFIG_PACKAGE_dropbearconvert=m
 # CONFIG_PACKAGE_dtc is not set
-# CONFIG_PACKAGE_dump1090 is not set
+CONFIG_PACKAGE_dump1090=m
 # CONFIG_PACKAGE_ecdsautils is not set
 # CONFIG_PACKAGE_elektra-kdb is not set
 # CONFIG_PACKAGE_evtest is not set
@@ -7079,19 +7381,12 @@ CONFIG_PACKAGE_flock=m
 CONFIG_PACKAGE_getopt=m
 # CONFIG_PACKAGE_gkermit is not set
 # CONFIG_PACKAGE_gpioctl-sysfs is not set
-# CONFIG_PACKAGE_gpsd is not set
-# CONFIG_PACKAGE_gpsd-clients is not set
-# CONFIG_PACKAGE_grep is not set
+CONFIG_PACKAGE_gpsd=m
+CONFIG_PACKAGE_gpsd-clients=m
+CONFIG_PACKAGE_grep=m
 # CONFIG_PACKAGE_hamlib is not set
-CONFIG_PACKAGE_haserl=m
-# CONFIG_HASERL_with_lua is not set
-
-#
-# Lua support
-#
-# CONFIG_HASERL_shell_luac is not set
-# CONFIG_HASERL_shell_lua is not set
-CONFIG_PACKAGE_haveged=m
+# CONFIG_PACKAGE_haserl is not set
+# CONFIG_PACKAGE_haveged is not set
 # CONFIG_PACKAGE_hub-ctrl is not set
 CONFIG_PACKAGE_hwclock=m
 CONFIG_PACKAGE_i2c-tools=m
@@ -7107,14 +7402,14 @@ CONFIG_PACKAGE_jshn=y
 # CONFIG_PACKAGE_lcd4linux-full is not set
 CONFIG_PACKAGE_ldattach=m
 CONFIG_PACKAGE_less=m
-CONFIG_PACKAGE_less-wide=m
+# CONFIG_PACKAGE_less-wide is not set
 # CONFIG_PACKAGE_libimobiledevice-utils is not set
 CONFIG_PACKAGE_libjson-script=y
 # CONFIG_PACKAGE_libplist-utils is not set
 # CONFIG_PACKAGE_libsysrepo is not set
 # CONFIG_PACKAGE_libusbmuxd-utils is not set
 CONFIG_PACKAGE_lm-sensors=m
-CONFIG_PACKAGE_lm-sensors-detect=m
+# CONFIG_PACKAGE_lm-sensors-detect is not set
 CONFIG_PACKAGE_logger=m
 # CONFIG_PACKAGE_logrotate is not set
 # CONFIG_PACKAGE_logtrigger is not set
@@ -7122,9 +7417,47 @@ CONFIG_PACKAGE_look=m
 CONFIG_PACKAGE_losetup=m
 # CONFIG_PACKAGE_lrzsz is not set
 CONFIG_PACKAGE_lsof=m
-# CONFIG_PACKAGE_lxc is not set
+CONFIG_PACKAGE_lxc=m
+
+#
+# Configuration
+#
+# CONFIG_LXC_KERNEL_OPTIONS is not set
+# CONFIG_LXC_BUSYBOX_OPTIONS is not set
+# CONFIG_LXC_SECCOMP is not set
+# CONFIG_PACKAGE_lxc-attach is not set
+# CONFIG_PACKAGE_lxc-auto is not set
+# CONFIG_PACKAGE_lxc-autostart is not set
+# CONFIG_PACKAGE_lxc-cgroup is not set
+# CONFIG_PACKAGE_lxc-checkconfig is not set
+# CONFIG_PACKAGE_lxc-clone is not set
+CONFIG_PACKAGE_lxc-common=m
+# CONFIG_PACKAGE_lxc-config is not set
+CONFIG_PACKAGE_lxc-configs=m
+# CONFIG_PACKAGE_lxc-console is not set
+CONFIG_PACKAGE_lxc-create=m
+# CONFIG_PACKAGE_lxc-destroy is not set
+# CONFIG_PACKAGE_lxc-device is not set
+# CONFIG_PACKAGE_lxc-execute is not set
+# CONFIG_PACKAGE_lxc-freeze is not set
+CONFIG_PACKAGE_lxc-hooks=m
+# CONFIG_PACKAGE_lxc-info is not set
+# CONFIG_PACKAGE_lxc-init is not set
+# CONFIG_PACKAGE_lxc-ls is not set
+# CONFIG_PACKAGE_lxc-lua is not set
+# CONFIG_PACKAGE_lxc-monitor is not set
+# CONFIG_PACKAGE_lxc-monitord is not set
+# CONFIG_PACKAGE_lxc-snapshot is not set
+# CONFIG_PACKAGE_lxc-start is not set
+# CONFIG_PACKAGE_lxc-stop is not set
+CONFIG_PACKAGE_lxc-templates=m
+# CONFIG_PACKAGE_lxc-unfreeze is not set
+# CONFIG_PACKAGE_lxc-unshare is not set
+# CONFIG_PACKAGE_lxc-user-nic is not set
+# CONFIG_PACKAGE_lxc-usernsexec is not set
+# CONFIG_PACKAGE_lxc-wait is not set
 CONFIG_PACKAGE_maccalc=m
-CONFIG_PACKAGE_macchanger=m
+# CONFIG_PACKAGE_macchanger is not set
 # CONFIG_PACKAGE_mbtools is not set
 CONFIG_PACKAGE_mc=m
 
@@ -7132,22 +7465,63 @@ CONFIG_PACKAGE_mc=m
 # Configuration
 #
 # CONFIG_MC_DIFFVIEWER is not set
-# CONFIG_MC_EDITOR is not set
-# CONFIG_MC_SUBSHELL is not set
+CONFIG_MC_EDITOR=y
+CONFIG_MC_SUBSHELL=y
 # CONFIG_MC_LARGEFILE is not set
 # CONFIG_MC_BACKGROUND is not set
-# CONFIG_MC_CHARSET is not set
+CONFIG_MC_CHARSET=y
 # CONFIG_MC_VFS is not set
 CONFIG_PACKAGE_mcookie=m
-CONFIG_PACKAGE_mmc-utils=y
+CONFIG_PACKAGE_mmc-utils=m
 # CONFIG_PACKAGE_moreutils is not set
 CONFIG_PACKAGE_mount-utils=m
 # CONFIG_PACKAGE_mpack is not set
 # CONFIG_PACKAGE_mt-st is not set
+CONFIG_PACKAGE_mtd-utils=m
+CONFIG_PACKAGE_mtd-utils-doc-loadbios=m
+CONFIG_PACKAGE_mtd-utils-docfdisk=m
+CONFIG_PACKAGE_mtd-utils-flash-erase=m
+CONFIG_PACKAGE_mtd-utils-flash-eraseall=m
+CONFIG_PACKAGE_mtd-utils-flash-lock=m
+CONFIG_PACKAGE_mtd-utils-flash-otp-dump=m
+CONFIG_PACKAGE_mtd-utils-flash-otp-lock=m
+CONFIG_PACKAGE_mtd-utils-flash-otp-write=m
+CONFIG_PACKAGE_mtd-utils-flash-unlock=m
+CONFIG_PACKAGE_mtd-utils-flashcp=m
+CONFIG_PACKAGE_mtd-utils-ftl-check=m
+CONFIG_PACKAGE_mtd-utils-ftl-format=m
+CONFIG_PACKAGE_mtd-utils-jffs2dump=m
+CONFIG_PACKAGE_mtd-utils-jffs2reader=m
+CONFIG_PACKAGE_mtd-utils-mkfs.jffs2=m
+CONFIG_PACKAGE_mtd-utils-mkfs.ubifs=m
+CONFIG_PACKAGE_mtd-utils-mtd-debug=m
+CONFIG_PACKAGE_mtd-utils-mtdinfo=m
+CONFIG_PACKAGE_mtd-utils-nanddump=m
+CONFIG_PACKAGE_mtd-utils-nandtest=m
+CONFIG_PACKAGE_mtd-utils-nandwrite=m
+CONFIG_PACKAGE_mtd-utils-nftl-format=m
+CONFIG_PACKAGE_mtd-utils-nftldump=m
+CONFIG_PACKAGE_mtd-utils-recv-image=m
+CONFIG_PACKAGE_mtd-utils-rfddump=m
+CONFIG_PACKAGE_mtd-utils-rfdformat=m
+CONFIG_PACKAGE_mtd-utils-serve-image=m
+CONFIG_PACKAGE_mtd-utils-sumtool=m
+CONFIG_PACKAGE_mtd-utils-ubiattach=m
+CONFIG_PACKAGE_mtd-utils-ubicrc32=m
+CONFIG_PACKAGE_mtd-utils-ubidetach=m
+CONFIG_PACKAGE_mtd-utils-ubiformat=m
+CONFIG_PACKAGE_mtd-utils-ubimkvol=m
+CONFIG_PACKAGE_mtd-utils-ubinfo=m
+CONFIG_PACKAGE_mtd-utils-ubinize=m
+CONFIG_PACKAGE_mtd-utils-ubirename=m
+CONFIG_PACKAGE_mtd-utils-ubirmvol=m
+CONFIG_PACKAGE_mtd-utils-ubirsvol=m
+CONFIG_PACKAGE_mtd-utils-ubiupdatevol=m
+CONFIG_PACKAGE_mtd-utils-tests=m
 CONFIG_PACKAGE_namei=m
-# CONFIG_PACKAGE_neard is not set
-# CONFIG_PACKAGE_neard-git is not set
-# CONFIG_PACKAGE_neardal is not set
+CONFIG_PACKAGE_neard=m
+CONFIG_PACKAGE_neard-git=m
+CONFIG_PACKAGE_neardal=m
 # CONFIG_PACKAGE_netopeer2-cli is not set
 # CONFIG_PACKAGE_netopeer2-server is not set
 CONFIG_PACKAGE_nfc-utils=m
@@ -7158,7 +7532,7 @@ CONFIG_PACKAGE_obexftp=m
 CONFIG_PACKAGE_oled-utils=m
 # CONFIG_PACKAGE_open-plc-utils is not set
 # CONFIG_PACKAGE_open2300 is not set
-CONFIG_PACKAGE_openldap-utils=m
+# CONFIG_PACKAGE_openldap-utils is not set
 CONFIG_PACKAGE_openobex=m
 CONFIG_PACKAGE_openocd=m
 CONFIG_PACKAGE_openocd-dev=m
@@ -7175,9 +7549,9 @@ CONFIG_PACKAGE_pcscd=m
 # CONFIG_PACKAGE_procps-ng is not set
 # CONFIG_PACKAGE_progress is not set
 CONFIG_PACKAGE_psmisc=m
-CONFIG_PACKAGE_pv=m
+# CONFIG_PACKAGE_pv is not set
 # CONFIG_PACKAGE_pwrtray-backend is not set
-# CONFIG_PACKAGE_qrencode is not set
+CONFIG_PACKAGE_qrencode=m
 # CONFIG_PACKAGE_relayctl is not set
 CONFIG_PACKAGE_rename=m
 CONFIG_PACKAGE_rng-tools=y
@@ -7186,33 +7560,12 @@ CONFIG_PACKAGE_rng-tools=y
 # CONFIG_PACKAGE_sane-backends is not set
 # CONFIG_PACKAGE_sane-daemon is not set
 # CONFIG_PACKAGE_sane-frontends is not set
-CONFIG_PACKAGE_shadow=m
-CONFIG_PACKAGE_shadow-chage=m
-CONFIG_PACKAGE_shadow-common=m
-CONFIG_PACKAGE_shadow-groupadd=m
-CONFIG_PACKAGE_shadow-groupdel=m
-CONFIG_PACKAGE_shadow-groupmod=m
-CONFIG_PACKAGE_shadow-groups=m
-CONFIG_PACKAGE_shadow-passwd=m
-CONFIG_PACKAGE_shadow-su=m
-CONFIG_PACKAGE_shadow-useradd=m
-CONFIG_PACKAGE_shadow-userdel=m
-CONFIG_PACKAGE_shadow-usermod=m
-CONFIG_PACKAGE_shadow-utils=m
-
-#
-# Select shadow utilities
-#
-CONFIG_shadow-all=y
-
-#
-# Utilities
-#
+# CONFIG_PACKAGE_shadow-utils is not set
 # CONFIG_PACKAGE_shtool is not set
 # CONFIG_PACKAGE_sispmctl is not set
 # CONFIG_PACKAGE_slide-switch is not set
-CONFIG_PACKAGE_smartd=m
-CONFIG_PACKAGE_smartmontools=m
+# CONFIG_PACKAGE_smartd is not set
+# CONFIG_PACKAGE_smartmontools is not set
 # CONFIG_PACKAGE_smstools3 is not set
 # CONFIG_PACKAGE_sockread is not set
 # CONFIG_PACKAGE_spi-tools is not set
@@ -7236,7 +7589,7 @@ CONFIG_PACKAGE_TAR_BZIP2=y
 CONFIG_PACKAGE_TAR_XZ=y
 # CONFIG_PACKAGE_taskwarrior is not set
 # CONFIG_PACKAGE_tracertools is not set
-# CONFIG_PACKAGE_tree is not set
+CONFIG_PACKAGE_tree=m
 CONFIG_PACKAGE_triggerhappy=y
 # CONFIG_PACKAGE_ugps is not set
 CONFIG_PACKAGE_usb-modeswitch=m
@@ -7250,12 +7603,12 @@ CONFIG_PACKAGE_uuidgen=m
 # CONFIG_PACKAGE_view1090 is not set
 CONFIG_PACKAGE_watchcat=m
 CONFIG_PACKAGE_whereis=m
-CONFIG_PACKAGE_wifitoggle=m
-# CONFIG_PACKAGE_wyliodrin-server is not set
-CONFIG_PACKAGE_xsltproc=m
-CONFIG_PACKAGE_xxd=m
+# CONFIG_PACKAGE_wifitoggle is not set
+CONFIG_PACKAGE_wyliodrin-server=m
+# CONFIG_PACKAGE_xsltproc is not set
+# CONFIG_PACKAGE_xxd is not set
 # CONFIG_PACKAGE_yanglint is not set
-# CONFIG_PACKAGE_yunbridge is not set
+CONFIG_PACKAGE_yunbridge=m
 
 #
 # Xorg
