@@ -1,0 +1,20 @@
+I got a probleme, but don't find where to put my issue : 
+Compilation of lede-project with linino give me : 
+
+```
+touch /home/smag0/LEDE/staging_dir/target-mips_24kc_musl/root-ar71xx/stamp/.libArcus_installed
+make[3]: Leaving directory `/home/smag0/LEDE/package/linino/arcus'
+make[3]: Entering directory `/home/smag0/LEDE/package/libs/libtool'
+make[3]: Leaving directory `/home/smag0/LEDE/package/libs/libtool'
+make[3]: Entering directory `/home/smag0/LEDE/package/linino/libical'
+mkdir -p /home/smag0/LEDE/staging_dir/target-mips_24kc_musl/root-ar71xx/stamp
+SHELL= flock /home/smag0/LEDE/tmp/.root-copy.flock -c 'cp -fpR /home/smag0/LEDE/build_dir/target-mips_24kc_musl/libical-1.0.1/.pkgdir/libical/. /home/smag0/LEDE/staging_dir/target-mips_24kc_musl/root-ar71xx/'
+touch /home/smag0/LEDE/staging_dir/target-mips_24kc_musl/root-ar71xx/stamp/.libical_installed
+make[3]: Leaving directory `/home/smag0/LEDE/package/linino/libical'
+make[2]: *** No rule to make target `package/linino/luci-app-6lowpand/compile', needed by `package/linino/bluez/compile'.  Stop.
+make[2]: Leaving directory `/home/smag0/LEDE'
+make[1]: *** [/home/smag0/LEDE/staging_dir/target-mips_24kc_musl/stamp/.package_compile] Error 2
+make[1]: Leaving directory `/home/smag0/LEDE'
+make: *** [world] Erreur 2
+
+```
