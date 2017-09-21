@@ -10,7 +10,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=shellinabox
 PKG_VERSION:=2.20
-PKG_RELEASE:=9
+PKG_RELEASE:=10
 
 PKG_INSTALL:=1
 
@@ -54,10 +54,10 @@ endef
 define Package/shellinabox/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/shellinaboxd $(1)/usr/sbin/
-	$(INSTALL_BIN) files/gen-cert.sh $(1)/usr/sbin/gen-cert
+	$(INSTALL_BIN) ./files/gen-cert.sh $(1)/usr/sbin/gen-cert
 
 	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) files/shellinabox-init.sh $(1)/etc/init.d/shellinabox-init
+	$(INSTALL_BIN) ./files/shellinabox-init.sh $(1)/etc/init.d/shellinabox-init
 endef
 
 define Package/shellianbox/prerm
