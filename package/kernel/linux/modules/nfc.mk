@@ -18,7 +18,7 @@ define KernelPackage/nfc-digital
   SUBMENU:=NFC
   DEFAULT:=m
   TITLE:=NFC Digital driver
-  DEPENDS:=@TARGET_ar71xx +kmod-nfc +kmod-lib-crc-ccitt +kmod-lib-crc-itu-t
+  DEPENDS:=+kmod-nfc +kmod-lib-crc-ccitt +kmod-lib-crc-itu-t
   KCONFIG:=CONFIG_NFC_DIGITAL
   FILES:=$(LINUX_DIR)/net/nfc/nfc_digital.ko
   AUTOLOAD:=$(call AutoLoad,95,nfc-digital)
