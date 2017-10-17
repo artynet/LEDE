@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=node8
-PKG_VERSION:=v8.5.0
+PKG_VERSION:=v8.7.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=node-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=http://nodejs.org/dist/$(PKG_VERSION)
-# PKG_MD5SUM:=e6c85c83001340b30671e9432e1bd337
+PKG_MD5SUM:=78c297b4a23f7f9c0c031baa77702402
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/node-$(PKG_VERSION)
 
@@ -49,7 +49,7 @@ define Package/node8/config
 
 	config NODEJS_8_ICU
 		bool "enable i18n features"
-		default y
+		default n
 
 	endmenu
 endef
