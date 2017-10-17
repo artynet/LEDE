@@ -115,9 +115,9 @@ defconfig: scripts/config/conf prepare-tmpinfo FORCE
 	@if [ ! -s .config -a -e $(HOME)/.openwrt/defconfig ]; then cp $(HOME)/.openwrt/defconfig .config; fi
 	$< --defconfig=.config Config.in
 
-defrpi2: scripts/config/conf prepare-tmpinfo FORCE
+defrpi: scripts/config/conf prepare-tmpinfo FORCE
 	touch .config
-	@if [ ! -s .config -a -e $(HOME)/configfiles/armconfig ]; then cp $(HOME)/configfiles/armconfig .config; fi
+	@if [ ! -s .config -a -e $(TOPDIR)/configfiles/armconfig ]; then cp $(TOPDIR)/configfiles/armconfig .config; fi
 	$< --defconfig=.config Config.in
 
 confdefault-y=allyes
