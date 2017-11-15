@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=node
-PKG_VERSION:=v6.11.4
+PKG_VERSION:=v8.9.1
 PKG_RELEASE:=1
 
 PKG_SOURCE:=node-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=http://nodejs.org/dist/${PKG_VERSION}
-PKG_MD5SUM:=717e67bcad5efa3c968119737ca69c94
+PKG_MD5SUM:=026e066a3d8c69fb1bc320385cfc65f2
 
 PKG_BUILD_DEPENDS:=python/host
 PKG_INSTALL:=1
@@ -59,10 +59,10 @@ CPUHOST:=$(subst x86_64-linux-gnu,x64,$(subst x86_64-pc-linux-gnu,x64,$(subst i6
 NODEJS:=node-$(PKG_VERSION)-linux-$(CPUHOST).tar.xz
 
 ifeq ($(CPUHOST),x64)
-    MD5SUM_NODE:=969dd7c52b0169bc03c890e2691d68e1
+    MD5SUM_NODE:=2f51560b53e004d2c6689ddbfe288065
 endif
 ifeq ($(CPUHOST),x86)
-    MD5SUM_NODE:=10b543d095b091394cea55f79b6bb238
+    MD5SUM_NODE:=node-v8.9.1-linux-x86.tar.xz
 endif
 
 # Distribution URL doesn't always have the correct version
@@ -78,8 +78,8 @@ endef
 define Build/Prepare
 	$(call Build/Prepare/Default)
 	$(eval $(call Download,nodebin))
-	$(TAR) -xvf $(DL_DIR)/$(NODEJS) -C $(STAGING_DIR_HOSTPKG) --strip-components=1
-	$(STAGING_DIR_HOSTPKG)/bin/npm update npm -g $(STAGING_DIR_HOSTPKG)/lib/node_modules
+	$(TAR) -xvf $(DL_DIR)/$(NODEJS) -C $(STAGING_DIR_HOST) --strip-components=1
+	$(STAGING_DIR_HOST)/bin/npm update npm -g $(STAGING_DIR_HOST)/lib/node_modules
 endef
 
 define Build/InstallDev
@@ -103,7 +103,7 @@ CONFIGURE_ARGS= \
 	--prefix=/usr
 
 ifneq ($(findstring arm,$(NODEJS_CPU)),)
-ifeq ($(CONFIG_SOFT_FLOAT),y)
+ifeq ($(CONFIG_SOFTOAT),y)
 CONFIGURE_ARGS+= --with-arm-float-abi=softfp
 else
 
