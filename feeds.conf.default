@@ -4,3 +4,4 @@ src-git routing https://git.lede-project.org/feed/routing.git;lede-17.01
 src-git telephony https://git.lede-project.org/feed/telephony.git;lede-17.01
 src-git luci https://github.com/artynet/luci.git;lininolede
 # src-git other https://github.com/artynet/openwrt-old-feeds.git;master
+src-git juci https://github.com/artynet/juci-openwrt-feed.git;v3.17.01-lede
