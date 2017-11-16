@@ -1600,6 +1600,78 @@ CONFIG_PACKAGE_wl12xx-firmware=m
 CONFIG_PACKAGE_wl18xx-firmware=m
 
 #
+# JUCI
+#
+
+#
+# Plugins
+#
+CONFIG_PACKAGE_juci-ddns=m
+# CONFIG_JUCI_DDNS is not set
+CONFIG_PACKAGE_juci-diagnostics=m
+# CONFIG_JUCI_DIAGNOSTICS is not set
+CONFIG_PACKAGE_juci-dnsmasq-dhcp=m
+# CONFIG_JUCI_DNSMASQ_DHCP is not set
+CONFIG_PACKAGE_juci-dropbear=m
+# CONFIG_JUCI_DROPBEAR is not set
+CONFIG_PACKAGE_juci-ethernet=m
+# CONFIG_JUCI_ETHERNET is not set
+CONFIG_PACKAGE_juci-event=m
+# CONFIG_JUCI_EVENT is not set
+CONFIG_PACKAGE_juci-example-standalone=m
+CONFIG_PACKAGE_juci-firewall-fw3=m
+# CONFIG_JUCI_FIREWALL_FW3 is not set
+CONFIG_PACKAGE_juci-freecwmp=m
+# CONFIG_JUCI_FREECWMP is not set
+CONFIG_PACKAGE_juci-igmpinfo=m
+# CONFIG_JUCI_IGMPINFO is not set
+CONFIG_PACKAGE_juci-jquery-console=m
+# CONFIG_JUCI_JQUERY_CONSOLE is not set
+CONFIG_PACKAGE_juci-macdb=m
+# CONFIG_JUCI_MACDB is not set
+CONFIG_PACKAGE_juci-minidlna=m
+# CONFIG_JUCI_MINIDLNA is not set
+CONFIG_PACKAGE_juci-minisnmpd=m
+# CONFIG_JUCI_MINISNMPD is not set
+CONFIG_PACKAGE_juci-mod-status=m
+# CONFIG_JUCI_MOD_STATUS is not set
+CONFIG_PACKAGE_juci-mod-system=m
+# CONFIG_JUCI_MOD_SYSTEM is not set
+CONFIG_PACKAGE_juci-network-netifd=m
+# CONFIG_JUCI_NETWORK_NETIFD is not set
+CONFIG_PACKAGE_juci-openwrt-wireless=m
+# CONFIG_JUCI_OPENWRT_WIRELESS is not set
+CONFIG_PACKAGE_juci-realtime-graphs=m
+# CONFIG_JUCI_REALTIME_GRAPHS is not set
+CONFIG_PACKAGE_juci-samba=m
+# CONFIG_JUCI_SAMBA is not set
+CONFIG_PACKAGE_juci-simple-gui=m
+# CONFIG_JUCI_SIMPLE_GUI is not set
+CONFIG_PACKAGE_juci-snmpd=m
+# CONFIG_JUCI_SNMPD is not set
+CONFIG_PACKAGE_juci-sysupgrade=m
+# CONFIG_JUCI_SYSUPGRADE is not set
+CONFIG_PACKAGE_juci-uhttpd=m
+# CONFIG_JUCI_UHTTPD is not set
+CONFIG_PACKAGE_juci-upnp=m
+# CONFIG_JUCI_UPNP is not set
+CONFIG_PACKAGE_juci-usb=m
+# CONFIG_JUCI_USB is not set
+CONFIG_PACKAGE_juci-utils=m
+# CONFIG_JUCI_UTILS is not set
+
+#
+# Themes
+#
+CONFIG_PACKAGE_juci-theme-openwrt=m
+# CONFIG_JUCI_THEME_OPENWRT is not set
+CONFIG_PACKAGE_juci=m
+CONFIG_PACKAGE_juci-full-openwrt=m
+CONFIG_PACKAGE_liborange=m
+CONFIG_PACKAGE_orange-rpcd=m
+CONFIG_ORANGE_PARALLEL=y
+
+#
 # Kernel modules
 #
 
@@ -2398,6 +2470,7 @@ CONFIG_PACKAGE_luai2c=m
 CONFIG_PACKAGE_luajit=m
 CONFIG_PACKAGE_lualanes=m
 CONFIG_PACKAGE_luaposix=m
+CONFIG_PACKAGE_luaposix33=m
 CONFIG_PACKAGE_luarocks=m
 CONFIG_PACKAGE_luasec=m
 CONFIG_PACKAGE_luasoap=m
@@ -3218,6 +3291,7 @@ CONFIG_PACKAGE_libavl=m
 CONFIG_PACKAGE_libbfd=m
 CONFIG_PACKAGE_libblkid=m
 CONFIG_PACKAGE_libblobmsg-json=y
+CONFIG_PACKAGE_libblobpack=m
 CONFIG_PACKAGE_libcanfestival=m
 CONFIG_PACKAGE_libcap=m
 CONFIG_PACKAGE_libcares=m
@@ -3677,6 +3751,8 @@ CONFIG_PACKAGE_libusbmuxd=m
 CONFIG_PACKAGE_libustream-cyassl=m
 CONFIG_PACKAGE_libustream-mbedtls=m
 CONFIG_PACKAGE_libustream-openssl=m
+CONFIG_PACKAGE_libusys=m
+CONFIG_PACKAGE_libutype=m
 CONFIG_PACKAGE_libuuid=m
 CONFIG_PACKAGE_libuv=m
 CONFIG_PACKAGE_libuvc=m
@@ -3685,7 +3761,7 @@ CONFIG_PACKAGE_libvorbis=m
 CONFIG_PACKAGE_libvorbisidec=m
 CONFIG_PACKAGE_libvpx=m
 CONFIG_PACKAGE_libwebcam=m
-CONFIG_PACKAGE_libwebsockets-cyassl=m
+# CONFIG_PACKAGE_libwebsockets-cyassl is not set
 CONFIG_PACKAGE_libwebsockets-full=m
 CONFIG_PACKAGE_libwebsockets-openssl=m
 CONFIG_PACKAGE_libwrap=m
@@ -5673,7 +5749,115 @@ CONFIG_PACKAGE_thc-ipv6-trace6=m
 #
 # Telephony
 #
-# CONFIG_PACKAGE_asterisk11 is not set
+CONFIG_PACKAGE_asterisk11=m
+CONFIG_PACKAGE_asterisk11-app-alarmreceiver=m
+CONFIG_PACKAGE_asterisk11-app-authenticate=m
+CONFIG_PACKAGE_asterisk11-app-chanisavail=m
+CONFIG_PACKAGE_asterisk11-app-chanspy=m
+CONFIG_PACKAGE_asterisk11-app-confbridge=m
+CONFIG_PACKAGE_asterisk11-app-dahdiras=m
+CONFIG_PACKAGE_asterisk11-app-directed_pickup=m
+CONFIG_PACKAGE_asterisk11-app-directory=m
+CONFIG_PACKAGE_asterisk11-app-disa=m
+CONFIG_PACKAGE_asterisk11-app-exec=m
+CONFIG_PACKAGE_asterisk11-app-minivm=m
+CONFIG_PACKAGE_asterisk11-app-mixmonitor=m
+CONFIG_PACKAGE_asterisk11-app-originate=m
+CONFIG_PACKAGE_asterisk11-app-playtones=m
+CONFIG_PACKAGE_asterisk11-app-queue=m
+CONFIG_PACKAGE_asterisk11-app-read=m
+CONFIG_PACKAGE_asterisk11-app-readexten=m
+CONFIG_PACKAGE_asterisk11-app-record=m
+CONFIG_PACKAGE_asterisk11-app-sayunixtime=m
+CONFIG_PACKAGE_asterisk11-app-senddtmf=m
+CONFIG_PACKAGE_asterisk11-app-sms=m
+CONFIG_PACKAGE_asterisk11-app-stack=m
+CONFIG_PACKAGE_asterisk11-app-system=m
+CONFIG_PACKAGE_asterisk11-app-talkdetect=m
+CONFIG_PACKAGE_asterisk11-app-verbose=m
+CONFIG_PACKAGE_asterisk11-app-waituntil=m
+CONFIG_PACKAGE_asterisk11-app-while=m
+CONFIG_PACKAGE_asterisk11-cdr=m
+CONFIG_PACKAGE_asterisk11-cdr-csv=m
+CONFIG_PACKAGE_asterisk11-cdr-sqlite3=m
+CONFIG_PACKAGE_asterisk11-chan-agent=m
+CONFIG_PACKAGE_asterisk11-chan-alsa=m
+CONFIG_PACKAGE_asterisk11-chan-dahdi=m
+CONFIG_PACKAGE_asterisk11-chan-dongle=m
+CONFIG_PACKAGE_asterisk11-chan-iax2=m
+CONFIG_PACKAGE_asterisk11-chan-mgcp=m
+CONFIG_PACKAGE_asterisk11-chan-motif=m
+CONFIG_PACKAGE_asterisk11-chan-ooh323=m
+CONFIG_PACKAGE_asterisk11-chan-oss=m
+CONFIG_PACKAGE_asterisk11-chan-sccp-b=m
+CONFIG_PACKAGE_asterisk11-chan-skinny=m
+CONFIG_PACKAGE_asterisk11-chan-unistim=m
+CONFIG_PACKAGE_asterisk11-codec-a-mu=m
+CONFIG_PACKAGE_asterisk11-codec-adpcm=m
+CONFIG_PACKAGE_asterisk11-codec-alaw=m
+CONFIG_PACKAGE_asterisk11-codec-dahdi=m
+CONFIG_PACKAGE_asterisk11-codec-g722=m
+CONFIG_PACKAGE_asterisk11-codec-g726=m
+CONFIG_PACKAGE_asterisk11-codec-g729=m
+CONFIG_PACKAGE_asterisk11-codec-gsm=m
+CONFIG_PACKAGE_asterisk11-codec-ilbc=m
+CONFIG_PACKAGE_asterisk11-codec-lpc10=m
+CONFIG_PACKAGE_asterisk11-codec-resample=m
+CONFIG_PACKAGE_asterisk11-curl=m
+CONFIG_PACKAGE_asterisk11-format-g726=m
+CONFIG_PACKAGE_asterisk11-format-g729=m
+CONFIG_PACKAGE_asterisk11-format-gsm=m
+CONFIG_PACKAGE_asterisk11-format-h263=m
+CONFIG_PACKAGE_asterisk11-format-h264=m
+CONFIG_PACKAGE_asterisk11-format-ilbc=m
+CONFIG_PACKAGE_asterisk11-format-sln=m
+CONFIG_PACKAGE_asterisk11-format-vox=m
+CONFIG_PACKAGE_asterisk11-format-wav=m
+CONFIG_PACKAGE_asterisk11-format-wav-gsm=m
+CONFIG_PACKAGE_asterisk11-func-base64=m
+CONFIG_PACKAGE_asterisk11-func-blacklist=m
+CONFIG_PACKAGE_asterisk11-func-channel=m
+CONFIG_PACKAGE_asterisk11-func-cut=m
+CONFIG_PACKAGE_asterisk11-func-db=m
+CONFIG_PACKAGE_asterisk11-func-devstate=m
+CONFIG_PACKAGE_asterisk11-func-enum=m
+CONFIG_PACKAGE_asterisk11-func-env=m
+CONFIG_PACKAGE_asterisk11-func-extstate=m
+CONFIG_PACKAGE_asterisk11-func-global=m
+CONFIG_PACKAGE_asterisk11-func-groupcount=m
+CONFIG_PACKAGE_asterisk11-func-math=m
+CONFIG_PACKAGE_asterisk11-func-module=m
+CONFIG_PACKAGE_asterisk11-func-presencestate=m
+CONFIG_PACKAGE_asterisk11-func-realtime=m
+CONFIG_PACKAGE_asterisk11-func-shell=m
+CONFIG_PACKAGE_asterisk11-func-uri=m
+CONFIG_PACKAGE_asterisk11-func-vmcount=m
+CONFIG_PACKAGE_asterisk11-mysql=m
+CONFIG_PACKAGE_asterisk11-odbc=m
+CONFIG_PACKAGE_asterisk11-pbx-ael=m
+CONFIG_PACKAGE_asterisk11-pbx-dundi=m
+CONFIG_PACKAGE_asterisk11-pbx-lua=m
+CONFIG_PACKAGE_asterisk11-pbx-realtime=m
+CONFIG_PACKAGE_asterisk11-pbx-spool=m
+CONFIG_PACKAGE_asterisk11-pgsql=m
+CONFIG_PACKAGE_asterisk11-res-adsi=m
+CONFIG_PACKAGE_asterisk11-res-ael-share=m
+CONFIG_PACKAGE_asterisk11-res-agi=m
+CONFIG_PACKAGE_asterisk11-res-calendar=m
+CONFIG_PACKAGE_asterisk11-res-clioriginate=m
+CONFIG_PACKAGE_asterisk11-res-monitor=m
+CONFIG_PACKAGE_asterisk11-res-musiconhold=m
+CONFIG_PACKAGE_asterisk11-res-phoneprov=m
+CONFIG_PACKAGE_asterisk11-res-pktccops=m
+CONFIG_PACKAGE_asterisk11-res-realtime=m
+CONFIG_PACKAGE_asterisk11-res-smdi=m
+CONFIG_PACKAGE_asterisk11-res-srtp=m
+CONFIG_PACKAGE_asterisk11-res-timing-dahdi=m
+CONFIG_PACKAGE_asterisk11-res-timing-pthread=m
+CONFIG_PACKAGE_asterisk11-res-timing-timerfd=m
+CONFIG_PACKAGE_asterisk11-res-xmpp=m
+CONFIG_PACKAGE_asterisk11-sounds=m
+CONFIG_PACKAGE_asterisk11-voicemail=m
 CONFIG_PACKAGE_asterisk13=m
 CONFIG_PACKAGE_asterisk13-app-alarmreceiver=m
 CONFIG_PACKAGE_asterisk13-app-authenticate=m
@@ -5809,8 +5993,272 @@ CONFIG_PACKAGE_baresip-mod-speex-pp=m
 CONFIG_PACKAGE_baresip-mod-stdio=m
 CONFIG_PACKAGE_baresip-mod-v4l=m
 CONFIG_PACKAGE_baresip-mod-v4l2=m
-# CONFIG_PACKAGE_freeswitch is not set
-# CONFIG_PACKAGE_kamailio4 is not set
+CONFIG_PACKAGE_freeswitch=m
+
+#
+# Configuration
+#
+CONFIG_FS_WITH_DEFAULT_HEAD=y
+# CONFIG_FS_WITH_LATEST_HEAD is not set
+# CONFIG_FS_WITH_LOCAL_SOURCE is not set
+CONFIG_FS_WITH_OPENWRT_SOURCE=y
+# CONFIG_FS_WITH_MYSQL is not set
+# CONFIG_FS_WITH_POSTGRESQL is not set
+# CONFIG_FS_WITH_SQLITE2 is not set
+CONFIG_FS_WITH_SQLITE3=y
+CONFIG_FS_WITH_ALSA=y
+CONFIG_FS_WITH_VISIBILITY=y
+CONFIG_FS_WITH_APR_CONFIG_SWITCHES=y
+CONFIG_FS_WITH_APR_IPV6=y
+CONFIG_FS_WITH_APR_SCTP=y
+CONFIG_FS_WITH_APR_THREADS=y
+CONFIG_FS_WITH_BUILTIN_ZRTP=y
+CONFIG_FS_WITH_OGG=y
+# CONFIG_FS_WITH_CORE_LIBEDIT_SUPPORT is not set
+CONFIG_FS_WITH_FHS=y
+CONFIG_FS_WITH_LIBVPX=y
+CONFIG_FS_WITH_LIBYUV=y
+CONFIG_FS_WITH_LZMA=y
+CONFIG_FS_WITH_OPENSSL=y
+CONFIG_FS_WITH_OPT=y
+# CONFIG_FS_WITH_SILENT_RULES is not set
+CONFIG_FS_WITH_SRTP=y
+CONFIG_FS_WITH_SRTP_GENERIC_AESICM=y
+# CONFIG_FS_WITH_SRTP_KERNEL_LINUX is not set
+CONFIG_FS_WITH_SRTP_OPENSSL=y
+CONFIG_FS_WITH_STUN=y
+CONFIG_FS_WITH_ERLANG="$$(STAGING_DIR)/host/lib/erlang"
+CONFIG_FS_WITH_PYTHON=y
+CONFIG_FS_WITH_PYTHON_PATH="$$(STAGING_DIR)/host/bin/python$(PYTHON3_VERSION)"
+CONFIG_PACKAGE_freeswitch-config-minimal=m
+CONFIG_PACKAGE_freeswitch-config-upstream-defaults=m
+CONFIG_PACKAGE_freeswitch-example-config=m
+CONFIG_PACKAGE_freeswitch-mod-abstraction=m
+CONFIG_PACKAGE_freeswitch-mod-alsa=m
+CONFIG_PACKAGE_freeswitch-mod-amr=m
+CONFIG_PACKAGE_freeswitch-mod-amrwb=m
+CONFIG_PACKAGE_freeswitch-mod-avmd=m
+CONFIG_PACKAGE_freeswitch-mod-basic=m
+CONFIG_PACKAGE_freeswitch-mod-bert=m
+CONFIG_PACKAGE_freeswitch-mod-blacklist=m
+CONFIG_PACKAGE_freeswitch-mod-callcenter=m
+CONFIG_PACKAGE_freeswitch-mod-cdr-csv=m
+CONFIG_PACKAGE_freeswitch-mod-cdr-mongodb=m
+CONFIG_PACKAGE_freeswitch-mod-cdr-sqlite=m
+CONFIG_PACKAGE_freeswitch-mod-cidlookup=m
+CONFIG_PACKAGE_freeswitch-mod-cluechoo=m
+CONFIG_PACKAGE_freeswitch-mod-commands=m
+CONFIG_PACKAGE_freeswitch-mod-conference=m
+CONFIG_PACKAGE_freeswitch-mod-console=m
+CONFIG_PACKAGE_freeswitch-mod-curl=m
+CONFIG_PACKAGE_freeswitch-mod-dahdi-codec=m
+CONFIG_PACKAGE_freeswitch-mod-db=m
+CONFIG_PACKAGE_freeswitch-mod-dialplan-asterisk=m
+CONFIG_PACKAGE_freeswitch-mod-dialplan-directory=m
+CONFIG_PACKAGE_freeswitch-mod-dialplan-xml=m
+CONFIG_PACKAGE_freeswitch-mod-dingaling=m
+CONFIG_PACKAGE_freeswitch-mod-directory=m
+CONFIG_PACKAGE_freeswitch-mod-distributor=m
+CONFIG_PACKAGE_freeswitch-mod-dptools=m
+CONFIG_PACKAGE_freeswitch-mod-easyroute=m
+CONFIG_PACKAGE_freeswitch-mod-enum=m
+CONFIG_PACKAGE_freeswitch-mod-erlang-event=m
+CONFIG_PACKAGE_freeswitch-mod-esf=m
+CONFIG_PACKAGE_freeswitch-mod-event-multicast=m
+CONFIG_PACKAGE_freeswitch-mod-event-socket=m
+CONFIG_PACKAGE_freeswitch-mod-event-zmq=m
+CONFIG_PACKAGE_freeswitch-mod-expr=m
+CONFIG_PACKAGE_freeswitch-mod-fifo=m
+CONFIG_PACKAGE_freeswitch-mod-format-cdr=m
+CONFIG_PACKAGE_freeswitch-mod-fsk=m
+CONFIG_PACKAGE_freeswitch-mod-g723-1=m
+CONFIG_PACKAGE_freeswitch-mod-g729=m
+CONFIG_PACKAGE_freeswitch-mod-graylog2=m
+CONFIG_PACKAGE_freeswitch-mod-h26x=m
+CONFIG_PACKAGE_freeswitch-mod-hash=m
+CONFIG_PACKAGE_freeswitch-mod-httapi=m
+CONFIG_PACKAGE_freeswitch-mod-http-cache=m
+CONFIG_PACKAGE_freeswitch-mod-isac=m
+CONFIG_PACKAGE_freeswitch-mod-json-cdr=m
+CONFIG_PACKAGE_freeswitch-mod-kazoo=m
+CONFIG_PACKAGE_freeswitch-mod-lcr=m
+CONFIG_PACKAGE_freeswitch-mod-ldap=m
+CONFIG_PACKAGE_freeswitch-mod-local-stream=m
+CONFIG_PACKAGE_freeswitch-mod-logfile=m
+CONFIG_PACKAGE_freeswitch-mod-loopback=m
+CONFIG_PACKAGE_freeswitch-mod-lua=m
+CONFIG_PACKAGE_freeswitch-mod-mp4v=m
+CONFIG_PACKAGE_freeswitch-mod-native-file=m
+CONFIG_PACKAGE_freeswitch-mod-nibblebill=m
+CONFIG_PACKAGE_freeswitch-mod-opus=m
+CONFIG_PACKAGE_freeswitch-mod-oreka=m
+CONFIG_PACKAGE_freeswitch-mod-png=m
+CONFIG_PACKAGE_freeswitch-mod-posix-timer=m
+CONFIG_PACKAGE_freeswitch-mod-prefix=m
+CONFIG_PACKAGE_freeswitch-mod-python=m
+CONFIG_PACKAGE_freeswitch-mod-rayo=m
+CONFIG_PACKAGE_freeswitch-mod-redis=m
+CONFIG_PACKAGE_freeswitch-mod-rss=m
+CONFIG_PACKAGE_freeswitch-mod-rtc=m
+CONFIG_PACKAGE_freeswitch-mod-rtmp=m
+CONFIG_PACKAGE_freeswitch-mod-say-de=m
+CONFIG_PACKAGE_freeswitch-mod-say-en=m
+CONFIG_PACKAGE_freeswitch-mod-say-es=m
+CONFIG_PACKAGE_freeswitch-mod-say-fa=m
+CONFIG_PACKAGE_freeswitch-mod-say-fr=m
+CONFIG_PACKAGE_freeswitch-mod-say-hu=m
+CONFIG_PACKAGE_freeswitch-mod-say-it=m
+CONFIG_PACKAGE_freeswitch-mod-say-nl=m
+CONFIG_PACKAGE_freeswitch-mod-say-pt=m
+CONFIG_PACKAGE_freeswitch-mod-say-ru=m
+CONFIG_PACKAGE_freeswitch-mod-say-th=m
+CONFIG_PACKAGE_freeswitch-mod-say-zh=m
+CONFIG_PACKAGE_freeswitch-mod-shell-stream=m
+CONFIG_PACKAGE_freeswitch-mod-skinny=m
+CONFIG_PACKAGE_freeswitch-mod-sms=m
+CONFIG_PACKAGE_freeswitch-mod-snapshot=m
+CONFIG_PACKAGE_freeswitch-mod-sndfile=m
+CONFIG_PACKAGE_freeswitch-mod-snmp=m
+CONFIG_PACKAGE_freeswitch-mod-snom=m
+CONFIG_PACKAGE_freeswitch-mod-sofia=m
+CONFIG_PACKAGE_freeswitch-mod-sonar=m
+CONFIG_PACKAGE_freeswitch-mod-spandsp=m
+# CONFIG_FS_WITH_FIXED_POINT is not set
+CONFIG_PACKAGE_freeswitch-mod-spy=m
+CONFIG_PACKAGE_freeswitch-mod-ssml=m
+CONFIG_PACKAGE_freeswitch-mod-stress=m
+CONFIG_PACKAGE_freeswitch-mod-syslog=m
+CONFIG_PACKAGE_freeswitch-mod-timerfd=m
+CONFIG_PACKAGE_freeswitch-mod-tone-stream=m
+CONFIG_PACKAGE_freeswitch-mod-translate=m
+CONFIG_PACKAGE_freeswitch-mod-tts-commandline=m
+CONFIG_PACKAGE_freeswitch-mod-valet-parking=m
+CONFIG_PACKAGE_freeswitch-mod-vmd=m
+CONFIG_PACKAGE_freeswitch-mod-voicemail=m
+CONFIG_PACKAGE_freeswitch-mod-voicemail-ivr=m
+CONFIG_PACKAGE_freeswitch-mod-xml-cdr=m
+CONFIG_PACKAGE_freeswitch-mod-xml-curl=m
+CONFIG_PACKAGE_freeswitch-mod-xml-ldap=m
+CONFIG_PACKAGE_freeswitch-mod-xml-rpc=m
+CONFIG_PACKAGE_freeswitch-mod-xml-scgi=m
+CONFIG_PACKAGE_freeswitch-mod-yaml=m
+CONFIG_PACKAGE_freeswitch-sounds-en-08KHz=m
+CONFIG_PACKAGE_freeswitch-sounds-en-16KHz=m
+CONFIG_PACKAGE_freeswitch-sounds-en-32KHz=m
+CONFIG_PACKAGE_freeswitch-sounds-en-48KHz=m
+CONFIG_PACKAGE_freeswitch-sounds-moh-08KHz=m
+CONFIG_PACKAGE_freeswitch-sounds-moh-16KHz=m
+CONFIG_PACKAGE_freeswitch-sounds-moh-32KHz=m
+CONFIG_PACKAGE_freeswitch-sounds-moh-48KHz=m
+CONFIG_PACKAGE_freeswitch-tools=m
+CONFIG_PACKAGE_kamailio4=m
+CONFIG_PACKAGE_kamailio4-mod-acc=m
+CONFIG_PACKAGE_kamailio4-mod-alias-db=m
+CONFIG_PACKAGE_kamailio4-mod-auth=m
+CONFIG_PACKAGE_kamailio4-mod-auth-db=m
+CONFIG_PACKAGE_kamailio4-mod-auth-diameter=m
+CONFIG_PACKAGE_kamailio4-mod-auth-xkeys=m
+CONFIG_PACKAGE_kamailio4-mod-avpops=m
+CONFIG_PACKAGE_kamailio4-mod-benchmark=m
+CONFIG_PACKAGE_kamailio4-mod-cfg-db=m
+CONFIG_PACKAGE_kamailio4-mod-cfg-rpc=m
+CONFIG_PACKAGE_kamailio4-mod-cfgutils=m
+CONFIG_PACKAGE_kamailio4-mod-cnxcc=m
+CONFIG_PACKAGE_kamailio4-mod-corex=m
+CONFIG_PACKAGE_kamailio4-mod-ctl=m
+CONFIG_PACKAGE_kamailio4-mod-db-flatstore=m
+CONFIG_PACKAGE_kamailio4-mod-db-mysql=m
+CONFIG_PACKAGE_kamailio4-mod-db-postgres=m
+CONFIG_PACKAGE_kamailio4-mod-db-sqlite=m
+CONFIG_PACKAGE_kamailio4-mod-db-text=m
+CONFIG_PACKAGE_kamailio4-mod-db-unixodbc=m
+CONFIG_PACKAGE_kamailio4-mod-debugger=m
+CONFIG_PACKAGE_kamailio4-mod-dialog=m
+CONFIG_PACKAGE_kamailio4-mod-dialog-ng=m
+CONFIG_PACKAGE_kamailio4-mod-dialplan=m
+CONFIG_PACKAGE_kamailio4-mod-dispatcher=m
+CONFIG_PACKAGE_kamailio4-mod-diversion=m
+CONFIG_PACKAGE_kamailio4-mod-domain=m
+CONFIG_PACKAGE_kamailio4-mod-domainpolicy=m
+CONFIG_PACKAGE_kamailio4-mod-drouting=m
+CONFIG_PACKAGE_kamailio4-mod-enum=m
+CONFIG_PACKAGE_kamailio4-mod-evapi=m
+CONFIG_PACKAGE_kamailio4-mod-exec=m
+CONFIG_PACKAGE_kamailio4-mod-group=m
+CONFIG_PACKAGE_kamailio4-mod-h350=m
+CONFIG_PACKAGE_kamailio4-mod-htable=m
+CONFIG_PACKAGE_kamailio4-mod-imc=m
+CONFIG_PACKAGE_kamailio4-mod-ipops=m
+CONFIG_PACKAGE_kamailio4-mod-jansson=m
+CONFIG_PACKAGE_kamailio4-mod-janssonrpc-c=m
+CONFIG_PACKAGE_kamailio4-mod-json=m
+CONFIG_PACKAGE_kamailio4-mod-jsonrpc-s=m
+CONFIG_PACKAGE_kamailio4-mod-kex=m
+CONFIG_PACKAGE_kamailio4-mod-lcr=m
+CONFIG_PACKAGE_kamailio4-mod-ldap=m
+CONFIG_PACKAGE_kamailio4-mod-maxfwd=m
+CONFIG_PACKAGE_kamailio4-mod-mediaproxy=m
+CONFIG_PACKAGE_kamailio4-mod-mi-datagram=m
+CONFIG_PACKAGE_kamailio4-mod-mi-fifo=m
+CONFIG_PACKAGE_kamailio4-mod-mi-rpc=m
+CONFIG_PACKAGE_kamailio4-mod-msilo=m
+CONFIG_PACKAGE_kamailio4-mod-msrp=m
+CONFIG_PACKAGE_kamailio4-mod-nat-traversal=m
+CONFIG_PACKAGE_kamailio4-mod-nathelper=m
+CONFIG_PACKAGE_kamailio4-mod-nosip=m
+CONFIG_PACKAGE_kamailio4-mod-path=m
+CONFIG_PACKAGE_kamailio4-mod-pdt=m
+CONFIG_PACKAGE_kamailio4-mod-permissions=m
+CONFIG_PACKAGE_kamailio4-mod-pike=m
+CONFIG_PACKAGE_kamailio4-mod-presence=m
+CONFIG_PACKAGE_kamailio4-mod-presence-dialoginfo=m
+CONFIG_PACKAGE_kamailio4-mod-presence-mwi=m
+CONFIG_PACKAGE_kamailio4-mod-presence-xml=m
+CONFIG_PACKAGE_kamailio4-mod-pua=m
+CONFIG_PACKAGE_kamailio4-mod-pua-bla=m
+CONFIG_PACKAGE_kamailio4-mod-pua-dialoginfo=m
+CONFIG_PACKAGE_kamailio4-mod-pua-mi=m
+CONFIG_PACKAGE_kamailio4-mod-pua-usrloc=m
+CONFIG_PACKAGE_kamailio4-mod-pua-xmpp=m
+CONFIG_PACKAGE_kamailio4-mod-pv=m
+CONFIG_PACKAGE_kamailio4-mod-qos=m
+CONFIG_PACKAGE_kamailio4-mod-ratelimit=m
+CONFIG_PACKAGE_kamailio4-mod-regex=m
+CONFIG_PACKAGE_kamailio4-mod-registrar=m
+CONFIG_PACKAGE_kamailio4-mod-rls=m
+CONFIG_PACKAGE_kamailio4-mod-rr=m
+CONFIG_PACKAGE_kamailio4-mod-rtimer=m
+CONFIG_PACKAGE_kamailio4-mod-rtpengine=m
+CONFIG_PACKAGE_kamailio4-mod-rtpproxy=m
+CONFIG_PACKAGE_kamailio4-mod-sanity=m
+CONFIG_PACKAGE_kamailio4-mod-sctp=m
+CONFIG_PACKAGE_kamailio4-mod-sipcapture=m
+CONFIG_PACKAGE_kamailio4-mod-siptrace=m
+CONFIG_PACKAGE_kamailio4-mod-siputils=m
+CONFIG_PACKAGE_kamailio4-mod-sl=m
+CONFIG_PACKAGE_kamailio4-mod-sms=m
+CONFIG_PACKAGE_kamailio4-mod-speeddial=m
+CONFIG_PACKAGE_kamailio4-mod-sqlops=m
+CONFIG_PACKAGE_kamailio4-mod-sst=m
+CONFIG_PACKAGE_kamailio4-mod-statistics=m
+CONFIG_PACKAGE_kamailio4-mod-stun=m
+CONFIG_PACKAGE_kamailio4-mod-tcpops=m
+CONFIG_PACKAGE_kamailio4-mod-textops=m
+CONFIG_PACKAGE_kamailio4-mod-tls=m
+CONFIG_PACKAGE_kamailio4-mod-tm=m
+CONFIG_PACKAGE_kamailio4-mod-tmx=m
+CONFIG_PACKAGE_kamailio4-mod-topoh=m
+CONFIG_PACKAGE_kamailio4-mod-uac=m
+CONFIG_PACKAGE_kamailio4-mod-uac-redirect=m
+CONFIG_PACKAGE_kamailio4-mod-uri-db=m
+CONFIG_PACKAGE_kamailio4-mod-userblacklist=m
+CONFIG_PACKAGE_kamailio4-mod-usrloc=m
+CONFIG_PACKAGE_kamailio4-mod-utils=m
+CONFIG_PACKAGE_kamailio4-mod-uuid=m
+CONFIG_PACKAGE_kamailio4-mod-xcap-client=m
+CONFIG_PACKAGE_kamailio4-mod-xlog=m
+CONFIG_PACKAGE_kamailio4-mod-xmlrpc=m
+CONFIG_PACKAGE_kamailio4-mod-xmpp=m
 CONFIG_PACKAGE_miax=m
 CONFIG_PACKAGE_pcapsipdump=m
 CONFIG_PACKAGE_restund=m
@@ -6180,7 +6628,7 @@ CONFIG_PACKAGE_lighttpd-mod-extforward=m
 CONFIG_PACKAGE_lighttpd-mod-fastcgi=m
 CONFIG_PACKAGE_lighttpd-mod-flv_streaming=m
 CONFIG_PACKAGE_lighttpd-mod-magnet=m
-CONFIG_PACKAGE_lighttpd-mod-mysql_vhost=m
+# CONFIG_PACKAGE_lighttpd-mod-mysql_vhost is not set
 CONFIG_PACKAGE_lighttpd-mod-proxy=m
 CONFIG_PACKAGE_lighttpd-mod-redirect=m
 CONFIG_PACKAGE_lighttpd-mod-rewrite=m
@@ -7164,6 +7612,7 @@ CONFIG_PACKAGE_irqbalance=m
 CONFIG_PACKAGE_iwcap=m
 CONFIG_PACKAGE_iwinfo=m
 CONFIG_PACKAGE_jshn=y
+CONFIG_PACKAGE_juci-bwc=m
 CONFIG_PACKAGE_kexec-tools=m
 
 #
@@ -7473,6 +7922,7 @@ CONFIG_PACKAGE_opensc-utils-sc-hsm-tool=m
 CONFIG_PACKAGE_opensc-utils-westcos-tool=m
 CONFIG_PACKAGE_openssl-util=m
 CONFIG_PACKAGE_opus-tools=m
+CONFIG_PACKAGE_oui-lookup=m
 CONFIG_PACKAGE_owipcalc=m
 CONFIG_PACKAGE_pciutils=m
 CONFIG_PACKAGE_pcscd=m
@@ -7542,6 +7992,8 @@ CONFIG_PACKAGE_smartd=m
 CONFIG_PACKAGE_smartmontools=m
 CONFIG_PACKAGE_smstools3=m
 CONFIG_PACKAGE_sockread=m
+CONFIG_PACKAGE_speedtest-cli=m
+CONFIG_PACKAGE_speedtest-cpp=m
 CONFIG_PACKAGE_spi-tools=m
 CONFIG_PACKAGE_spidev-test=m
 CONFIG_PACKAGE_strace=m
