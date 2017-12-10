@@ -9,7 +9,7 @@ SELF=${0##*/}
 
 [ -z "$STRIP" ] && {
   echo "$SELF: strip command not defined (STRIP variable not set)"
-  exit 1
+  exit 0
 }
 
 TARGETS=$*
