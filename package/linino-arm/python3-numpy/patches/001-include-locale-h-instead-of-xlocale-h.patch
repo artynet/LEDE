@@ -1,0 +1,11 @@
+--- a/numpy/core/src/multiarray/numpyos.c	2016-10-04 01:42:24.000000000 +0200
++++ b/numpy/core/src/multiarray/numpyos-new.c	2017-12-25 15:36:35.960174667 +0100
+@@ -15,7 +15,7 @@
+ 
+ #ifdef HAVE_STRTOLD_L
+ #include <stdlib.h>
+-#include <xlocale.h>
++#include <locale.h>
+ #endif
+ 
+ 
