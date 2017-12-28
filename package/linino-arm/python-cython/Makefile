@@ -1,0 +1,53 @@
+#
+# Copyright (c) 2015 Quatanium Co., Ltd.
+#
+# Based on copyright (C) 2008-2010 openwrt
+#
+# This is free software, licensed under the GNU General Public License v2.
+# License: http://www.gnu.org/licenses/gpl.html GPL version v2.
+#
+
+include $(TOPDIR)/rules.mk
+
+PKG_NAME:=Cython
+PKG_VERSION:=0.27.3
+PKG_RELEASE:=1
+
+PKG_SOURCE:=Cython-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=http://pypi.python.org/packages/source/C/$(PKG_NAME)/
+# PKG_MD5SUM:=813df20f7ce5f00e60568e0371fbd07c
+PKG_BUILD_DIR:=$(BUILD_DIR_HOST)/$(PKG_NAME)-$(PKG_VERSION)/
+
+PKG_BUILD_DEPENDS:=python
+
+PKG_BUILD_DIR:=$(BUILD_DIR)/python-cython-$(PKG_VERSION)
+PKG_UNPACK=$(HOST_TAR) -C $(PKG_BUILD_DIR) --strip-components=1 -xzf $(DL_DIR)/$(PKG_SOURCE)
+
+include $(INCLUDE_DIR)/package.mk
+$(call include_mk, python-package.mk)
+
+define Package/python-cython
+  SUBMENU:=Python
+  SECTION:=lang
+  CATEGORY:=Languages
+  TITLE:=python-cython
+  URL:=http://www.cython.org
+  DEPENDS:=+python
+endef
+
+define Package/python-cython/description
+  Cython is a language that should make writing C extensions for the Python language easier
+endef
+
+define Build/Compile
+	$(call Build/Compile/PyMod,,install --no-cython-compile --prefix="$(PKG_INSTALL_DIR)/usr")
+endef
+
+define Build/InstallDev
+	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
+	$(CP) \
+	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
+	    $(1)$(PYTHON_PKG_DIR)
+endef
+
+$(eval $(call BuildPackage,python-cython))
