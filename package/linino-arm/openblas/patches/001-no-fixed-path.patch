@@ -1,0 +1,13 @@
+diff --git a/Makefile.install b/Makefile.install
+index 24fe8c82..d9327520 100644
+--- a/Makefile.install
++++ b/Makefile.install
+@@ -3,8 +3,6 @@ export GOTOBLAS_MAKEFILE = 1
+ -include $(TOPDIR)/Makefile.conf_last
+ include ./Makefile.system
+ 
+-PREFIX ?= /opt/OpenBLAS
+-
+ OPENBLAS_INCLUDE_DIR := $(PREFIX)/include
+ OPENBLAS_LIBRARY_DIR := $(PREFIX)/lib
+ OPENBLAS_BINARY_DIR := $(PREFIX)/bin
