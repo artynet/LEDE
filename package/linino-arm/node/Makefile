@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=node
-PKG_VERSION:=v8.9.1
+PKG_VERSION:=v8.9.4
 PKG_RELEASE:=1
 
 PKG_SOURCE:=node-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=http://nodejs.org/dist/$(PKG_VERSION)
-# PKG_MD5SUM:=e6c85c83001340b30671e9432e1bd337
+PKG_MD5SUM:=631ed102fe58c13cf63bc92a68cf4759
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/node-$(PKG_VERSION)
 
@@ -53,6 +53,38 @@ define Package/node/config
 
 	endmenu
 endef
+
+# setting env
+
+CPUHOST:=$(subst x86_64-linux-gnu,x64,$(subst x86_64-pc-linux-gnu,x64,$(subst i686-linux-gnu,x86,$(subst i686-pc-linux-gnu,x86,$(GNU_HOST_NAME)))))
+
+NODEJS:=node-$(PKG_VERSION)-linux-$(CPUHOST).tar.xz
+
+ifeq ($(CPUHOST),x64)
+    MD5SUM_NODE:=ac0f80d58f0149a2895942841c9e176a
+endif
+ifeq ($(CPUHOST),x86)
+    MD5SUM_NODE:=e8fd3023d5bdee0bad45e427bc807e58
+endif
+
+# Distribution URL doesn't always have the correct version
+# Using the OpenWrt/Linino mirror provides a stable version
+define Download/nodebin
+	URL:=https://nodejs.org/dist/$(PKG_VERSION)/
+	FILE:=$(NODEJS)
+	MD5SUM:=$(MD5SUM_NODE)
+endef
+
+# prepare step
+
+define Build/Prepare
+	$(call Build/Prepare/Default)
+	$(eval $(call Download,nodebin))
+	$(TAR) -xvf $(DL_DIR)/$(NODEJS) -C $(STAGING_DIR_HOSTPKG) --strip-components=1
+	# $(STAGING_DIR_HOSTPKG)/bin/npm update npm -g $(STAGING_DIR_HOSTPKG)/lib/node_modules
+endef
+
+# actual build
 
 NODEJS_CPU:=$(subst powerpc,ppc,$(subst aarch64,arm64,$(subst x86_64,x64,$(subst i386,ia32,$(ARCH)))))
 
@@ -108,6 +140,13 @@ else
 CONFIGURE_ARGS+= \
 	--with-intl=none
 endif
+
+# actual install
+
+define Build/InstallDev
+	$(INSTALL_DIR) $(1)/usr/include
+	$(CP) $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include/
+endef
 
 define Package/node/install
 	$(INSTALL_DIR) $(1)/usr/bin
