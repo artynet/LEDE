@@ -74,12 +74,6 @@ MAKE_FLAGS += \
 	pkgconfigdir=/usr/lib/pkgconfig \
 	sysconfdir=/etc/openzwave
 
-# define Build/Prepare
-#	$(call Build/Prepare/Default)
-#	rm $(PKG_BUILD_DIR)/cpp/src/platform/HidController.*
-#	sed -i -e '/hidapi/d;/HidController/d' $(PKG_BUILD_DIR)/distfiles.mk
-# endef
-
 define Package/libopenzwave/install
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libopenzwave.so* $(1)/usr/lib/
