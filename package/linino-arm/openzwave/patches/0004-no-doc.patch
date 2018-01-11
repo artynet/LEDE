@@ -11,7 +11,7 @@ diff --git a/cpp/build/Makefile b/cpp/build/Makefile
 index c4e6a1a6..4ee8a4c5 100644
 --- a/cpp/build/Makefile
 +++ b/cpp/build/Makefile
-@@ -161,15 +161,8 @@ $(top_builddir)/Doxyfile: $(top_srcdir)/docs/Doxyfile.in $(top_srcdir)/cpp/src/v
+@@ -192,15 +192,8 @@ $(top_builddir)/Doxyfile: $(top_srcdir)/docs/Doxyfile.in $(top_srcdir)/cpp/src/v
  		-e 's|[@]VERSION@|$(VERSION).$(VERSION_REV)|g' \
  		< "$<" > "$@"
  

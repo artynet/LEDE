@@ -9,9 +9,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openzwave
-PKG_REV:=32d06447
+PKG_REV:=b0b0912
 PKG_VERSION:=1.5
-PKG_RELEASE:=4
+PKG_RELEASE:=11
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/OpenZWave/open-zwave.git
@@ -27,7 +27,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/openzwave/default
   URL:=http://openzwave.com
   MAINTAINER:=Stijn Tintel <stijn@linux-ipv6.be>
-  DEPENDS:=+libpthread +libstdcpp
+  DEPENDS:=+libpthread +libstdcpp +hidapi +eudev
 endef
 
 define Package/openzwave/description
@@ -64,6 +64,8 @@ $(call Package/openzwave/default)
   TITLE:=Open-ZWave Device Configs
 endef
 
+TARGET_LDFLAGS += -ludev
+
 MAKE_FLAGS += \
 	LD="$(TARGET_CROSS)g++" \
 	LIBDIR="$(PKG_BUILD_DIR)" \
@@ -72,11 +74,11 @@ MAKE_FLAGS += \
 	pkgconfigdir=/usr/lib/pkgconfig \
 	sysconfdir=/etc/openzwave
 
-define Build/Prepare
-	$(call Build/Prepare/Default)
-	rm $(PKG_BUILD_DIR)/cpp/src/platform/HidController.*
-	sed -i -e '/hidapi/d;/HidController/d' $(PKG_BUILD_DIR)/distfiles.mk
-endef
+# define Build/Prepare
+#	$(call Build/Prepare/Default)
+#	rm $(PKG_BUILD_DIR)/cpp/src/platform/HidController.*
+#	sed -i -e '/hidapi/d;/HidController/d' $(PKG_BUILD_DIR)/distfiles.mk
+# endef
 
 define Package/libopenzwave/install
 	$(INSTALL_DIR) $(1)/usr/lib
