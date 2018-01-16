@@ -9,9 +9,9 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mozilla-iot-gateway
 PKG_VERSION:=0.2.2
-PKG_RELEASE:=5
+PKG_RELEASE:=6
 
-PKG_REV:=0d1045e
+PKG_REV:=98223df
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/artynet/gateway.git
@@ -29,7 +29,7 @@ define Package/mozilla-iot-gateway
 	SECTION:=Network
 	CATEGORY:=IoT
 	TITLE:=Mozilla IoT Gateway
-	DEPENDS:=+libc +libstdcpp +node +libopenzwave
+	DEPENDS:=+libc +libstdcpp +node +libopenzwave +python +openssl-util
 endef
 
 define Package/mozilla-iot-gateway/description
