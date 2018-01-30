@@ -11,7 +11,7 @@ PKG_NAME:=openblas
 PKG_VERSION:=0.2.20
 PKG_RELEASE:=1
 
-PKG_REV:=b816569
+PKG_REV:=09e397e
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/xianyi/OpenBLAS.git
