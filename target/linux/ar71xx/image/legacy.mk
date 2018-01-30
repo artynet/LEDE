@@ -1033,6 +1033,22 @@ $(eval $(call SingleProfile,WZRHP64K,64kraw,WZR450HP2,wzr-450hp2,WZR-450HP2,ttyS
 $(eval $(call SingleProfile,Zcomax,64k,ZCN1523H28,zcn-1523h-2-8,ZCN-1523H-2,ttyS0,115200,$$(zcn1523h_mtdlayout)))
 $(eval $(call SingleProfile,Zcomax,64k,ZCN1523H516,zcn-1523h-5-16,ZCN-1523H-5,ttyS0,115200,$$(zcn1523h_mtdlayout)))
 
+# MultiProfile parameters (example with yun board):
+#
+#    profile name        : [LININO_YUN] it is the profile name for this
+#                          configuration. It must be an existent profile name
+#                          that you can find in
+#                          target/linux/ar71xx/generic/profiles/.
+#    profile to build    : [LININO_YUN_16M LININO_YUN_16M_250k] it is the list
+#                          of SingleProfile(s) to build. Here you must write
+#                          the SingleProfile names space separated.
+
+# LININO MULTI PROFILES
+# $(eval $(call MultiProfile,LININO, $(LININO_SINGLE_PROFILES)))
+$(eval $(call MultiProfile,LININO_YUNONECHOW, $(LININO_YUNONECHOW_PROFILES)))
+$(eval $(call MultiProfile,LININO_YUNONE, $(LININO_YUNONE_PROFILES)))
+$(eval $(call MultiProfile,LININO_AVR, $(LININO_AVR_PROFILES)))
+
 endif # ifeq ($(SUBTARGET),generic)
 
 
@@ -1079,28 +1095,8 @@ $(eval $(call SingleProfile,WHRHPG300N,64kraw,WLAEAG300N,wlae-ag300n,WLAE-AG300N
 
 $(eval $(call SingleProfile,ZyXEL,64k,NBG_460N_550N_550NH,nbg460n_550n_550nh,NBG460N,ttyS0,115200,NBG-460N))
 
-<<<<<<< HEAD
 endif # ifeq ($(SUBTARGET),tiny)
 
-=======
-# MultiProfile parameters (example with yun board):
-#
-#    profile name        : [LININO_YUN] it is the profile name for this
-#                          configuration. It must be an existent profile name
-#                          that you can find in
-#                          target/linux/ar71xx/generic/profiles/.
-#    profile to build    : [LININO_YUN_16M LININO_YUN_16M_250k] it is the list
-#                          of SingleProfile(s) to build. Here you must write
-#                          the SingleProfile names space separated.
-
-# LININO MULTI PROFILES
-$(eval $(call MultiProfile,LININO, $(LININO_SINGLE_PROFILES)))
-$(eval $(call MultiProfile,LININO_YUNONECHOW, $(LININO_YUNONECHOW_PROFILES)))
-$(eval $(call MultiProfile,LININO_YUNONE, $(LININO_YUNONE_PROFILES)))
-$(eval $(call MultiProfile,LININO_AVR, $(LININO_AVR_PROFILES)))
-
-endif # ifeq ($(SUBTARGET),generic)
->>>>>>> adding preliminary files for linino build
 
 ifeq ($(SUBTARGET),nand)
 

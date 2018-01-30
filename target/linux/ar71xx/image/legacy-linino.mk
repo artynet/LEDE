@@ -10,13 +10,13 @@
 
 # Linino ALL
 
-define LegacyDevice/LININO
-	DEVICE_TITLE := Linino All Profiles
-	DEVICE_PACKAGES := kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-ledtrig-usbdev kmod-usb-storage \
-		kmod-fs-vfat kmod-fs-msdos kmod-fs-ntfs kmod-fs-ext4 linino-scripts linino-conf \
-		kmod-nls-cp437 kmod-nls-cp850 kmod-nls-cp852 kmod-nls-iso8859-1 kmod-nls-utf8
-endef
-LEGACY_DEVICES += LININO
+# define LegacyDevice/LININO
+# 	DEVICE_TITLE := Linino All Profiles
+# 	DEVICE_PACKAGES := kmod-usb-core kmod-usb-ohci kmod-usb2 kmod-ledtrig-usbdev kmod-usb-storage \
+# 		kmod-fs-vfat kmod-fs-msdos kmod-fs-ntfs kmod-fs-ext4 linino-scripts linino-conf \
+# 		kmod-nls-cp437 kmod-nls-cp850 kmod-nls-cp852 kmod-nls-iso8859-1 kmod-nls-utf8
+# endef
+# LEGACY_DEVICES += LININO
 
 # Linino YunOne
 
