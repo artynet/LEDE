@@ -14,7 +14,6 @@ DEVICE_VARS += BOARDNAME CMDLINE CONSOLE IMAGE_SIZE LOADER_TYPE
 
 ifeq ($(SUBTARGET),generic)
 include ./generic.mk
-<<<<<<< HEAD
 include ./generic-legacy-devices.mk
 include ./generic-senao.mk
 include ./generic-tp-link.mk
@@ -23,11 +22,11 @@ endif
 ifeq ($(SUBTARGET),tiny)
 include ./tiny-tp-link.mk
 include ./tiny-legacy-devices.mk
-=======
 include ./legacy-devices.mk
-include ./legacy-linino.mk
 include ./senao.mk
->>>>>>> adding legacy build mode for Linino boards
+endif
+ifeq ($(SUBTARGET),linino)
+include ./legacy-linino.mk
 endif
 ifeq ($(SUBTARGET),nand)
 include ./nand.mk
