@@ -66,14 +66,20 @@ endef
 
 define PatchKernel
 	cp $(KDIR)/vmlinux$(3) $(KDIR_TMP)/vmlinux$(3)-$(1)
-	echo "1"
-ifneq ($(CONFIG_IMAGE_CMDLINE_HACK),)
 	$(STAGING_DIR_HOST)/bin/patch-cmdline $(KDIR_TMP)/vmlinux$(3)-$(1) "$(strip $(2))"
-endif
+endef
+
+define PatchKernelLinino
+	cp $(KDIR)/vmlinux$(3) $(KDIR_TMP)/vmlinux$(3)-$(1)
 endef
 
 define PatchKernel/initramfs
 	$(call PatchKernel,$(1),$(2),-initramfs)
+	cp $(KDIR_TMP)/vmlinux-initramfs-$(1) $(call imgname,initramfs,$(1)).bin
+endef
+
+define PatchKernelLinino/initramfs
+	$(call PatchKernelLinino,$(1),$(2),-initramfs)
 	cp $(KDIR_TMP)/vmlinux-initramfs-$(1) $(call imgname,initramfs,$(1)).bin
 endef
 
@@ -83,17 +89,23 @@ endef
 # $(4): name suffix, e.g. "-initramfs".
 define PatchKernelLzma
 	cp $(KDIR)/vmlinux$(4) $(KDIR_TMP)/vmlinux$(4)-$(1)
-	echo "2"
+	$(STAGING_DIR_HOST)/bin/patch-cmdline $(KDIR_TMP)/vmlinux$(4)-$(1) "$(strip $(2))"
+	$(call CompressLzma,$(KDIR_TMP)/vmlinux$(4)-$(1),$(KDIR_TMP)/vmlinux$(4)-$(1).bin.lzma,$(3))
+endef
+
+define PatchKernelLininoLzma
+	cp $(KDIR)/vmlinux$(4) $(KDIR_TMP)/vmlinux$(4)-$(1)
 	$(call CompressLzma,$(KDIR_TMP)/vmlinux$(4)-$(1),$(KDIR_TMP)/vmlinux$(4)-$(1).bin.lzma,$(3))
 endef
 
 define PatchKernelGzip
 	cp $(KDIR)/vmlinux$(3) $(KDIR_TMP)/vmlinux$(3)-$(1)
-	echo "3"
-ifneq ($(CONFIG_IMAGE_CMDLINE_HACK),)
 	$(STAGING_DIR_HOST)/bin/patch-cmdline $(KDIR_TMP)/vmlinux$(3)-$(1) "$(strip $(2))"
 	gzip -9n -c $(KDIR_TMP)/vmlinux$(3)-$(1) > $(KDIR_TMP)/vmlinux$(3)-$(1).bin.gz
-endif
+endef
+
+define PatchKernelLininoGzip
+	cp $(KDIR)/vmlinux$(3) $(KDIR_TMP)/vmlinux$(3)-$(1)
 	gzip -9n -c $(KDIR_TMP)/vmlinux$(3)-$(1) > $(KDIR_TMP)/vmlinux$(3)-$(1).bin.gz
 endef
 
@@ -133,18 +145,42 @@ define MkuImageGzip/initramfs
 	$(call MkuImage,gzip,,$(KDIR_TMP)/vmlinux-initramfs-$(1).bin.gz,$(call imgname,initramfs,$(1))-uImage.bin)
 endef
 
+# Linino Variants #########
+
+define MkuImageLininoLzma
+	$(call PatchKernelLininoLzma,$(1),$(2),$(3),$(4))
+	$(call MkuImage,lzma,$(5),$(KDIR_TMP)/vmlinux$(4)-$(1).bin.lzma,$(KDIR_TMP)/vmlinux$(4)-$(1).uImage)
+endef
+
+define MkuImageLininoLzma/initramfs
+	$(call PatchKernelLininoLzma,$(1),$(2),$(3),-initramfs)
+	$(call MkuImage,lzma,$(4),$(KDIR_TMP)/vmlinux-initramfs-$(1).bin.lzma,$(call imgname,initramfs,$(1))-uImage.bin)
+endef
+
+define MkuImageLininoGzip
+	$(call PatchKernelLininoGzip,$(1),$(2))
+	$(call MkuImage,gzip,,$(KDIR_TMP)/vmlinux-$(1).bin.gz,$(KDIR_TMP)/vmlinux-$(1).uImage)
+endef
+
+define MkuImageLininoGzip/initramfs
+	$(call PatchKernelLininoGzip,$(1),$(2),-initramfs)
+	$(call MkuImage,gzip,,$(KDIR_TMP)/vmlinux-initramfs-$(1).bin.gz,$(call imgname,initramfs,$(1))-uImage.bin)
+endef
+
+###########################
+
 define MkuImageOKLI
 	$(call MkuImage,lzma,-M 0x4f4b4c49,$(KDIR)/vmlinux.bin.lzma,$(KDIR_TMP)/vmlinux-$(1).okli)
 endef
 endif
 
 define Image/Build/LininoLzma
- $(call MkuImageLzma,$(2),$(3) $(4))
+ $(call MkuImageLininoLzma,$(2),$(3) $(4))
  $(call Image/Build/Ath,$(1),$(2),$(3),$(4),$(5),$(6),$(7))
 endef
 
 define Image/Build/LininoLzma/initramfs
- $(call MkuImageLzma/initramfs,$(2),$(3) $(4))
+ $(call MkuImageLininoLzma/initramfs,$(2),$(3) $(4))
 endef
 
 # $(1): name of the 1st file.
