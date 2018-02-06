@@ -15,9 +15,9 @@ PKG_REV:=0.3.0-lede
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/artynet/gateway.git
-PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_REV)
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_REV)
 PKG_SOURCE_VERSION=$(PKG_REV)
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_REV).tar.gz
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_REV).tar.gz
 
 PKG_NODE_VERSION:=8.9.4
 
@@ -26,14 +26,15 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
 include $(INCLUDE_DIR)/package.mk
 
 define Package/mozilla-iot-gateway
-	SECTION:=Network
-	CATEGORY:=IoT
-	TITLE:=Mozilla IoT Gateway
-	DEPENDS:=+libc +libstdcpp +node +libopenzwave +python +openssl-util
+  SECTION:=Network
+  CATEGORY:=IoT
+  TITLE:=Mozilla IoT Gateway
+  DEPENDS:=+libc +libstdcpp +node +libopenzwave +python +openssl-util
+  MAINTAINER:=Arturo Rinaldi <arty.net2@gmail.com>
 endef
 
 define Package/mozilla-iot-gateway/description
-	Mozilla IoT Gateway
+  Mozilla IoT Things Gateway
 endef
 
 define Build/Prepare
