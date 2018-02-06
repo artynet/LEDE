@@ -9,9 +9,9 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mozilla-iot-gateway
 PKG_VERSION:=0.3.0
-PKG_RELEASE:=pre6
+PKG_RELEASE:=5
 
-PKG_REV:=008609f
+PKG_REV:=0.3.0-lede
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/artynet/gateway.git
