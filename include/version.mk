@@ -109,3 +109,6 @@ VERSION_SED_SCRIPT:=$(SED) 's,%U,$(call sed_escape,$(VERSION_REPO)),g' \
 	-e 's,%P,$(call sed_escape,$(VERSION_PRODUCT)),g' \
 	-e 's,%h,$(call sed_escape,$(VERSION_HWREV)),g'
 
+LININO_SED:=$(SED) 's,%U,$(VERSION_REPO),g' \
+	-e 's,%n,\L$(subst $(space),_,$(VERSION_NICK)),g' \
+	-e 's/\/targets.*//g'
