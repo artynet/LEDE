@@ -9,9 +9,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openzwave
-PKG_REV:=43a39d5
+PKG_REV:=5e0d37e
 PKG_VERSION:=1.5
-PKG_RELEASE:=15
+PKG_RELEASE:=16
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/OpenZWave/open-zwave.git
