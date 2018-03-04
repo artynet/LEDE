@@ -9,9 +9,9 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openblas
 PKG_VERSION:=0.2.20
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
-PKG_REV:=09e397e
+PKG_REV:=72e6515
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/xianyi/OpenBLAS.git
