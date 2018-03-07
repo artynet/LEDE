@@ -8,20 +8,20 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mozilla-iot-gateway-dev
-PKG_VERSION:=0.4.0-beta1
+PKG_VERSION:=0.4.0
 PKG_RELEASE:=1
 
-PKG_REV:=0.4.0-lede-beta1
+PKG_REV:=164a6fe
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/artynet/gateway.git
-PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_REV)
+PKG_SOURCE_URL:=https://github.com/mozilla-iot/gateway.git
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_REV)
 PKG_SOURCE_VERSION=$(PKG_REV)
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_REV).tar.gz
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_REV).tar.gz
 
 PKG_NODE_VERSION:=8.9.4
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)-$(PKG_REV)
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -29,7 +29,7 @@ define Package/mozilla-iot-gateway-dev
   SECTION:=Network
   CATEGORY:=IoT
   TITLE:=Mozilla IoT Gateway
-  DEPENDS:=+libc +libstdcpp +node +libopenzwave +python +openssl-util
+  DEPENDS:=+node +libopenzwave +python +openssl-util
   MAINTAINER:=Arturo Rinaldi <arty.net2@gmail.com>
 endef
 
@@ -37,15 +37,12 @@ define Package/mozilla-iot-gateway-dev/description
   Mozilla IoT Things Gateway (Dev Code)
 endef
 
-define Build/Prepare
-	mkdir -p $(PKG_BUILD_DIR)/build
-	$(TAR) xvf $(DL_DIR)/$(PKG_SOURCE) -C $(PKG_BUILD_DIR)/build --strip-components=1
-	$(INSTALL_DIR) $(PKG_BUILD_DIR)
-endef
-
 NODEJS_CPU:=$(subst powerpc,ppc,$(subst aarch64,arm64,$(subst x86_64,x64,$(subst i386,ia32,$(ARCH)))))
 
+# actual gateway build
+
 define Build/Compile
+	(cd $(PKG_BUILD_DIR); \
 	$(MAKE_VARS) \
 	$(MAKE_FLAGS) \
 	npm_config_arch=$(NODEJS_CPU) \
@@ -53,15 +50,14 @@ define Build/Compile
 	npm_config_cache=$(TMP_DIR)/npm-cache \
 	npm_config_tmp=$(TMP_DIR)/npm-tmp \
 	PREFIX="$(PKG_INSTALL_DIR)/usr/" \
-	npm install --build-from-source --target_arch=$(NODEJS_CPU) -g $(DL_DIR)/$(PKG_SOURCE)
+	npm install --build-from-source --target_arch=$(NODEJS_CPU))
 	rm -rf $(TMP_DIR)/npm-tmp
 	rm -rf $(TMP_DIR)/npm-cache
 endef
 
 define Package/mozilla-iot-gateway-dev/install
 	$(INSTALL_DIR) $(1)/opt/mozilla-iot-gateway-dev
-	$(CP) -r $(PKG_BUILD_DIR)/build/* $(1)/opt/mozilla-iot-gateway-dev
-	$(CP) -r $(PKG_INSTALL_DIR)/usr/lib/node_modules/things-gateway/node_modules $(1)/opt/mozilla-iot-gateway-dev
+	$(CP) `ls -d -1 $(PKG_BUILD_DIR)/* | grep -v ipkg` $(1)/opt/mozilla-iot-gateway-dev
 
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) ./files/mozilla-iot-run-dev $(1)/usr/bin

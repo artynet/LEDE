@@ -1,0 +1,12 @@
+diff --git a/package.json b/package.json
+index 6fbdd27..c211333 100644
+--- a/package.json
++++ b/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "things-gateway",
+-  "version": "0.3.0",
++  "version": "0.4.0-164a6fe",
+   "description": "Web of Things gateway",
+   "main": "app.js",
+   "scripts": {
