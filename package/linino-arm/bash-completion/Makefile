@@ -21,6 +21,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/bash-completion
   SECTION:=utils
   CATEGORY:=Utilities
+  SUBMENU:=Shells
   TITLE:=bash completion scripts
   DEPENDS:=+libncurses +bash
   URL:=http://www.caliban.org/bash/
