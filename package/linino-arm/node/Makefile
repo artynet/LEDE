@@ -13,7 +13,7 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=node-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=http://nodejs.org/dist/$(PKG_VERSION)
-# PKG_MD5SUM:=3f47386a36575c3b6f9ca7eb5fc67520
+PKG_MD5SUM:=7b7223dc2af6743923aadfb868703353
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/node-$(PKG_VERSION)
 
@@ -61,10 +61,10 @@ CPUHOST:=$(subst x86_64-linux-gnu,x64,$(subst x86_64-pc-linux-gnu,x64,$(subst i6
 NODEJS:=node-$(PKG_VERSION)-linux-$(CPUHOST).tar.xz
 
 ifeq ($(CPUHOST),x64)
-    # MD5SUM_NODE:=03f228eb240f9bd0c096b6ea074d984d
+    MD5SUM_NODE:=d71d54fa7f5fe4b5e1931ee9aa7339a7
 endif
 ifeq ($(CPUHOST),x86)
-    # MD5SUM_NODE:=c478de2f246de2fedc89552592eb9eb3
+    MD5SUM_NODE:=03d6a1a856f773f9134f1be16e027dff
 endif
 
 # Distribution URL doesn't always have the correct version
