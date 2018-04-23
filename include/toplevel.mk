@@ -117,7 +117,7 @@ defconfig: scripts/config/conf prepare-tmpinfo FORCE
 
 defrpi: scripts/config/conf prepare-tmpinfo FORCE
 	touch .config
-	@if [ ! -s .config -a -e $(TOPDIR)/configfiles/armconfig ]; then cp $(TOPDIR)/configfiles/armconfig .config; fi
+	@if [ ! -s .config -a -e $(TOPDIR)/configfiles/arancino_config ]; then cp $(TOPDIR)/configfiles/arancino_config .config; fi
 	$< --defconfig=.config Config.in
 
 confdefault-y=allyes
