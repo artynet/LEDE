@@ -258,15 +258,9 @@ define Image/mkfs/ext4
 		$(if $(CONFIG_TARGET_EXT4_JOURNAL),,-J) \
 		$(if $(SOURCE_DATE_EPOCH),-T $(SOURCE_DATE_EPOCH)) \
 		$@ $(call mkfs_target_dir,$(1))/
-        $(STAGING_DIR_HOST)/bin/make_ext4fs \
-                -l $(EXTE2SIZE) -b $(CONFIG_TARGET_EXT4_BLOCKSIZE) \
-                $(if $(CONFIG_TARGET_EXT4_RESERVED_PCT),-m $(CONFIG_TARGET_EXT4_RESERVED_PCT)) \
-                $(if $(CONFIG_TARGET_EXT4_JOURNAL),,-J) \
-                $(if $(SOURCE_DATE_EPOCH),-T $(SOURCE_DATE_EPOCH)) \
-                $@-extra $(call mkfs_target_dir,$(1))-extra/
 endef
 
-ifdef CONFIG_TARGET_ROOTFS_EXT_PARTSIZE
+ifdef CONFIG_TARGET_ROOTFS_EXT
 define Image/mkfs/ext4-extra
         $(STAGING_DIR_HOST)/bin/make_ext4fs \
                 -l $(EXTE2SIZE) -b $(CONFIG_TARGET_EXT4_BLOCKSIZE) \

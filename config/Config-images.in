@@ -264,9 +264,14 @@ menu "Target Images"
 		  it will be mounted by PARTUUID which makes the kernel find the
 		  appropriate disk automatically.
 
+	config TARGET_ROOTFS_EXT
+		bool "Rootfs extra partition"
+		#depends on TARGET_ROOTFS_PARTSIZE
+		default n
+
 	config TARGET_ROOTFS_EXT_PARTSIZE
                 int "Extra Root filesystem partition size (in MB)"
-                depends on GRUB_IMAGES || TARGET_ROOTFS_EXT4FS || TARGET_rb532 || TARGET_mvebu || TARGET_uml
+                depends on TARGET_ROOTFS_EXT
                 default 256
                 help
                   Select the extra root filesystem partition size.
