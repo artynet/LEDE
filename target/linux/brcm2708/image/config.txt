@@ -961,3 +961,4 @@ dtoverlay=mcp2515-can0,interrupt=6
 #dtoverlay=rpi-dac
 #dtoverlay=rpi-proto
 #dtoverlay=rra-digidac1-wm8741-audio
+dtoverlay=pi3-disable-bt
