@@ -1,1 +1,1 @@
-dwc_otg.lpm_enable=0 console=sttyUSB0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait
+dwc_otg.lpm_enable=0 dwc_otg.nak_holdoff=0 dwc_otg.fiq_enable=1 dwc_otg.fiq_fsm_enable=1 dwc_otg.fiq_fsm_mask=0x7 console=ttyUSB0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait ro
