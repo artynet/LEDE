@@ -10,8 +10,6 @@ Allow it to be used by changing the device tree.
  drivers/tty/serial/max310x.c | 57 ++++++++++++++++++++++++++++++++++----------
  1 file changed, 44 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/tty/serial/max310x.c b/drivers/tty/serial/max310x.c
-index d45133056f51d..601875861c330 100644
 --- a/drivers/tty/serial/max310x.c
 +++ b/drivers/tty/serial/max310x.c
 @@ -13,6 +13,13 @@
@@ -44,7 +42,7 @@ index d45133056f51d..601875861c330 100644
  };
  
  struct max310x_one {
-@@ -407,6 +416,7 @@ static const struct max310x_devtype max3107_devtype = {
+@@ -407,6 +416,7 @@ static const struct max310x_devtype max3
  	.nr	= 1,
  	.detect	= max3107_detect,
  	.power	= max310x_power,
@@ -52,7 +50,7 @@ index d45133056f51d..601875861c330 100644
  };
  
  static const struct max310x_devtype max3108_devtype = {
-@@ -414,6 +424,7 @@ static const struct max310x_devtype max3108_devtype = {
+@@ -414,6 +424,7 @@ static const struct max310x_devtype max3
  	.nr	= 1,
  	.detect	= max3108_detect,
  	.power	= max310x_power,
@@ -60,7 +58,7 @@ index d45133056f51d..601875861c330 100644
  };
  
  static const struct max310x_devtype max3109_devtype = {
-@@ -421,6 +432,7 @@ static const struct max310x_devtype max3109_devtype = {
+@@ -421,6 +432,7 @@ static const struct max310x_devtype max3
  	.nr	= 2,
  	.detect	= max3109_detect,
  	.power	= max310x_power,
@@ -68,7 +66,7 @@ index d45133056f51d..601875861c330 100644
  };
  
  static const struct max310x_devtype max14830_devtype = {
-@@ -428,6 +440,7 @@ static const struct max310x_devtype max14830_devtype = {
+@@ -428,6 +440,7 @@ static const struct max310x_devtype max1
  	.nr	= 4,
  	.detect	= max14830_detect,
  	.power	= max14830_power,
@@ -76,7 +74,7 @@ index d45133056f51d..601875861c330 100644
  };
  
  static bool max310x_reg_writeable(struct device *dev, unsigned int reg)
-@@ -506,6 +519,7 @@ static int max310x_set_baud(struct uart_port *port, int baud)
+@@ -506,6 +519,7 @@ static int max310x_set_baud(struct uart_
  		}
  	}
  
@@ -84,7 +82,7 @@ index d45133056f51d..601875861c330 100644
  	max310x_port_write(port, MAX310X_BRGDIVMSB_REG, (div / 16) >> 8);
  	max310x_port_write(port, MAX310X_BRGDIVLSB_REG, div / 16);
  	max310x_port_write(port, MAX310X_BRGCFG_REG, (div % 16) | mode);
-@@ -516,7 +530,7 @@ static int max310x_set_baud(struct uart_port *port, int baud)
+@@ -516,7 +530,7 @@ static int max310x_set_baud(struct uart_
  static int max310x_update_best_err(unsigned long f, long *besterr)
  {
  	/* Use baudrate 115200 for calculate error */
@@ -93,7 +91,7 @@ index d45133056f51d..601875861c330 100644
  
  	if ((*besterr < 0) || (*besterr > err)) {
  		*besterr = err;
-@@ -527,7 +541,7 @@ static int max310x_update_best_err(unsigned long f, long *besterr)
+@@ -527,7 +541,7 @@ static int max310x_update_best_err(unsig
  }
  
  static int max310x_set_ref_clk(struct max310x_port *s, unsigned long freq,
@@ -102,7 +100,7 @@ index d45133056f51d..601875861c330 100644
  {
  	unsigned int div, clksrc, pllcfg = 0;
  	long besterr = -1;
-@@ -571,8 +585,13 @@ static int max310x_set_ref_clk(struct max310x_port *s, unsigned long freq,
+@@ -571,8 +585,13 @@ static int max310x_set_ref_clk(struct ma
  	}
  
  	/* Configure clock source */
@@ -118,7 +116,7 @@ index d45133056f51d..601875861c330 100644
  	/* Configure PLL */
  	if (pllcfg) {
  		clksrc |= MAX310X_CLKSRC_PLL_BIT;
-@@ -586,6 +605,7 @@ static int max310x_set_ref_clk(struct max310x_port *s, unsigned long freq,
+@@ -586,6 +605,7 @@ static int max310x_set_ref_clk(struct ma
  	if (pllcfg && xtal)
  		msleep(10);
  
@@ -126,7 +124,7 @@ index d45133056f51d..601875861c330 100644
  	return (int)bestfreq;
  }
  
-@@ -799,6 +819,7 @@ static void max310x_set_termios(struct uart_port *port,
+@@ -799,6 +819,7 @@ static void max310x_set_termios(struct u
  	unsigned int lcr, flow = 0;
  	int baud;
  
@@ -134,7 +132,7 @@ index d45133056f51d..601875861c330 100644
  	/* Mask termios capabilities we don't support */
  	termios->c_cflag &= ~CMSPAR;
  
-@@ -870,6 +891,7 @@ static void max310x_set_termios(struct uart_port *port,
+@@ -870,6 +891,7 @@ static void max310x_set_termios(struct u
  				  port->uartclk / 16 / 0xffff,
  				  port->uartclk / 4);
  
@@ -142,7 +140,7 @@ index d45133056f51d..601875861c330 100644
  	/* Setup baudrate generator */
  	baud = max310x_set_baud(port, baud);
  
-@@ -1085,6 +1107,7 @@ static int max310x_probe(struct device *dev, struct max310x_devtype *devtype,
+@@ -1085,6 +1107,7 @@ static int max310x_probe(struct device *
  	struct clk *clk_osc, *clk_xtal;
  	struct max310x_port *s;
  	bool xtal = false;
@@ -150,7 +148,7 @@ index d45133056f51d..601875861c330 100644
  
  	if (IS_ERR(regmap))
  		return PTR_ERR(regmap);
-@@ -1111,22 +1134,30 @@ static int max310x_probe(struct device *dev, struct max310x_devtype *devtype,
+@@ -1111,22 +1134,30 @@ static int max310x_probe(struct device *
  	} else if (PTR_ERR(clk_osc) == -EPROBE_DEFER ||
  		   PTR_ERR(clk_xtal) == -EPROBE_DEFER) {
  		return -EPROBE_DEFER;
@@ -189,7 +187,7 @@ index d45133056f51d..601875861c330 100644
  	s->regmap = regmap;
  	s->devtype = devtype;
  	dev_set_drvdata(dev, s);
-@@ -1156,7 +1187,7 @@ static int max310x_probe(struct device *dev, struct max310x_devtype *devtype,
+@@ -1156,7 +1187,7 @@ static int max310x_probe(struct device *
  				   MAX310X_MODE1_AUTOSLEEP_BIT);
  	}
  
