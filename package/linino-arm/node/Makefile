@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=node
-PKG_VERSION:=v8.11.1
+PKG_VERSION:=v8.11.2
 PKG_RELEASE:=1
 
 PKG_SOURCE:=node-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=http://nodejs.org/dist/$(PKG_VERSION)
-PKG_MD5SUM:=7b7223dc2af6743923aadfb868703353
+PKG_MD5SUM:=56be405b63b8c6c8ecd98c002fb15e4a
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/node-$(PKG_VERSION)
 
@@ -49,7 +49,7 @@ define Package/node/config
 
 	config NODEJS_ICU
 		bool "enable i18n features"
-		default y
+		default n
 
 	endmenu
 endef
@@ -61,10 +61,10 @@ CPUHOST:=$(subst x86_64-linux-gnu,x64,$(subst x86_64-pc-linux-gnu,x64,$(subst i6
 NODEJS:=node-$(PKG_VERSION)-linux-$(CPUHOST).tar.xz
 
 ifeq ($(CPUHOST),x64)
-    MD5SUM_NODE:=d71d54fa7f5fe4b5e1931ee9aa7339a7
+    MD5SUM_NODE:=dc2b675234c473c7b37b1076a03120f1
 endif
 ifeq ($(CPUHOST),x86)
-    MD5SUM_NODE:=03d6a1a856f773f9134f1be16e027dff
+    MD5SUM_NODE:=6184b7a7cb9ea98194bf389c1a485aff
 endif
 
 # Distribution URL doesn't always have the correct version
