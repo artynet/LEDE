@@ -651,7 +651,7 @@ $(eval $(call KernelPackage,serial-8250))
 define KernelPackage/regmap
   SUBMENU:=$(OTHER_MENU)
   TITLE:=Generic register map support
-  DEPENDS:=+kmod-lib-lzo +kmod-i2c-core
+  DEPENDS:=+kmod-lib-lz4 +kmod-i2c-core
   KCONFIG:=CONFIG_REGMAP \
 	   CONFIG_REGMAP_MMIO \
 	   CONFIG_REGMAP_SPI \
