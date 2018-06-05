@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=bluez
-PKG_VERSION:=5.48
+PKG_VERSION:=5.50
 PKG_RELEASE:=7
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
@@ -83,6 +83,7 @@ define Package/bluez-daemon/conffiles
 /etc/bluetooth/network.conf
 /etc/bluetooth/input.conf
 /etc/bluetooth/audio.conf
+/etc/bluetooth/keys
 /etc/config/bluetooth
 endef
 
@@ -90,8 +91,12 @@ define Package/bluez-6lowpan-daemon/conffiles
 /etc/bluetooth/bluetooth_6lowpand.conf
 endef
 
+TARGET_CPPFLAGS += \
+ 		-D_GNU_SOURCE
+
 CONFIGURE_ARGS += \
 	--enable-static \
+	--enable-shared \
 	--enable-client \
 	--enable-datafiles \
 	--enable-experimental \
@@ -108,9 +113,6 @@ CONFIGURE_ARGS += \
 	--disable-test \
 	--disable-udev \
 	--enable-deprecated
-
-TARGET_CPPFLAGS += \
-	-D_GNU_SOURCE
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
