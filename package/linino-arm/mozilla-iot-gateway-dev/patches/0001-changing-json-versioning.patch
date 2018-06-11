@@ -5,8 +5,8 @@ index 3468235..43fcee2 100644
 @@ -1,6 +1,6 @@
  {
    "name": "things-gateway",
--  "version": "0.3.0",
-+  "version": "0.4.0-5780830",
+-  "version": "0.4.0",
++  "version": "0.4.2",
    "description": "Web of Things gateway",
    "main": "app.js",
    "scripts": {
