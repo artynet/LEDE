@@ -1,8 +1,8 @@
 diff --git a/Makefile.tools b/Makefile.tools
-index 651ff00ca..dfaceac56 100644
+index 9647fb027..689e05a79 100644
 --- a/Makefile.tools
 +++ b/Makefile.tools
-@@ -176,6 +176,7 @@ endif
+@@ -194,6 +194,7 @@ endif
  if TOOLS
  bin_PROGRAMS += tools/rctest tools/l2test tools/l2ping tools/bccmd \
  			tools/bluemoon tools/hex2hcd tools/mpris-proxy \
@@ -10,7 +10,7 @@ index 651ff00ca..dfaceac56 100644
  			tools/btattach
  
  noinst_PROGRAMS += tools/bdaddr tools/avinfo tools/avtest \
-@@ -283,6 +284,9 @@ tools_bccmd_LDADD = lib/libbluetooth-internal.la
+@@ -301,6 +302,9 @@ tools_bccmd_LDADD = lib/libbluetooth-internal.la
  tools_bluemoon_SOURCES = tools/bluemoon.c monitor/bt.h
  tools_bluemoon_LDADD = src/libshared-mainloop.la
  
