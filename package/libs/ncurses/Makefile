@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ncurses
 PKG_VERSION:=6.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
@@ -44,6 +44,15 @@ define Package/libncurses
   ABI_VERSION:=$(PKG_VERSION)
 endef
 
+define Package/ncurses-bin
+  SECTION:=utils
+  CATEGORY:=Utilities
+  TITLE:=Terminal handling utilities (Unicode)
+  URL:=http://www.gnu.org/software/ncurses/
+  DEPENDS:= +terminfo +libncurses
+  ABI_VERSION:=$(PKG_VERSION)
+endef
+
 TARGET_CFLAGS += $(FPIC)
 
 CONFIGURE_ARGS += \
@@ -56,7 +65,6 @@ CONFIGURE_ARGS += \
 	--without-debug \
 	--without-manpages \
 	--without-profile \
-	--without-progs \
 	--without-tests \
 	--disable-big-core \
 	--disable-home-terminfo \
@@ -81,7 +89,7 @@ HOST_CONFIGURE_ARGS += \
 
 ifeq ($(HOST_OS),FreeBSD)
 	CONFIGURE_ARGS +=
-		--with-terminfo=/usr/share/terminfo.db 
+		--with-terminfo=/usr/share/terminfo.db
 endif
 
 MAKE_FLAGS += \
@@ -95,7 +103,7 @@ define Build/Install/Default
 	$(MAKE_VARS) \
 	$(MAKE) -C $(PKG_BUILD_DIR)/$(MAKE_PATH) \
 		$(MAKE_INSTALL_FLAGS) \
-		$(1) install.libs install.data;
+		$(1) install.libs install.data install.progs;
 endef
 
 define Package/terminfo/install
@@ -124,6 +132,11 @@ define Package/libncurses/install
 	done
 endef
 
+define Package/ncurses-bin/install
+	$(INSTALL_DIR) $(1)/usr/bin
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin/
+endef
+
 define Build/InstallDev
 	$(CP) $(PKG_INSTALL_DIR)/* $(1)
 	for lib in ncurses panel menu form; do \
@@ -150,3 +163,4 @@ endef
 $(eval $(call HostBuild))
 $(eval $(call BuildPackage,terminfo))
 $(eval $(call BuildPackage,libncurses))
+$(eval $(call BuildPackage,ncurses-bin))
