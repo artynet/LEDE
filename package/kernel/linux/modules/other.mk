@@ -939,3 +939,20 @@ define KernelPackage/bmp085-spi/description
 endef
 
 $(eval $(call KernelPackage,bmp085-spi))
+
+define KernelPackage/max310x-spi
+  SUBMENU:=$(OTHER_MENU)
+  TITLE:=Maxim (Dallas) MAX3107/8/9, MAX14830 serial driver
+  DEPENDS:= 
+  KCONFIG:= CONFIG_REGMAP_SPI \
+       CONFIG_SPI=y
+  FILES:= $(LINUX_DIR)/drivers/tty/serial/max310x.ko
+  AUTOLOAD:=$(call AutoProbe,max310x)
+endef
+define KernelPackage/max310x-spi/description
+ This driver adds support for Maxim MAX310x serial dirver
+ connected via SPI.
+endef
+
+$(eval $(call KernelPackage,max310x-spi))
+
