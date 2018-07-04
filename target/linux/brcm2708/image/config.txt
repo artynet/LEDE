@@ -940,8 +940,10 @@ dtparam=i2c0=on
 dtparam=i2c1=on
 dtparam=spi=on
 
-dtoverlay=spi0-cs,cs0_pin=8                             
-dtoverlay=mcp2515-can0,interrupt=6
+#dtoverlay=spi0-cs,cs0_pin=8                             
+#dtoverlay=mcp2515-can0,interrupt=6
+dtoverlay=spi0-cs,cs0_pin=7
+dtoverlay=scs-max3107-spi0 
 #dtoverlay=adau1977-adc
 #dtoverlay=allo-piano-dac-pcm512x-audio
 #dtoverlay=audioinjector-wm8731-audio
