@@ -3,7 +3,8 @@
 # Copyright (C) 2010 Vertical Communications
 
 do_mount_root() {
-	fsck.ext4 -p /dev/mmcblk0p2 
+	logger -t INFO "Start checking SD filesystem"
+	fsck.ext4 -y /dev/mmcblk0p2 
 	mount_root
 	boot_run_hook preinit_mount_root
 	[ -f /sysupgrade.tgz ] && {
