@@ -2,4 +2,3 @@
 ::shutdown:/etc/init.d/rcS K shutdown
 ::askconsole:/usr/libexec/login.sh
 ttyFTDI::askfirst:/usr/libexec/login.sh
-ttyMAX0::respawn:/sbin/getty -L ttyMAX0 115200 vt102
