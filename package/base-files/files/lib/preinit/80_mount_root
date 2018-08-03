@@ -3,15 +3,25 @@
 # Copyright (C) 2010 Vertical Communications
 
 do_mount_root() {
-	logger -t INFO "Start checking SD filesystem"
-	fsck.ext4 -y /dev/mmcblk0p2 
-	mount_root
-	boot_run_hook preinit_mount_root
-	[ -f /sysupgrade.tgz ] && {
-		echo "- config restore -"
-		cd /
-		tar xzf /sysupgrade.tgz
-	}
+        echo "mount_root: Start checking SD filesystem" > /dev/kmsg
+        fsck.ext4 -y /dev/mmcblk0p2 > /dev/kmsg
+        STATUS=$?
+        if [ ${STATUS} -ne "0" ]; then
+                echo "mount_root: file system check of /dev/mmcblk0p2 failed, status= ${STATUS}" > /dev/kmsg
+                # if reboot needed....
+                if [ "${STATUS}"=="3" ]; then
+                  echo "mount_root: file system check need to be rebooted"  > /dev/kmsg
+                  reboot -f
+                fi
+        fi
+        mount_root
+        boot_run_hook preinit_mount_root
+        [ -f /sysupgrade.tgz ] && {
+                echo "- config restore -"
+                cd /
+                tar xzf /sysupgrade.tgz
+        }
 }
 
+echo "mount_root: Starting..." > /dev/kmsg
 [ "$INITRAMFS" = "1" ] || boot_hook_add preinit_main do_mount_root
