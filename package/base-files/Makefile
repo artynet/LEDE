@@ -11,7 +11,7 @@ include $(INCLUDE_DIR)/kernel.mk
 include $(INCLUDE_DIR)/version.mk
 
 PKG_NAME:=base-files
-PKG_RELEASE:=173.8
+PKG_RELEASE:=173.9
 PKG_FLAGS:=nonshared
 
 PKG_FILE_DEPENDS:=$(PLATFORM_DIR)/ $(GENERIC_PLATFORM_DIR)/base-files/
@@ -154,7 +154,9 @@ define Package/base-files/install
 	mkdir -p $(1)/www
 	mkdir -p $(1)/root
 	$(LN) /proc/mounts $(1)/etc/mtab
-	mkdir -p $(1)/var/run
+	mkdir -p $(1)/var
+	mkdir -p $(1)/tmp/run
+	$(LN) /tmp/run $(1)/var/run
 	mkdir -p $(1)/etc
 	$(LN) /tmp/resolv.conf /tmp/TZ /tmp/localtime $(1)/etc/
 
@@ -170,6 +172,19 @@ define Package/base-files/install
 				echo "$$$${conffile##$(1)}" >> $(1)/CONTROL/conffiles; \
 		fi \
 	done
+endef
+
+define Package/base-files/postinst
+#!/bin/sh
+	if [[ -L $${IPKG_INSTROOT}/var/run && -d $${IPKG_INSTROOT}/var/run ]]; then 
+		echo "/var/run it is already a symlink"
+	else
+              mv $${IPKG_INSTROOT}/var/run/* $${IPKG_INSTROOT}/tmp/run 
+              rm -rf $${IPKG_INSTROOT}/var/run 
+	      # create a link for /var/run
+	      ln -s  $${IPKG_INSTROOT}/tmp/run  $${IPKG_INSTROOT}/var/run
+        fi 
+exit 0
 endef
 
 ifneq ($(DUMP),1)
