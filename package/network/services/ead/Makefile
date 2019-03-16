@@ -23,6 +23,7 @@ define Package/ead
   SECTION:=net
   CATEGORY:=Base system
   TITLE:=Emergency Access Daemon
+  DEPENDS:=+bash
   URL:=http://bridge.sourceforge.net/
 endef
 
