@@ -11,7 +11,7 @@ PKG_NAME:=openssl
 PKG_BASE:=1.1.1
 PKG_BUGFIX:=c
 PKG_VERSION:=$(PKG_BASE)$(PKG_BUGFIX)
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 PKG_USE_MIPS16:=0
 ENGINES_DIR=engines-1.1
 
@@ -104,6 +104,22 @@ endef
 define Package/libopenssl/description
 $(call Package/openssl/Default/description)
 This package contains the OpenSSL shared libraries, needed by other programs.
+endef
+
+define Package/libopenssl-dev
+	$(call Package/openssl/Default)
+	URL:=http://www.openssl.org/
+	SECTION:=libs
+	SUBMENU:=SSL
+	CATEGORY:=Libraries
+	DEPENDS:=+OPENSSL_WITH_COMPRESSION:zlib
+	TITLE+= (DEV files)
+	ABI_VERSION:=$(PKG_VERSION)
+endef
+
+define Package/libopenssl-dev/description
+	$(call Package/openssl/Default/description)
+	This package contains the OpenSSL DEV files, needed by other source code for building.
 endef
 
 define Package/openssl-util
@@ -382,7 +398,20 @@ define Package/libopenssl/install
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/lib/libcrypto.so.* $(1)/usr/lib/
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/lib/libssl.so.* $(1)/usr/lib/
 	$(if $(CONFIG_OPENSSL_ENGINE),$(INSTALL_DIR) $(1)/usr/lib/$(ENGINES_DIR))
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/lib{crypto,ssl}.{a,so*} $(1)/usr/lib/
 endef
+
+define Package/libopenssl-dev/install
+	$(INSTALL_DIR) $(1)/usr/include
+	$(CP) $(PKG_INSTALL_DIR)/usr/include/openssl $(1)/usr/include/
+	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/{openssl,libcrypto,libssl}.pc $(1)/usr/lib/pkgconfig/
+	[ -n "$(TARGET_LDFLAGS)" ] && $(SED) 's#$(TARGET_LDFLAGS)##g' $(1)/usr/lib/pkgconfig/{openssl,libcrypto,libssl}.pc || true
+endef
+
+	 define Package/openssl-util/install
+	@@ -267,4 +290,5 @@ define Package/openssl-util/install
+	 endef
 
 define Package/libopenssl-conf/install
 	$(INSTALL_DIR) $(1)/etc/ssl
@@ -410,6 +439,7 @@ define Package/libopenssl-padlock/install
 endef
 
 $(eval $(call BuildPackage,libopenssl))
+$(eval $(call BuildPackage,libopenssl-dev))
 $(eval $(call BuildPackage,libopenssl-conf))
 $(eval $(call BuildPackage,libopenssl-afalg))
 $(eval $(call BuildPackage,libopenssl-devcrypto))
