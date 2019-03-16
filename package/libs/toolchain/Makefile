@@ -193,7 +193,7 @@ define Package/libpthread/config
 		string
 		prompt "libpthread shared library files (use wildcards)"
 		depends on EXTERNAL_TOOLCHAIN && PACKAGE_libpthread
-		default "./lib/libpthread{-*.so,.so.*}"
+		default "./lib/libpthread{-*.so,.so.*,.a}"
 
 	endmenu
 endef
