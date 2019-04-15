@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=smartme-scripts
 PKG_VERSION:=1.0
-PKG_RELEASE:=6
+PKG_RELEASE:=7
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -17,7 +17,7 @@ define Package/smartme-scripts
   SECTION:=utils
   CATEGORY:=Base system
   TITLE:=Custom SmartME scripts
-  DEPENDS:=+kmod-loop +wireless-tools
+  DEPENDS:=+kmod-loop +wireless-tools +brcmfmac-firmware-bluetooth +gnupg +luci
 endef
 
 define Build/Compile
