@@ -28,7 +28,8 @@ define KernelPackage/can
 	CONFIG_CAN_SOFTING=n \
 	CONFIG_CAN_XILINXCAN=n \
 	CONFIG_NET_EMATCH_CANID=n \
-	CONFIG_CAN_DEBUG_DEVICES=n
+	CONFIG_CAN_DEBUG_DEVICES=n \
+	CONFIG_CAN_SPI_MCP251X=n
   FILES:=$(LINUX_DIR)/drivers/net/can/can-dev.ko \
 	 $(LINUX_DIR)/net/can/can.ko
   AUTOLOAD:=$(call AutoProbe,can can-dev)
@@ -275,3 +276,17 @@ endef
 
 $(eval $(call KernelPackage,can-c-can-pci))
 
+define KernelPackage/can-spi-mcp251x
+  TITLE:=MCP2515 CAN controller via SPI
+  KCONFIG:=CONFIG_CAN_SPI_MCP251X
+  FILES:=$(LINUX_DIR)/drivers/net/can/spi/mcp251x.ko
+  AUTOLOAD:=$(call AutoProbe,can-spi-mcp251x)
+  $(call AddDepends/can)
+endef
+
+define KernelPackage/can-spi-mcp251x/description
+ This driver adds support for MCP251x can controller connected 
+via host mcu using SPI bus
+endef
+
+$(eval $(call KernelPackage,can-spi-mcp251x))
