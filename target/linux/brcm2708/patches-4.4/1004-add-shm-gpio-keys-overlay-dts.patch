@@ -1,0 +1,49 @@
+Index: linux-4.4.89/arch/arm/boot/dts/overlays/shm-gpio-keys-overlay.dts
+===================================================================
+--- /dev/null
++++ linux-4.4.89/arch/arm/boot/dts/overlays/shm-gpio-keys-overlay.dts
+@@ -0,0 +1,32 @@
++/*
++ * Device tree overlay for SHM RPI3 expansion GPIO keys
++ * Button 1: BRCM pin 26 (header pin 37)
++ * Button 2: BRCM pin 20 (header pin 38)
++ */
++
++/dts-v1/;
++/plugin/;
++/ {
++	compatible = "brcm,bcm2835", "brcm,bcm2708", "brcm,bcm2709";
++	
++	fragment@0 {
++		target-path = "/soc";
++		__overlay__ {
++			keypad: keypad {
++				compatible = "gpio-keys";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				button@26 {
++					label = "BUTTON1";
++					linux,code = <0x100>;
++					gpios = <&gpio 26 1>;
++				};
++				button@20 {
++					label = "BUTTON2";
++					linux,code = <0x101>;
++					gpios = <&gpio 20 1>;
++				};
++			};
++		};
++	};
++};
+Index: linux-4.4.89/arch/arm/boot/dts/overlays/Makefile
+===================================================================
+--- linux-4.4.89.orig/arch/arm/boot/dts/overlays/Makefile
++++ linux-4.4.89/arch/arm/boot/dts/overlays/Makefile
+@@ -30,6 +30,7 @@ dtbo-$(RPI_DT_OVERLAYS) += dwc2.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += enc28j60.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += enc28j60-spi2.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += gpio-ir.dtbo
++dtbo-$(RPI_DT_OVERLAYS) += shm-gpio-keys.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += gpio-poweroff.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += hifiberry-amp.dtbo
+ dtbo-$(RPI_DT_OVERLAYS) += hifiberry-dac.dtbo
