@@ -23,12 +23,12 @@ Index: linux-4.4.89/arch/arm/boot/dts/overlays/shm-gpio-keys-overlay.dts
 +				#size-cells = <0>;
 +				button@26 {
 +					label = "BUTTON1";
-+					linux,code = <0x100>;
++					linux,code = <103>;
 +					gpios = <&gpio 26 1>;
 +				};
 +				button@20 {
 +					label = "BUTTON2";
-+					linux,code = <0x101>;
++					linux,code = <108>;
 +					gpios = <&gpio 20 1>;
 +				};
 +			};
