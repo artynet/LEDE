@@ -964,3 +964,5 @@ dtoverlay=scs-max3107-spi0
 #dtoverlay=rpi-proto
 #dtoverlay=rra-digidac1-wm8741-audio
 dtoverlay=pi3-disable-bt
+# Enable buttons events
+dtoverlay=shm-gpio-keys
