@@ -1,6 +1,6 @@
 # Use the default kernel version if the Makefile doesn't override it
 
-LINUX_RELEASE?=1
+LINUX_RELEASE?=4
 
 LINUX_VERSION-3.18 = .43
 LINUX_VERSION-4.4 = .89
