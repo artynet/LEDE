@@ -40,6 +40,7 @@ define Package/kernel-image
   TITLE:=Kernel Image
   VERSION:=$(LINUX_VERSION)-$(LINUX_RELEASE)-$(LINUX_VERMAGIC)
   DEPENDS:=@TARGET_brcm2708_bcm2710 +libc +libstdcpp +zlib
+  EXTRA_DEPENDS:=kernel (=$(LINUX_VERSION)-$(LINUX_RELEASE)-$(LINUX_VERMAGIC))
   DEFAULT:=m if TARGET_brcm2708_bcm2710
 endef
 
