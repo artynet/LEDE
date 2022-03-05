@@ -7,14 +7,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ca-certificates
-PKG_VERSION:=20190110
-PKG_RELEASE:=2
+PKG_VERSION:=20211016
+PKG_RELEASE:=1
 PKG_MAINTAINER:=
 
 PKG_SOURCE:=$(PKG_NAME)_$(PKG_VERSION).tar.xz
-PKG_SOURCE_URL:=http://ftp.debian.org/debian/pool/main/c/ca-certificates
-PKG_HASH:=ee4bf0f4c6398005f5b5ca4e0b87b82837ac5c3b0280a1cb3a63c47555c3a675
-
+PKG_SOURCE_URL:=@DEBIAN/pool/main/c/ca-certificates
+PKG_HASH:=2ae9b6dc5f40c25d6d7fe55e07b54f12a8967d1955d3b7b2f42ee46266eeef88
 PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
@@ -34,6 +33,13 @@ define Package/ca-bundle
   PKGARCH:=all
   PROVIDES:=ca-certs
 endef
+
+define Build/Prepare
+	$(DECOMPRESS_CMD) $(HOST_TAR) -C $(PKG_BUILD_DIR) $(TAR_OPTIONS)
+	$(Build/Patch)
+endef
+
+MAKE_PATH := work
 
 define Build/Install
 	mkdir -p \

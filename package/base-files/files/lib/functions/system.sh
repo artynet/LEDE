@@ -1,5 +1,6 @@
 # Copyright (C) 2006-2013 OpenWrt.org
 
+. /lib/functions.sh
 . /usr/share/libubox/jshn.sh
 
 get_mac_binary() {
@@ -134,6 +135,15 @@ mtd_get_part_size() {
 	done < /proc/mtd
 }
 
+mmc_get_mac_binary() {
+	local part_name="$1"
+	local offset="$2"
+	local part
+
+	part=$(find_mmc_part "$part_name")
+	get_mac_binary "$part" "$offset"
+}
+
 macaddr_add() {
 	local mac=$1
 	local val=$2
@@ -151,10 +161,38 @@ macaddr_geteui() {
 	echo ${mac:9:2}$sep${mac:12:2}$sep${mac:15:2}
 }
 
+macaddr_setbit() {
+	local mac=$1
+	local bit=${2:-0}
+
+	[ $bit -gt 0 -a $bit -le 48 ] || return
+
+	printf "%012x" $(( 0x${mac//:/} | 2**(48-bit) )) | sed -e 's/\(.\{2\}\)/\1:/g' -e 's/:$//'
+}
+
+macaddr_unsetbit() {
+	local mac=$1
+	local bit=${2:-0}
+
+	[ $bit -gt 0 -a $bit -le 48 ] || return
+
+	printf "%012x" $(( 0x${mac//:/} & ~(2**(48-bit)) )) | sed -e 's/\(.\{2\}\)/\1:/g' -e 's/:$//'
+}
+
 macaddr_setbit_la() {
+	macaddr_setbit $1 7
+}
+
+macaddr_unsetbit_mc() {
 	local mac=$1
 
-	printf "%02x:%s" $((0x${mac%%:*} | 0x02)) ${mac#*:}
+	printf "%02x:%s" $((0x${mac%%:*} & ~0x01)) ${mac#*:}
+}
+
+macaddr_random() {
+	local randsrc=$(get_mac_binary /dev/urandom 0)
+	
+	echo "$(macaddr_unsetbit_mc "$(macaddr_setbit_la "${randsrc}")")"
 }
 
 macaddr_2bin() {

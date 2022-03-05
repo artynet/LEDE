@@ -29,19 +29,19 @@ define AddDepends/hwmon
   DEPENDS:=+kmod-hwmon-core $(1)
 endef
 
-define KernelPackage/hwmon-ads1015
-  TITLE:=Texas Instruments ADS1015
-  KCONFIG:= CONFIG_SENSORS_ADS1015
-  FILES:= $(LINUX_DIR)/drivers/hwmon/ads1015.ko
-  AUTOLOAD:=$(call AutoLoad,60,ads1015)
+define KernelPackage/hwmon-ad7418
+  TITLE:=AD741x monitoring support
+  KCONFIG:=CONFIG_SENSORS_AD7418
+  FILES:=$(LINUX_DIR)/drivers/hwmon/ad7418.ko
+  AUTOLOAD:=$(call AutoLoad,60,ad7418 ad7418)
   $(call AddDepends/hwmon,+kmod-i2c-core)
 endef
 
-define KernelPackage/hwmon-ads1015/description
- Kernel module for Texas Instruments ADS1015 Analog-to-Digital converter
+define KernelPackage/hwmon-ad7418/description
+ Kernel module for Analog Devices AD7416, AD7417 and AD7418 temperature monitor chip
 endef
 
-$(eval $(call KernelPackage,hwmon-ads1015))
+$(eval $(call KernelPackage,hwmon-ad7418))
 
 define KernelPackage/hwmon-adt7410
   TITLE:=ADT7410 monitoring support
@@ -75,6 +75,22 @@ define KernelPackage/hwmon-adt7475/description
 endef
 
 $(eval $(call KernelPackage,hwmon-adt7475))
+
+
+define KernelPackage/hwmon-dme1737
+  TITLE:=SMSC DME1737 and compatible monitoring support
+  KCONFIG:=CONFIG_SENSORS_DME1737
+  FILES:= \
+	$(LINUX_DIR)/drivers/hwmon/dme1737.ko
+  AUTOLOAD:=$(call AutoProbe,dme1737)
+  $(call AddDepends/hwmon,+kmod-i2c-core +kmod-hwmon-vid)
+endef
+
+define KernelPackage/hwmon-dme1737/description
+ SMSC DME1737, SCH3112, SCH3114, SCH3116, SCH5027 monitoring support
+endef
+
+$(eval $(call KernelPackage,hwmon-dme1737))
 
 
 define KernelPackage/hwmon-drivetemp
@@ -120,6 +136,21 @@ define KernelPackage/hwmon-f71882fg/description
 endef
 
 $(eval $(call KernelPackage,hwmon-f71882fg))
+
+
+define KernelPackage/hwmon-g762
+  TITLE:=G762/G763 fan speed PWM controller support
+  KCONFIG:=CONFIG_SENSORS_G762
+  FILES:=$(LINUX_DIR)/drivers/hwmon/g762.ko
+  AUTOLOAD:=$(call AutoProbe,g762)
+  $(call AddDepends/hwmon,+kmod-i2c-core)
+endef
+
+define KernelPackage/hwmon-g762/description
+ Kernel module for Global Mixed-mode Technology Inc G762 and G763 fan speed PWM controller chips.
+endef
+
+$(eval $(call KernelPackage,hwmon-g762))
 
 
 define KernelPackage/hwmon-ina209
@@ -180,6 +211,23 @@ define KernelPackage/hwmon-lm63/description
 endef
 
 $(eval $(call KernelPackage,hwmon-lm63))
+
+
+define KernelPackage/hwmon-lm70
+  TITLE:=LM70 monitoring support
+  KCONFIG:=CONFIG_SENSORS_LM70 \
+        CONFIG_SPI=y \
+        CONFIG_SPI_MASTER=y
+  FILES:=$(LINUX_DIR)/drivers/hwmon/lm70.ko
+  AUTOLOAD:=$(call AutoProbe,lm70)
+  $(call AddDepends/hwmon)
+endef
+
+define KernelPackage/hwmon-lm70/description
+ Kernel module for lm70 and compatible thermal monitor chip
+endef
+
+$(eval $(call KernelPackage,hwmon-lm70))
 
 
 define KernelPackage/hwmon-lm75
@@ -317,6 +365,21 @@ endef
 $(eval $(call KernelPackage,hwmon-nct6775))
 
 
+define KernelPackage/hwmon-nct7802
+  TITLE:=NCT7802Y and compatibles monitoring support
+  KCONFIG:=CONFIG_SENSORS_NCT7802
+  FILES:=$(LINUX_DIR)/drivers/hwmon/nct7802.ko
+  AUTOLOAD:=$(call AutoProbe,nct7802)
+  $(call AddDepends/hwmon,+kmod-regmap-i2c)
+endef
+
+define KernelPackage/hwmon-nct7802/description
+ Kernel module for NCT7802Y thermal monitor chip
+endef
+
+$(eval $(call KernelPackage,hwmon-nct7802))
+
+
 define KernelPackage/hwmon-pc87360
   TITLE:=PC87360 monitoring support
   KCONFIG:=CONFIG_SENSORS_PC87360
@@ -379,7 +442,9 @@ $(eval $(call KernelPackage,hwmon-pwmfan))
 
 define KernelPackage/hwmon-sch5627
   TITLE:=SMSC SCH5627 monitoring support
-  KCONFIG:=CONFIG_SENSORS_SCH5627
+  KCONFIG:= \
+	CONFIG_SENSORS_SCH5627 \
+	CONFIG_WATCHDOG_CORE=y
   FILES:= \
 	$(LINUX_DIR)/drivers/hwmon/sch5627.ko \
 	$(LINUX_DIR)/drivers/hwmon/sch56xx-common.ko

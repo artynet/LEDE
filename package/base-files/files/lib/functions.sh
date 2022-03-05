@@ -1,4 +1,3 @@
-#!/bin/sh
 # Copyright (C) 2006-2014 OpenWrt.org
 # Copyright (C) 2006 Fokus Fraunhofer <carsten.tittel@fokus.fraunhofer.de>
 # Copyright (C) 2010 Vertical Communications
@@ -107,21 +106,33 @@ config_unset() {
 # config_get <variable> <section> <option> [<default>]
 # config_get <section> <option>
 config_get() {
-	case "$3" in
-		"") eval echo "\"\${CONFIG_${1}_${2}:-\${4}}\"";;
-		*)  eval export ${NO_EXPORT:+-n} -- "${1}=\${CONFIG_${2}_${3}:-\${4}}";;
+	case "$2${3:-$1}" in
+		*[!A-Za-z0-9_]*) : ;;
+		*)
+			case "$3" in
+				"") eval echo "\"\${CONFIG_${1}_${2}:-\${4}}\"";;
+				*)  eval export ${NO_EXPORT:+-n} -- "${1}=\${CONFIG_${2}_${3}:-\${4}}";;
+			esac
+		;;
 	esac
+}
+
+# get_bool <value> [<default>]
+get_bool() {
+	local _tmp="$1"
+	case "$_tmp" in
+		1|on|true|yes|enabled) _tmp=1;;
+		0|off|false|no|disabled) _tmp=0;;
+		*) _tmp="$2";;
+	esac
+	echo -n "$_tmp"
 }
 
 # config_get_bool <variable> <section> <option> [<default>]
 config_get_bool() {
 	local _tmp
 	config_get _tmp "$2" "$3" "$4"
-	case "$_tmp" in
-		1|on|true|yes|enabled) _tmp=1;;
-		0|off|false|no|disabled) _tmp=0;;
-		*) _tmp="$4";;
-	esac
+	_tmp="$(get_bool "$_tmp" "$4")"
 	export ${NO_EXPORT:+-n} "$1=$_tmp"
 }
 
@@ -176,7 +187,7 @@ default_prerm() {
 		ret=$?
 	fi
 
-	local shell="$(which bash)"
+	local shell="$(command -v bash)"
 	for i in $(grep -s "^/etc/init.d/" "$root/usr/lib/opkg/info/${pkgname}.list"); do
 		if [ -n "$root" ]; then
 			${shell:-/bin/sh} "$root/etc/rc.common" "$root$i" disable
@@ -198,10 +209,10 @@ add_group_and_user() {
 	if [ -n "$rusers" ]; then
 		local tuple oIFS="$IFS"
 		for tuple in $rusers; do
-			local uid gid uname gname
+			local uid gid uname gname addngroups addngroup addngname addngid
 
 			IFS=":"
-			set -- $tuple; uname="$1"; gname="$2"
+			set -- $tuple; uname="$1"; gname="$2"; addngroups="$3"
 			IFS="="
 			set -- $uname; uname="$1"; uid="$2"
 			set -- $gname; gname="$1"; gid="$2"
@@ -221,7 +232,24 @@ add_group_and_user() {
 				group_add_user "$gname" "$uname"
 			fi
 
-			unset uid gid uname gname
+			if [ -n "$uname" ] &&  [ -n "$addngroups" ]; then
+				oIFS="$IFS"
+				IFS=","
+				for addngroup in $addngroups ; do
+					IFS="="
+					set -- $addngroup; addngname="$1"; addngid="$2"
+					if [ -n "$addngid" ]; then
+						group_exists "$addngname" || group_add "$addngname" "$addngid"
+					else
+						group_add_next "$addngname"
+					fi
+
+					group_add_user "$addngname" "$uname"
+				done
+				IFS="$oIFS"
+			fi
+
+			unset uid gid uname gname addngroups addngroup addngname addngid
 		done
 	fi
 }
@@ -254,7 +282,6 @@ default_postinst() {
 		fi
 
 		if grep -m1 -q -s "^/etc/uci-defaults/" "$filelist"; then
-			. /lib/functions/system.sh
 			[ -d /tmp/.uci ] || mkdir -p /tmp/.uci
 			for i in $(grep -s "^/etc/uci-defaults/" "$filelist"); do
 				( [ -f "$i" ] && cd "$(dirname $i)" && . "$i" ) && rm -f "$i"
@@ -265,7 +292,7 @@ default_postinst() {
 		rm -f /tmp/luci-indexcache
 	fi
 
-	local shell="$(which bash)"
+	local shell="$(command -v bash)"
 	for i in $(grep -s "^/etc/init.d/" "$root$filelist"); do
 		if [ -n "$root" ]; then
 			${shell:-/bin/sh} "$root/etc/rc.common" "$root$i" enable
@@ -301,6 +328,25 @@ find_mtd_part() {
 
 	[ -d /dev/mtdblock ] && PREFIX=/dev/mtdblock/
 	echo "${INDEX:+$PREFIX$INDEX}"
+}
+
+find_mmc_part() {
+	local DEVNAME PARTNAME ROOTDEV
+
+	if grep -q "$1" /proc/mtd; then
+		echo "" && return 0
+	fi
+
+	if [ -n "$2" ]; then
+		ROOTDEV="$2"
+	else
+		ROOTDEV="mmcblk*"
+	fi
+
+	for DEVNAME in /sys/block/$ROOTDEV/mmcblk*p*; do
+		PARTNAME="$(grep PARTNAME ${DEVNAME}/uevent | cut -f2 -d'=')"
+		[ "$PARTNAME" = "$1" ] && echo "/dev/$(basename $DEVNAME)" && return 0
+	done
 }
 
 group_add() {
@@ -372,6 +418,16 @@ user_exists() {
 
 board_name() {
 	[ -e /tmp/sysinfo/board_name ] && cat /tmp/sysinfo/board_name || echo "generic"
+}
+
+cmdline_get_var() {
+	local var=$1
+	local cmdlinevar tmp
+
+	for cmdlinevar in $(cat /proc/cmdline); do
+		tmp=${cmdlinevar##${var}}
+		[ "=" = "${tmp:0:1}" ] && echo ${tmp:1}
+	done
 }
 
 [ -z "$IPKG_INSTROOT" ] && [ -f /lib/config/uci.sh ] && . /lib/config/uci.sh

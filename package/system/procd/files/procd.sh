@@ -196,6 +196,8 @@ _procd_add_jail() {
 		ronly)	json_add_boolean "ronly" "1";;
 		requirejail)	json_add_boolean "requirejail" "1";;
 		netns)	json_add_boolean "netns" "1";;
+		userns)	json_add_boolean "userns" "1";;
+		cgroupsns)	json_add_boolean "cgroupsns" "1";;
 		esac
 	done
 	json_add_object "mount"
@@ -244,7 +246,7 @@ _procd_set_param() {
 		env|data|limits)
 			_procd_add_table "$type" "$@"
 		;;
-		command|netdev|file|respawn|watch)
+		command|netdev|file|respawn|watch|watchdog)
 			_procd_add_array "$type" "$@"
 		;;
 		error)
@@ -258,7 +260,8 @@ _procd_set_param() {
 		reload_signal)
 			json_add_int "$type" $(kill -l "$1")
 		;;
-		pidfile|user|group|seccomp|capabilities|facility)
+		pidfile|user|group|seccomp|capabilities|facility|\
+		extroot|overlaydir|tmpoverlaysize)
 			json_add_string "$type" "$1"
 		;;
 		stdout|stderr|no_new_privs)
@@ -325,6 +328,79 @@ _procd_add_config_trigger() {
 	json_close_array
 }
 
+_procd_add_mount_trigger() {
+	json_add_array
+	_procd_add_array_data "$1"
+	local action="$2"
+	local multi=0
+	shift ; shift
+
+	json_add_array
+	_procd_add_array_data "if"
+
+	if [ "$2" ]; then
+		json_add_array
+		_procd_add_array_data "or"
+		multi=1
+	fi
+
+	while [ "$1" ]; do
+		json_add_array
+		_procd_add_array_data "eq" "target" "$1"
+		shift
+		json_close_array
+	done
+
+	[ $multi = 1 ] && json_close_array
+
+	json_add_array
+	_procd_add_array_data "run_script" /etc/init.d/$name $action
+	json_close_array
+
+	json_close_array
+	_procd_add_timeout
+	json_close_array
+}
+
+_procd_add_action_mount_trigger() {
+	local action="$1"
+	shift
+	local mountpoints="$(procd_get_mountpoints "$@")"
+	[ "${mountpoints//[[:space:]]}" ] || return 0
+	local script=$(readlink "$initscript")
+	local name=$(basename ${script:-$initscript})
+
+	_procd_open_trigger
+	_procd_add_mount_trigger mount.add $action "$mountpoints"
+	_procd_close_trigger
+}
+
+procd_get_mountpoints() {
+	(
+		__procd_check_mount() {
+			local cfg="$1"
+			local path="${2%%/}/"
+			local target
+			config_get target "$cfg" target
+			target="${target%%/}/"
+			[ "$path" != "${path##$target}" ] && echo "${target%%/}"
+		}
+		local mpath
+		config_load fstab
+		for mpath in "$@"; do
+			config_foreach __procd_check_mount mount "$mpath"
+		done
+	) | sort -u
+}
+
+_procd_add_restart_mount_trigger() {
+	_procd_add_action_mount_trigger restart "$@"
+}
+
+_procd_add_reload_mount_trigger() {
+	_procd_add_action_mount_trigger reload "$@"
+}
+
 _procd_add_raw_trigger() {
 	json_add_array
 	_procd_add_array_data "$1"
@@ -374,7 +450,7 @@ _procd_append_param() {
 		env|data|limits)
 			_procd_add_table_data "$@"
 		;;
-		command|netdev|file|respawn|watch)
+		command|netdev|file|respawn|watch|watchdog)
 			_procd_add_array_data "$@"
 		;;
 		error)
@@ -525,10 +601,10 @@ uci_validate_section()
 	local _result
 	local _error
 	shift; shift; shift
-	_result=`/sbin/validate_data "$_package" "$_type" "$_name" "$@" 2> /dev/null`
+	_result=$(/sbin/validate_data "$_package" "$_type" "$_name" "$@" 2> /dev/null)
 	_error=$?
 	eval "$_result"
-	[ "$_error" = "0" ] || `/sbin/validate_data "$_package" "$_type" "$_name" "$@" 1> /dev/null`
+	[ "$_error" = "0" ] || $(/sbin/validate_data "$_package" "$_type" "$_name" "$@" 1> /dev/null)
 	return $_error
 }
 
@@ -556,8 +632,12 @@ _procd_wrapper \
 	procd_add_raw_trigger \
 	procd_add_config_trigger \
 	procd_add_interface_trigger \
+	procd_add_mount_trigger \
 	procd_add_reload_trigger \
 	procd_add_reload_interface_trigger \
+	procd_add_action_mount_trigger \
+	procd_add_reload_mount_trigger \
+	procd_add_restart_mount_trigger \
 	procd_open_trigger \
 	procd_close_trigger \
 	procd_open_instance \

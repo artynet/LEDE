@@ -21,11 +21,11 @@ Signed-off-by: Tim Harvey <tharvey@gateworks.com>
 +#include <linux/of.h>
  #include <linux/platform_data/x86/apple.h>
  #include <linux/pm_runtime.h>
- #include <linux/switchtec.h>
-@@ -5431,3 +5432,34 @@ out_disable:
- DECLARE_PCI_FIXUP_CLASS_FINAL(PCI_VENDOR_ID_NVIDIA, 0x13b1,
- 			      PCI_CLASS_DISPLAY_VGA, 8,
- 			      quirk_reset_lenovo_thinkpad_p50_nvgpu);
+ #include <linux/suspend.h>
+@@ -5793,3 +5794,34 @@ static void nvidia_ion_ahci_fixup(struct
+ 	pdev->dev_flags |= PCI_DEV_FLAGS_HAS_MSI_MASKING;
+ }
+ DECLARE_PCI_FIXUP_FINAL(PCI_VENDOR_ID_NVIDIA, 0x0ab8, nvidia_ion_ahci_fixup);
 +
 +#ifdef CONFIG_PCI_HOST_THUNDER_PEM
 +/*

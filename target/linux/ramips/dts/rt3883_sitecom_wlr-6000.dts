@@ -1,5 +1,3 @@
-/dts-v1/;
-
 #include "rt3883.dtsi"
 
 #include <dt-bindings/gpio/gpio.h>
@@ -31,12 +29,12 @@
 		compatible = "gpio-leds";
 
 		led_power: power {
-			label = "wlr-6000:red:power";
+			label = "red:power";
 			gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
 		};
 
 		ops {
-			label = "wlr-6000:white:ops";
+			label = "white:ops";
 			gpios = <&gpio0 0 GPIO_ACTIVE_LOW>;
 		};
 	};
@@ -59,15 +57,16 @@
 
 &state_default {
 	gpio {
-		ralink,group = "i2c", "jtag", "uartf";
-		ralink,function = "gpio";
+		groups = "i2c", "jtag", "uartf";
+		function = "gpio";
 	};
 };
 
 &ethernet {
 	status = "okay";
-	mtd-mac-address = <&factory 0x8004>;
-	mtd-mac-address-increment = <1>;
+	nvmem-cells = <&macaddr_factory_8004>;
+	nvmem-cell-names = "mac-address";
+	mac-address-increment = <1>;
 
 	port@0 {
 		phy-handle = <&phy0>;
@@ -99,7 +98,7 @@
 &spi0 {
 	status = "okay";
 
-	m25p80@0 {
+	flash@0 {
 		compatible = "jedec,spi-nor";
 		reg = <0>;
 		spi-max-frequency = <8600000>;
@@ -181,4 +180,14 @@
 
 &ohci {
 	status = "okay";
+};
+
+&factory {
+	compatible = "nvmem-cells";
+	#address-cells = <1>;
+	#size-cells = <1>;
+
+	macaddr_factory_8004: macaddr@8004 {
+		reg = <0x8004 0x6>;
+	};
 };

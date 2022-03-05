@@ -84,6 +84,35 @@ endef
 $(eval $(call KernelPackage,i2c-algo-pcf))
 
 
+I2C_DWCORE_MODULES:= \
+  CONFIG_I2C_DESIGNWARE_CORE:drivers/i2c/busses/i2c-designware-core
+
+define KernelPackage/i2c-designware-core
+  $(call i2c_defaults,$(I2C_DWCORE_MODULES),58)
+  TITLE:=Synopsys DesignWare I2C core
+  DEPENDS:=+kmod-i2c-core +!LINUX_5_4:kmod-regmap-core
+  HIDDEN:=y
+endef
+
+$(eval $(call KernelPackage,i2c-designware-core))
+
+
+I2C_DWPCI_MODULES:= \
+  CONFIG_I2C_DESIGNWARE_PCI:drivers/i2c/busses/i2c-designware-pci
+
+define KernelPackage/i2c-designware-pci
+  $(call i2c_defaults,$(I2C_DWPCI_MODULES),59)
+  TITLE:=Synopsys DesignWare PCI
+  DEPENDS:=+kmod-i2c-designware-core
+endef
+
+define KernelPackage/i2c-designware-pci/description
+ Support for Synopsys DesignWare I2C controller. Only master mode is supported.
+endef
+
+$(eval $(call KernelPackage,i2c-designware-pci))
+
+
 I2C_GPIO_MODULES:= \
   CONFIG_I2C_GPIO:drivers/i2c/busses/i2c-gpio
 
@@ -210,7 +239,6 @@ $(eval $(call KernelPackage,i2c-piix4))
 
 
 I2C_PXA_MODULES:= \
-  CONFIG_I2C_PXA_SLAVE=y \
   CONFIG_I2C_PXA:drivers/i2c/busses/i2c-pxa
 
 define KernelPackage/i2c-pxa
